@@ -16,6 +16,19 @@ export default function decorate(block) {
     moveInstrumentation(row, details);
 
     details.className = 'accordion-item';
+
+    const layoutField = row.children[2];
+
+    if (layoutField) {
+      const layout = layoutField.textContent.trim().toLowerCase();
+
+      if (layout === 'faq') {
+        details.classList.add('faq');
+      }
+
+      layoutField.remove();
+    }
+
     details.append(summary, body);
 
     row.replaceWith(details);
