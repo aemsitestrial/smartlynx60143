@@ -76,6 +76,7 @@
   font-weight: 700;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .accordion.plus-minus summary::after {
   content: '+';
   border: none;
