@@ -12,6 +12,7 @@ export default function decorate(block) {
     body.className = 'accordion-item-body';
 
     const details = document.createElement('details');
+
     moveInstrumentation(row, details);
 
     details.className = 'accordion-item';
