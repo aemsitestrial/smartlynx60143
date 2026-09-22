@@ -2,7 +2,6 @@
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -62,4 +61,31 @@
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+.accordion.card details {
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
+
+.accordion.faq .accordion-item-label::before {
+  content: 'Q. ';
+  font-weight: 700;
+}
+
+.accordion.plus-minus summary::after {
+  content: '+';
+  border: none;
+  width: auto;
+  height: auto;
+  font-size: 24px;
+  font-weight: 700;
+  transform: translateY(-50%);
+}
+
+.accordion.plus-minus details[open] summary::after {
+  content: '-';
 }
