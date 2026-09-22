@@ -3,7 +3,7 @@
 }
 
 .accordion details {
-  border: 1px solid var(--accordion-border, #dadada);
+  border: 1px solid #dadada;
   margin: 0;
 }
 
@@ -25,6 +25,10 @@
   transition: background-color 0.2s;
   background-color: var(--accordion-bg, transparent);
   color: var(--accordion-text, inherit);
+}
+
+.accordion .highlighted > summary {
+  font-weight: 700;
 }
 
 .accordion details[open] summary {
@@ -68,10 +72,19 @@
 }
 
 .accordion details[open] .accordion-item-body {
-  border-top: 1px solid var(--accordion-border, #dadada);
+  border-top: 1px solid #dadada;
 }
 
-.accordion .accordion-item.faq .accordion-item-label::before {
-  content: 'Q. ';
-  font-weight: 700;
+.accordion .highlighted {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion input[type='search'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
 }

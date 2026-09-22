@@ -1,6 +1,8 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+  let hasSearch = false;
+
   [...block.children].forEach((row) => {
     const label = row.children[0];
 
@@ -20,13 +22,21 @@ export default function decorate(block) {
     const layoutField = row.children[2];
     const backgroundField = row.children[3];
     const textColorField = row.children[4];
-    const borderColorField = row.children[5];
 
     if (layoutField) {
       const layout = layoutField.textContent.trim().toLowerCase();
 
-      if (layout === 'faq') {
-        details.classList.add('faq');
+      if (layout === 'single-open') {
+        details.classList.add('single-open');
+      }
+
+      if (layout === 'highlighted') {
+        details.classList.add('highlighted');
+      }
+
+      if (layout === 'search') {
+        details.classList.add('search-layout');
+        hasSearch = true;
       }
 
       layoutField.remove();
@@ -43,27 +53,52 @@ export default function decorate(block) {
     }
 
     if (textColorField) {
-      const textColor = textColorField.textContent.trim();
+      const color = textColorField.textContent.trim();
 
-      if (textColor) {
-        details.style.setProperty('--accordion-text', textColor);
+      if (color) {
+        details.style.setProperty('--accordion-text', color);
       }
 
       textColorField.remove();
-    }
-
-    if (borderColorField) {
-      const borderColor = borderColorField.textContent.trim();
-
-      if (borderColor) {
-        details.style.setProperty('--accordion-border', borderColor);
-      }
-
-      borderColorField.remove();
     }
 
     details.append(summary, body);
 
     row.replaceWith(details);
   });
+
+  const singleOpenItems = block.querySelectorAll('.single-open');
+
+  singleOpenItems.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) {
+        return;
+      }
+
+      singleOpenItems.forEach((other) => {
+        if (other !== item) {
+          other.removeAttribute('open');
+        }
+      });
+    });
+  });
+
+  if (hasSearch) {
+    const search = document.createElement('input');
+
+    search.type = 'search';
+    search.placeholder = 'Search...';
+
+    search.addEventListener('input', () => {
+      const term = search.value.toLowerCase();
+
+      block.querySelectorAll('.accordion-item').forEach((item) => {
+        const text = item.textContent.toLowerCase();
+
+        item.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+
+    block.prepend(search);
+  }
 }

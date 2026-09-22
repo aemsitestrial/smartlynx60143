@@ -61,8 +61,16 @@
               "value": "default"
             },
             {
-              "name": "FAQ",
-              "value": "faq"
+              "name": "Single Open",
+              "value": "single-open"
+            },
+            {
+              "name": "Highlighted",
+              "value": "highlighted"
+            },
+            {
+              "name": "Search",
+              "value": "search"
             }
           ]
         },
@@ -77,13 +85,6 @@
           "component": "text",
           "name": "textColor",
           "label": "Text Color",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "name": "borderColor",
-          "label": "Border Color",
           "valueType": "string",
           "value": ""
         }
