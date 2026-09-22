@@ -122,7 +122,7 @@
                   "name": "Accordion Item",
                   "model": "accordion-item",
                   "summary": "Lorem Ipsum",
-                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
                 }
               }
             }

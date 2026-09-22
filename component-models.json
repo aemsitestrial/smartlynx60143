@@ -168,6 +168,23 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "variant",
+        "label": "Variant",
+        "valueType": "string",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "FAQ",
+            "value": "faq"
+          }
+        ]
       }
     ]
   },
