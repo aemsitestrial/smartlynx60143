@@ -185,6 +185,27 @@
             "value": "faq"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "backgroundColor",
+        "label": "Background Color",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "textColor",
+        "label": "Text Color",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "borderColor",
+        "label": "Border Color",
+        "valueType": "string",
+        "value": ""
       }
     ]
   },

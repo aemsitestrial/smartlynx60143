@@ -18,6 +18,9 @@ export default function decorate(block) {
     details.className = 'accordion-item';
 
     const layoutField = row.children[2];
+    const backgroundField = row.children[3];
+    const textColorField = row.children[4];
+    const borderColorField = row.children[5];
 
     if (layoutField) {
       const layout = layoutField.textContent.trim().toLowerCase();
@@ -27,6 +30,36 @@ export default function decorate(block) {
       }
 
       layoutField.remove();
+    }
+
+    if (backgroundField) {
+      const bg = backgroundField.textContent.trim();
+
+      if (bg) {
+        details.style.setProperty('--accordion-bg', bg);
+      }
+
+      backgroundField.remove();
+    }
+
+    if (textColorField) {
+      const textColor = textColorField.textContent.trim();
+
+      if (textColor) {
+        details.style.setProperty('--accordion-text', textColor);
+      }
+
+      textColorField.remove();
+    }
+
+    if (borderColorField) {
+      const borderColor = borderColorField.textContent.trim();
+
+      if (borderColor) {
+        details.style.setProperty('--accordion-border', borderColor);
+      }
+
+      borderColorField.remove();
     }
 
     details.append(summary, body);
