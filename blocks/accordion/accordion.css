@@ -4,7 +4,7 @@
 
 /* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
-  margin-top: 25px;
+  margin-top: 24px;
 }
 
 .accordion details p {
