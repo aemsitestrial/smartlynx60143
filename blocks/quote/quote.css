@@ -39,3 +39,16 @@
   content: '—';
   padding-right: 0.5ch;
 }
+
+.quote blockquote.centered {
+  text-align: center;
+}
+
+.quote blockquote.centered .quote-attribution {
+  text-align: center;
+}
+
+.quote blockquote.left-border {
+  border-left: 4px solid #0070f3;
+  padding-left: 24px;
+}

@@ -5776,6 +5776,27 @@
         "value": "",
         "label": "Attribution",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "layout",
+        "label": "Layout",
+        "valueType": "string",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Centered Quote",
+            "value": "centered"
+          },
+          {
+            "name": "Left Border Quote",
+            "value": "left-border"
+          }
+        ]
       }
     ]
   },
