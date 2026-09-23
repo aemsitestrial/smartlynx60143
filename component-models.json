@@ -5793,8 +5793,8 @@
             "value": "centered"
           },
           {
-            "name": "Left Border Quote",
-            "value": "left-border"
+            "name": "Right Quote",
+            "value": "right"
           }
         ]
       }

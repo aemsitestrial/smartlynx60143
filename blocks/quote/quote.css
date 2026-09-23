@@ -48,7 +48,10 @@
   text-align: center;
 }
 
-.quote blockquote.left-border {
-  border-left: 4px solid #0070f3;
-  padding-left: 24px;
+.quote blockquote.right {
+  text-align: right;
+}
+
+.quote blockquote.right .quote-attribution {
+  text-align: right;
 }
