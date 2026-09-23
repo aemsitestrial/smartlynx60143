@@ -10,7 +10,15 @@ export default async function decorate(block) {
   let layout = 'default';
 
   if (layoutField) {
-    layout = layoutField.textContent.trim().toLowerCase();
+    const value = layoutField.textContent.trim().toLowerCase();
+
+    if (value.includes('center')) {
+      layout = 'centered';
+    } else if (value.includes('right')) {
+      layout = 'right';
+    } else {
+      layout = 'default';
+    }
   }
 
   blockquote.classList.add(layout);
@@ -20,8 +28,10 @@ export default async function decorate(block) {
     blockquote.append(title);
   }
 
-  quotation.className = 'quote-quotation';
-  blockquote.append(quotation);
+  if (quotation) {
+    quotation.className = 'quote-quotation';
+    blockquote.append(quotation);
+  }
 
   if (description && description.textContent.trim()) {
     description.className = 'quote-description';
