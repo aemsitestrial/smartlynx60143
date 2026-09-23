@@ -5836,6 +5836,13 @@
         "label": "Quote Color",
         "valueType": "string",
         "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "profileImage",
+        "label": "Profile Image",
+        "valueType": "string",
+        "value": ""
       }
     ]
   },

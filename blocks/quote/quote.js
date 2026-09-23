@@ -7,6 +7,7 @@ export default async function decorate(block) {
   const backgroundField = block.children[5]?.firstElementChild;
   const textColorField = block.children[6]?.firstElementChild;
   const quoteColorField = block.children[7]?.firstElementChild;
+  const profileImageField = block.children[8];
 
   const blockquote = document.createElement('blockquote');
 
@@ -19,14 +20,14 @@ export default async function decorate(block) {
       layout = 'centered';
     } else if (value.includes('right')) {
       layout = 'right';
-    } else {
-      layout = 'default';
+    } else if (value.includes('profile')) {
+      layout = 'profile';
     }
   }
 
   blockquote.classList.add(layout);
 
-  if (title && title.textContent.trim()) {
+  if (title?.textContent.trim()) {
     title.className = 'quote-title';
     blockquote.append(title);
   }
@@ -36,22 +37,32 @@ export default async function decorate(block) {
     blockquote.append(quotation);
   }
 
-  if (description && description.textContent.trim()) {
+  if (description?.textContent.trim()) {
     description.className = 'quote-description';
     blockquote.append(description);
   }
 
-  if (attribution) {
+  if (layout === 'profile' && attribution) {
+    const author = document.createElement('div');
+    author.className = 'quote-author';
+
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'quote-author-image';
+
+    const img = profileImageField?.querySelector('img');
+
+    if (img) {
+      imageWrapper.append(img.cloneNode(true));
+      author.append(imageWrapper);
+    }
+
+    attribution.className = 'quote-attribution';
+    author.append(attribution);
+
+    blockquote.append(author);
+  } else if (attribution) {
     attribution.className = 'quote-attribution';
     blockquote.append(attribution);
-
-    const ems = attribution.querySelectorAll('em');
-
-    ems.forEach((em) => {
-      const cite = document.createElement('cite');
-      cite.innerHTML = em.innerHTML;
-      em.replaceWith(cite);
-    });
   }
 
   if (backgroundField?.textContent.trim()) {
@@ -70,10 +81,18 @@ export default async function decorate(block) {
 
   if (quoteColorField?.textContent.trim()) {
     blockquote.style.setProperty(
-      '--quote-icon',
+      '--quote-color',
       quoteColorField.textContent.trim(),
     );
   }
+
+  const ems = blockquote.querySelectorAll('em');
+
+  ems.forEach((em) => {
+    const cite = document.createElement('cite');
+    cite.innerHTML = em.innerHTML;
+    em.replaceWith(cite);
+  });
 
   block.innerHTML = '';
   block.append(blockquote);

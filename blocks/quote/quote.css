@@ -26,7 +26,7 @@
 
 .quote blockquote .quote-quotation {
   font-size: 120%;
-  color: var(--quote-icon, inherit);
+  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-quotation > :first-child {
@@ -36,7 +36,7 @@
 .quote blockquote .quote-quotation p:first-child::before,
 .quote blockquote .quote-quotation p:last-child::after {
   line-height: 0;
-  color: var(--quote-icon, inherit);
+  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-quotation p:first-child::before {
@@ -70,4 +70,29 @@
 
 .quote blockquote.right .quote-attribution {
   text-align: right;
+}
+
+.quote .quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quote .quote-author-image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.quote blockquote.profile .quote-attribution {
+  text-align: left;
+  margin: 0;
+}
+
+.quote blockquote.profile .quote-attribution p:first-child::before {
+  content: '';
+  padding-right: 0;
 }
