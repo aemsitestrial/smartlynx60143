@@ -35,6 +35,20 @@
           "valueType": "string"
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "value": "",
+          "label": "Description"
+        },
+        {
           "component": "select",
           "name": "layout",
           "label": "Layout",

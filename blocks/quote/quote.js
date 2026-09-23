@@ -1,7 +1,9 @@
 export default async function decorate(block) {
   const quotation = block.children[0]?.firstElementChild;
   const attribution = block.children[1]?.firstElementChild;
-  const layoutField = block.children[2]?.firstElementChild;
+  const title = block.children[2]?.firstElementChild;
+  const description = block.children[3]?.firstElementChild;
+  const layoutField = block.children[4]?.firstElementChild;
 
   const blockquote = document.createElement('blockquote');
 
@@ -13,8 +15,18 @@ export default async function decorate(block) {
 
   blockquote.classList.add(layout);
 
+  if (title && title.textContent.trim()) {
+    title.className = 'quote-title';
+    blockquote.append(title);
+  }
+
   quotation.className = 'quote-quotation';
   blockquote.append(quotation);
+
+  if (description && description.textContent.trim()) {
+    description.className = 'quote-description';
+    blockquote.append(description);
+  }
 
   if (attribution) {
     attribution.className = 'quote-attribution';
