@@ -7,7 +7,6 @@ export default async function decorate(block) {
   const backgroundField = block.children[5]?.firstElementChild;
   const textColorField = block.children[6]?.firstElementChild;
   const quoteColorField = block.children[7]?.firstElementChild;
-  const profileImageField = block.children[8];
 
   const blockquote = document.createElement('blockquote');
 
@@ -20,8 +19,6 @@ export default async function decorate(block) {
       layout = 'centered';
     } else if (value.includes('right')) {
       layout = 'right';
-    } else if (value.includes('profile')) {
-      layout = 'profile';
     } else {
       layout = 'default';
     }
@@ -44,32 +41,7 @@ export default async function decorate(block) {
     blockquote.append(description);
   }
 
-  if (layout === 'profile' && attribution) {
-    const authorWrapper = document.createElement('div');
-    authorWrapper.className = 'quote-author';
-
-    const picture = profileImageField?.querySelector('picture');
-
-    if (picture) {
-      const imageWrapper = document.createElement('div');
-      imageWrapper.className = 'quote-author-image';
-      imageWrapper.append(picture);
-      authorWrapper.append(imageWrapper);
-    }
-
-    attribution.className = 'quote-attribution';
-    authorWrapper.append(attribution);
-
-    blockquote.append(authorWrapper);
-
-    const ems = attribution.querySelectorAll('em');
-
-    ems.forEach((em) => {
-      const cite = document.createElement('cite');
-      cite.innerHTML = em.innerHTML;
-      em.replaceWith(cite);
-    });
-  } else if (attribution) {
+  if (attribution) {
     attribution.className = 'quote-attribution';
     blockquote.append(attribution);
 
