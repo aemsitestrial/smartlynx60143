@@ -71,3 +71,29 @@
 .quote blockquote.right .quote-attribution {
   text-align: right;
 }
+
+.quote .quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quote .quote-author-image picture,
+.quote .quote-author-image img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+.quote blockquote.profile .quote-attribution {
+  margin: 0;
+  text-align: left;
+}
+
+.quote blockquote.profile .quote-attribution p:first-child::before {
+  content: '';
+  padding: 0;
+}
