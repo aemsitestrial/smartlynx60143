@@ -4,6 +4,9 @@ export default async function decorate(block) {
   const title = block.children[2]?.firstElementChild;
   const description = block.children[3]?.firstElementChild;
   const layoutField = block.children[4]?.firstElementChild;
+  const backgroundField = block.children[5]?.firstElementChild;
+  const textColorField = block.children[6]?.firstElementChild;
+  const quoteColorField = block.children[7]?.firstElementChild;
 
   const blockquote = document.createElement('blockquote');
 
@@ -49,6 +52,25 @@ export default async function decorate(block) {
       cite.innerHTML = em.innerHTML;
       em.replaceWith(cite);
     });
+  }
+  if (backgroundField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-bg',
+      backgroundField.textContent.trim(),
+    );
+  }
+  if (textColorField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-text',
+      textColorField.textContent.trim(),
+    );
+  }
+
+  if (quoteColorField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-icon',
+      quoteColorField.textContent.trim(),
+    );
   }
 
   block.innerHTML = '';

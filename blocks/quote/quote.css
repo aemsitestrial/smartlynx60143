@@ -1,24 +1,27 @@
+.quote blockquote {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 24px;
+  background-color: var(--quote-bg, transparent);
+  color: var(--quote-text, inherit);
+  border-radius: 8px;
+}
+
+@media (width >= 900px) {
+  .quote blockquote {
+    padding: 32px;
+  }
+}
+
 .quote blockquote .quote-title {
-  line-height: 1.6;
   margin-bottom: 16px;
+  line-height: 1.6;
 }
 
 .quote blockquote .quote-description {
   margin-top: 16px;
   font-size: 1rem;
   line-height: 1.6;
-}
-
-.quote blockquote {
-  margin: 0 auto;
-  padding: 0 24px;
-  max-width: 900px;
-}
-
-@media (width >= 900px) {
-  .quote blockquote {
-    padding: 0 32px;
-  }
 }
 
 .quote blockquote .quote-quotation {
@@ -32,6 +35,7 @@
 .quote blockquote .quote-quotation p:first-child::before,
 .quote blockquote .quote-quotation p:last-child::after {
   line-height: 0;
+  color: var(--quote-icon, currentcolor);
 }
 
 .quote blockquote .quote-quotation p:first-child::before {
