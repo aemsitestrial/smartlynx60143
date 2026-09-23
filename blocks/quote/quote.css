@@ -26,6 +26,7 @@
 
 .quote blockquote .quote-quotation {
   font-size: 120%;
+  color: var(--quote-icon, inherit);
 }
 
 .quote blockquote .quote-quotation > :first-child {
@@ -35,7 +36,7 @@
 .quote blockquote .quote-quotation p:first-child::before,
 .quote blockquote .quote-quotation p:last-child::after {
   line-height: 0;
-  color: var(--quote-icon, currentcolor);
+  color: var(--quote-icon, inherit);
 }
 
 .quote blockquote .quote-quotation p:first-child::before {
