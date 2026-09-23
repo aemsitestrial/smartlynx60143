@@ -1,6 +1,5 @@
 .quote blockquote .quote-title {
-  font-size: 2rem;
-  font-weight: 700;
+  line-height: 1.6;
   margin-bottom: 16px;
 }
 

@@ -35,7 +35,7 @@
           "valueType": "string"
         },
         {
-          "component": "text",
+          "component": "richtext",
           "valueType": "string",
           "name": "title",
           "value": "",
