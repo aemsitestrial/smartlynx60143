@@ -43,6 +43,8 @@ export default async function decorate(block) {
   }
 
   if (layout === 'profile' && attribution) {
+    console.log(profileImageField?.outerHTML);
+
     const authorWrapper = document.createElement('div');
     authorWrapper.className = 'quote-author';
 
@@ -53,13 +55,8 @@ export default async function decorate(block) {
 
     authorWrapper.append(imageWrapper);
 
-    const authorInfo = document.createElement('div');
-    authorInfo.className = 'quote-author-info';
-
     attribution.className = 'quote-attribution';
-    authorInfo.append(attribution);
-
-    authorWrapper.append(authorInfo);
+    authorWrapper.append(attribution);
 
     blockquote.append(authorWrapper);
   } else if (attribution) {
