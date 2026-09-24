@@ -1,97 +1,112 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-export default function decorate(block) {
-  const rows = [...block.children];
-
-  const quotationRow = rows[0];
-  const attributionRow = rows[1];
-  const titleRow = rows[2];
-  const descriptionRow = rows[3];
-  const layoutRow = rows[4];
-  const profileImageRow = rows[8];
-
-  const layout = layoutRow?.textContent.trim().toLowerCase() || 'default';
-
-  let picture;
-
-  const image = profileImageRow?.querySelector('img');
-
-  if (image) {
-    picture = image.closest('picture');
-
-    const optimizedPicture = createOptimizedPicture(
-      image.src,
-      image.alt || '',
-      false,
-      [
-        { width: '200' },
-        { width: '400' },
-        { width: '800' },
-      ],
-    );
-
-    picture.replaceWith(optimizedPicture);
-    picture = optimizedPicture;
-  }
+export default async function decorate(block) {
+  const quotation = block.children[0]?.firstElementChild;
+  const attribution = block.children[1]?.firstElementChild;
+  const title = block.children[2]?.firstElementChild;
+  const description = block.children[3]?.firstElementChild;
+  const layoutField = block.children[4]?.firstElementChild;
+  const backgroundField = block.children[5]?.firstElementChild;
+  const textColorField = block.children[6]?.firstElementChild;
+  const quoteColorField = block.children[7]?.firstElementChild;
+  const profileImageField = block.children[8];
 
   const blockquote = document.createElement('blockquote');
+
+  let layout = 'default';
+
+  if (layoutField) {
+    const value = layoutField.textContent.trim().toLowerCase();
+
+    if (value.includes('center')) {
+      layout = 'centered';
+    } else if (value.includes('right')) {
+      layout = 'right';
+    } else if (value.includes('profile')) {
+      layout = 'profile';
+    }
+  }
+
   blockquote.classList.add(layout);
 
-  if (titleRow?.innerHTML.trim()) {
-    const title = document.createElement('div');
+  if (title?.textContent.trim()) {
     title.className = 'quote-title';
-    title.innerHTML = titleRow.innerHTML;
     blockquote.append(title);
   }
 
-  if (quotationRow?.innerHTML.trim()) {
-    const quotation = document.createElement('div');
+  if (quotation) {
     quotation.className = 'quote-quotation';
-    quotation.innerHTML = quotationRow.innerHTML;
     blockquote.append(quotation);
   }
 
-  if (descriptionRow?.innerHTML.trim()) {
-    const description = document.createElement('div');
+  if (description?.textContent.trim()) {
     description.className = 'quote-description';
-    description.innerHTML = descriptionRow.innerHTML;
     blockquote.append(description);
   }
 
-  if (layout === 'profile') {
-    const author = document.createElement('div');
-    author.className = 'quote-author';
+  if (layout === 'profile' && attribution) {
+    const authorWrapper = document.createElement('div');
+    authorWrapper.className = 'quote-author';
 
-    if (picture) {
-      const imageWrapper = document.createElement('div');
-      imageWrapper.className = 'quote-author-image';
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'quote-author-image';
+
+    const image = profileImageField?.querySelector('img');
+
+    if (image) {
+      const picture = createOptimizedPicture(
+        image.src,
+        image.alt || attribution.textContent.trim() || 'Profile Image',
+        false,
+        [{ width: '100' }],
+      );
 
       imageWrapper.append(picture);
-
-      author.append(imageWrapper);
+      authorWrapper.append(imageWrapper);
     }
 
-    const info = document.createElement('div');
-    info.className = 'quote-author-info';
+    const authorInfo = document.createElement('div');
+    authorInfo.className = 'quote-author-info';
 
-    if (attributionRow?.innerHTML.trim()) {
-      const attribution = document.createElement('div');
-      attribution.className = 'quote-attribution';
-      attribution.innerHTML = attributionRow.innerHTML;
-
-      info.append(attribution);
-    }
-
-    author.append(info);
-    blockquote.append(author);
-  } else if (attributionRow?.innerHTML.trim()) {
-    const attribution = document.createElement('div');
     attribution.className = 'quote-attribution';
-    attribution.innerHTML = attributionRow.innerHTML;
+    authorInfo.append(attribution);
 
+    authorWrapper.append(authorInfo);
+    blockquote.append(authorWrapper);
+  } else if (attribution) {
+    attribution.className = 'quote-attribution';
     blockquote.append(attribution);
   }
 
-  block.textContent = '';
+  const ems = blockquote.querySelectorAll('em');
+
+  ems.forEach((em) => {
+    const cite = document.createElement('cite');
+    cite.innerHTML = em.innerHTML;
+    em.replaceWith(cite);
+  });
+
+  if (backgroundField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-bg',
+      backgroundField.textContent.trim(),
+    );
+  }
+
+  if (textColorField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-text',
+      textColorField.textContent.trim(),
+    );
+  }
+
+  if (quoteColorField?.textContent.trim()) {
+    blockquote.style.setProperty(
+      '--quote-color',
+      quoteColorField.textContent.trim(),
+    );
+  }
+
+  block.innerHTML = '';
   block.append(blockquote);
 }
