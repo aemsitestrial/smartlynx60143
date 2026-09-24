@@ -33,12 +33,6 @@
   text-indent: -0.5ch;
 }
 
-.quote blockquote .quote-quotation p:first-child::before,
-.quote blockquote .quote-quotation p:last-child::after {
-  line-height: 0;
-  color: var(--quote-color, inherit);
-}
-
 .quote blockquote .quote-quotation p:first-child::before {
   content: "“";
 }
@@ -48,12 +42,12 @@
 }
 
 .quote blockquote .quote-attribution {
-  text-align: right;
+  margin-top: 16px;
+  text-align: left;
 }
 
 .quote blockquote .quote-attribution p:first-child::before {
-  content: "—";
-  padding-right: 0.5ch;
+  content: "— ";
 }
 
 .quote blockquote.centered {
@@ -72,17 +66,8 @@
   text-align: right;
 }
 
-/* Profile Quote */
-
-.quote .quote-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
-}
-
 .quote .quote-author-image {
-  flex-shrink: 0;
+  margin-top: 24px;
 }
 
 .quote .quote-author-image picture,
@@ -94,19 +79,4 @@
   border-radius: 50%;
   object-fit: cover;
   display: block;
-}
-
-.quote .quote-author-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.quote blockquote.profile .quote-attribution {
-  margin: 0;
-  text-align: left;
-}
-
-.quote blockquote.profile .quote-attribution p:first-child::before {
-  content: "";
-  padding-right: 0;
 }

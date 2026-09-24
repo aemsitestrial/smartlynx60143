@@ -35,38 +35,25 @@ export default async function decorate(block) {
     blockquote.append(quotation);
   }
 
+  if (attribution) {
+    attribution.className = 'quote-attribution';
+    blockquote.append(attribution);
+  }
+
   if (description?.textContent.trim()) {
     description.className = 'quote-description';
     blockquote.append(description);
   }
 
-  if (attribution) {
-    const hasImage = profileImageField?.innerHTML?.trim();
+  const hasImage = profileImageField?.innerHTML?.trim();
 
-    if (hasImage) {
-      const authorWrapper = document.createElement('div');
-      authorWrapper.className = 'quote-author';
+  if (hasImage) {
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'quote-author-image';
 
-      const imageWrapper = document.createElement('div');
-      imageWrapper.className = 'quote-author-image';
+    imageWrapper.innerHTML = profileImageField.innerHTML;
 
-      imageWrapper.innerHTML = profileImageField.innerHTML;
-
-      authorWrapper.append(imageWrapper);
-
-      const authorInfo = document.createElement('div');
-      authorInfo.className = 'quote-author-info';
-
-      attribution.className = 'quote-attribution';
-      authorInfo.append(attribution);
-
-      authorWrapper.append(authorInfo);
-
-      blockquote.append(authorWrapper);
-    } else {
-      attribution.className = 'quote-attribution';
-      blockquote.append(attribution);
-    }
+    blockquote.append(imageWrapper);
   }
 
   const ems = blockquote.querySelectorAll('em');
