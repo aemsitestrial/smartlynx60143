@@ -95,12 +95,12 @@
 .quote .quote-author-image img {
   width: 48px;
   height: 48px;
-  max-width: 48px;
   min-width: 48px;
+  max-width: 48px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
   overflow: hidden;
+  display: block;
 }
 
 .quote .quote-author-info {
@@ -116,15 +116,4 @@
 .quote blockquote.profile .quote-attribution p:first-child::before {
   content: "";
   padding-right: 0;
-}
-
-.quote blockquote.profile .quote-title {
-  margin: 0;
-  font-weight: 600;
-}
-
-.quote blockquote.profile .quote-description {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
 }

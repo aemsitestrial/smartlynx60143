@@ -49,12 +49,9 @@ export default async function decorate(block) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'quote-author-image';
 
-    const picture = profileImageField?.querySelector('picture');
+    imageWrapper.innerHTML = profileImageField?.innerHTML || '';
 
-    if (picture) {
-      imageWrapper.append(picture.cloneNode(true));
-      authorWrapper.append(imageWrapper);
-    }
+    authorWrapper.append(imageWrapper);
 
     const authorInfo = document.createElement('div');
     authorInfo.className = 'quote-author-info';
