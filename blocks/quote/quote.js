@@ -43,27 +43,39 @@ export default async function decorate(block) {
   }
 
   if (layout === 'profile' && attribution) {
-    const author = document.createElement('div');
-    author.className = 'quote-author';
+    const authorWrapper = document.createElement('div');
+    authorWrapper.className = 'quote-author';
 
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'quote-author-image';
 
-    const img = profileImageField?.querySelector('img');
+    const link = profileImageField?.querySelector('a');
 
-    if (img) {
-      imageWrapper.append(img.cloneNode(true));
-      author.append(imageWrapper);
+    if (link && link.href) {
+      const img = document.createElement('img');
+      img.src = link.href;
+      img.alt = attribution.textContent.trim() || 'Profile Image';
+
+      imageWrapper.append(img);
+      authorWrapper.append(imageWrapper);
     }
 
     attribution.className = 'quote-attribution';
-    author.append(attribution);
+    authorWrapper.append(attribution);
 
-    blockquote.append(author);
+    blockquote.append(authorWrapper);
   } else if (attribution) {
     attribution.className = 'quote-attribution';
     blockquote.append(attribution);
   }
+
+  const ems = blockquote.querySelectorAll('em');
+
+  ems.forEach((em) => {
+    const cite = document.createElement('cite');
+    cite.innerHTML = em.innerHTML;
+    em.replaceWith(cite);
+  });
 
   if (backgroundField?.textContent.trim()) {
     blockquote.style.setProperty(
@@ -85,14 +97,6 @@ export default async function decorate(block) {
       quoteColorField.textContent.trim(),
     );
   }
-
-  const ems = blockquote.querySelectorAll('em');
-
-  ems.forEach((em) => {
-    const cite = document.createElement('cite');
-    cite.innerHTML = em.innerHTML;
-    em.replaceWith(cite);
-  });
 
   block.innerHTML = '';
   block.append(blockquote);

@@ -40,11 +40,11 @@
 }
 
 .quote blockquote .quote-quotation p:first-child::before {
-  content: '“';
+  content: "“";
 }
 
 .quote blockquote .quote-quotation p:last-child::after {
-  content: '”';
+  content: "”";
 }
 
 .quote blockquote .quote-attribution {
@@ -52,7 +52,7 @@
 }
 
 .quote blockquote .quote-attribution p:first-child::before {
-  content: '—';
+  content: "—";
   padding-right: 0.5ch;
 }
 
@@ -72,11 +72,17 @@
   text-align: right;
 }
 
+/* Profile Quote */
+
 .quote .quote-author {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-top: 20px;
+}
+
+.quote .quote-author-image {
+  flex-shrink: 0;
 }
 
 .quote .quote-author-image img {
@@ -88,11 +94,11 @@
 }
 
 .quote blockquote.profile .quote-attribution {
-  text-align: left;
   margin: 0;
+  text-align: left;
 }
 
 .quote blockquote.profile .quote-attribution p:first-child::before {
-  content: '';
+  content: "";
   padding-right: 0;
 }
