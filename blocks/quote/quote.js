@@ -1,5 +1,3 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
 export default async function decorate(block) {
   const quotation = block.children[0]?.firstElementChild;
   const attribution = block.children[1]?.firstElementChild;
@@ -51,17 +49,10 @@ export default async function decorate(block) {
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'quote-author-image';
 
-    const image = profileImageField?.querySelector('img');
+    const picture = profileImageField?.querySelector('picture');
 
-    if (image) {
-      const picture = createOptimizedPicture(
-        image.src,
-        image.alt || attribution.textContent.trim() || 'Profile Image',
-        false,
-        [{ width: '100' }],
-      );
-
-      imageWrapper.append(picture);
+    if (picture) {
+      imageWrapper.append(picture.cloneNode(true));
       authorWrapper.append(imageWrapper);
     }
 
@@ -72,6 +63,7 @@ export default async function decorate(block) {
     authorInfo.append(attribution);
 
     authorWrapper.append(authorInfo);
+
     blockquote.append(authorWrapper);
   } else if (attribution) {
     attribution.className = 'quote-attribution';
