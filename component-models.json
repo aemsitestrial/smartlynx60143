@@ -5839,6 +5839,13 @@
         "label": "Profile Image",
         "valueType": "string",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "iconText",
+        "label": "Icon Text",
+        "valueType": "string",
+        "value": ""
       }
     ]
   },

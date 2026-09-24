@@ -56,27 +56,7 @@
   padding-right: 0.5ch;
 }
 
-.quote blockquote.centered {
-  text-align: center;
-}
-
-.quote blockquote.centered .quote-attribution {
-  text-align: center;
-}
-
-.quote blockquote.right {
-  text-align: right;
-}
-
-.quote blockquote.right .quote-attribution {
-  text-align: right;
-}
-
-/* Profile Layout */
-
-.quote blockquote.profile {
-  text-align: left;
-}
+/* Author layout rules - keep ABOVE centered/right rules */
 
 .quote .quote-author {
   display: flex;
@@ -88,8 +68,6 @@
 .quote .quote-author-image {
   flex-shrink: 0;
 }
-
-/* Small Profile Icon */
 
 .quote .quote-author-image picture,
 .quote .quote-author-image img {
@@ -106,14 +84,41 @@
 .quote .quote-author-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-.quote blockquote.profile .quote-attribution {
+.quote .quote-icon-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.quote .quote-author-info .quote-attribution {
   margin: 0;
   text-align: left;
 }
 
-.quote blockquote.profile .quote-attribution p:first-child::before {
+.quote .quote-author-info .quote-attribution p:first-child::before {
   content: "";
   padding-right: 0;
+}
+
+/* Layout Variations */
+
+.quote blockquote.centered {
+  text-align: center;
+}
+
+.quote blockquote.centered .quote-attribution {
+  text-align: center;
+}
+
+.quote blockquote.right {
+  text-align: right;
+}
+
+.quote blockquote.right .quote-attribution {
+  text-align: right;
 }

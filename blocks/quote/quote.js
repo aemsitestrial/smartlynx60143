@@ -8,6 +8,7 @@ export default async function decorate(block) {
   const textColorField = block.children[6]?.firstElementChild;
   const quoteColorField = block.children[7]?.firstElementChild;
   const profileImageField = block.children[8];
+  const iconTextField = block.children[9]?.firstElementChild;
 
   const blockquote = document.createElement('blockquote');
 
@@ -40,33 +41,40 @@ export default async function decorate(block) {
     blockquote.append(description);
   }
 
-  if (attribution) {
-    const hasImage = profileImageField?.innerHTML?.trim();
+  const hasImage = profileImageField?.innerHTML?.trim();
 
-    if (hasImage) {
-      const authorWrapper = document.createElement('div');
-      authorWrapper.className = 'quote-author';
+  if (hasImage) {
+    const authorWrapper = document.createElement('div');
+    authorWrapper.className = 'quote-author';
 
-      const imageWrapper = document.createElement('div');
-      imageWrapper.className = 'quote-author-image';
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'quote-author-image';
 
-      imageWrapper.innerHTML = profileImageField.innerHTML;
+    imageWrapper.innerHTML = profileImageField.innerHTML;
 
-      authorWrapper.append(imageWrapper);
+    authorWrapper.append(imageWrapper);
 
-      const authorInfo = document.createElement('div');
-      authorInfo.className = 'quote-author-info';
+    const authorInfo = document.createElement('div');
+    authorInfo.className = 'quote-author-info';
 
+    if (iconTextField?.textContent.trim()) {
+      const iconText = document.createElement('div');
+      iconText.className = 'quote-icon-text';
+      iconText.textContent = iconTextField.textContent.trim();
+
+      authorInfo.append(iconText);
+    }
+
+    if (attribution) {
       attribution.className = 'quote-attribution';
       authorInfo.append(attribution);
-
-      authorWrapper.append(authorInfo);
-
-      blockquote.append(authorWrapper);
-    } else {
-      attribution.className = 'quote-attribution';
-      blockquote.append(attribution);
     }
+
+    authorWrapper.append(authorInfo);
+    blockquote.append(authorWrapper);
+  } else if (attribution) {
+    attribution.className = 'quote-attribution';
+    blockquote.append(attribution);
   }
 
   const ems = blockquote.querySelectorAll('em');
