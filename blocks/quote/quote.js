@@ -20,8 +20,6 @@ export default async function decorate(block) {
       layout = 'centered';
     } else if (value.includes('right')) {
       layout = 'right';
-    } else if (value.includes('profile')) {
-      layout = 'profile';
     }
   }
 
@@ -42,29 +40,33 @@ export default async function decorate(block) {
     blockquote.append(description);
   }
 
-  if (layout === 'profile' && attribution) {
-    const authorWrapper = document.createElement('div');
-    authorWrapper.className = 'quote-author';
+  if (attribution) {
+    const hasImage = profileImageField?.innerHTML?.trim();
 
-    const imageWrapper = document.createElement('div');
-    imageWrapper.className = 'quote-author-image';
+    if (hasImage) {
+      const authorWrapper = document.createElement('div');
+      authorWrapper.className = 'quote-author';
 
-    imageWrapper.innerHTML = profileImageField?.innerHTML || '';
+      const imageWrapper = document.createElement('div');
+      imageWrapper.className = 'quote-author-image';
 
-    authorWrapper.append(imageWrapper);
+      imageWrapper.innerHTML = profileImageField.innerHTML;
 
-    const authorInfo = document.createElement('div');
-    authorInfo.className = 'quote-author-info';
+      authorWrapper.append(imageWrapper);
 
-    attribution.className = 'quote-attribution';
-    authorInfo.append(attribution);
+      const authorInfo = document.createElement('div');
+      authorInfo.className = 'quote-author-info';
 
-    authorWrapper.append(authorInfo);
+      attribution.className = 'quote-attribution';
+      authorInfo.append(attribution);
 
-    blockquote.append(authorWrapper);
-  } else if (attribution) {
-    attribution.className = 'quote-attribution';
-    blockquote.append(attribution);
+      authorWrapper.append(authorInfo);
+
+      blockquote.append(authorWrapper);
+    } else {
+      attribution.className = 'quote-attribution';
+      blockquote.append(attribution);
+    }
   }
 
   const ems = blockquote.querySelectorAll('em');
