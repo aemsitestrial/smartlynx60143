@@ -1,9 +1,15 @@
 export default function decorate(block) {
-  const imagePath = block.textContent.trim();
+  const rows = [...block.children];
 
-  block.innerHTML = `
-    <div class="quote-image">
-      ${imagePath}
-    </div>
-  `;
+  const profileImageRow = rows[8];
+
+  const picture = profileImageRow?.querySelector('picture');
+
+  block.innerHTML = '';
+
+  if (picture) {
+    block.append(picture.cloneNode(true));
+  } else {
+    block.innerHTML = '<p>No image found</p>';
+  }
 }
