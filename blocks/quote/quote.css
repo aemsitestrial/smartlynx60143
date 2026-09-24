@@ -56,7 +56,23 @@
   padding-right: 0.5ch;
 }
 
-/* Author layout rules - keep ABOVE centered/right rules */
+.quote blockquote.centered {
+  text-align: center;
+}
+
+.quote blockquote.centered .quote-attribution {
+  text-align: center;
+}
+
+.quote blockquote.right {
+  text-align: right;
+}
+
+.quote blockquote.right .quote-attribution {
+  text-align: right;
+}
+
+/* Profile Quote */
 
 .quote .quote-author {
   display: flex;
@@ -77,48 +93,20 @@
   max-width: 48px;
   border-radius: 50%;
   object-fit: cover;
-  overflow: hidden;
   display: block;
 }
 
 .quote .quote-author-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.quote .quote-icon-text {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #444;
-  margin-bottom: 4px;
-}
-
-.quote .quote-author-info .quote-attribution {
+.quote blockquote.profile .quote-attribution {
   margin: 0;
   text-align: left;
 }
 
-.quote .quote-author-info .quote-attribution p:first-child::before {
+.quote blockquote.profile .quote-attribution p:first-child::before {
   content: "";
   padding-right: 0;
-}
-
-/* Layout Variations */
-
-.quote blockquote.centered {
-  text-align: center;
-}
-
-.quote blockquote.centered .quote-attribution {
-  text-align: center;
-}
-
-.quote blockquote.right {
-  text-align: right;
-}
-
-.quote blockquote.right .quote-attribution {
-  text-align: right;
 }
