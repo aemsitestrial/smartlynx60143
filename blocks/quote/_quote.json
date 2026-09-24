@@ -99,7 +99,7 @@
           "name": "profileImage",
           "label": "Profile Image",
           "valueType": "string",
-          "value": ""
+          "multi": false
         }
       ]
     }

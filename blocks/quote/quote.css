@@ -74,6 +74,10 @@
 
 /* Profile Quote */
 
+.quote blockquote.profile {
+  text-align: left;
+}
+
 .quote .quote-author {
   display: flex;
   align-items: center;
@@ -86,11 +90,17 @@
 }
 
 .quote .quote-author-image img {
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  border: 2px solid #ddd;
+}
+
+.quote .quote-author-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .quote blockquote.profile .quote-attribution {
@@ -101,4 +111,15 @@
 .quote blockquote.profile .quote-attribution p:first-child::before {
   content: "";
   padding-right: 0;
+}
+
+.quote blockquote.profile .quote-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.quote blockquote.profile .quote-description {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
