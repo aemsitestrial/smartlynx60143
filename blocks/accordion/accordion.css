@@ -21,7 +21,7 @@
   padding-right: 46px;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
+  overflow: hidden;
   transition: background-color 0.2s;
   background-color: var(--accordion-bg, transparent);
   color: var(--accordion-text, inherit);
@@ -72,6 +72,7 @@
 }
 
 .accordion details[open] .accordion-item-body {
+  display: block;
   border-top: 1px solid #dadada;
 }
 
@@ -98,40 +99,50 @@
 }
 
 .accordion.horizontal .accordion-item {
+  display: flex;
   width: 90px;
-  transition: width 0.4s ease;
   flex-shrink: 0;
+  overflow: hidden;
+  transition: width 0.4s ease;
 }
 
 .accordion.horizontal .accordion-item[open] {
-  width: 1100px;
+  flex: 1;
 }
 
 .accordion.horizontal .accordion-item > summary {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   width: 90px;
-  min-height: 700px;
+  min-width: 90px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
+  background: #f4f4f4;
 }
 
-/* Content Area */
+.accordion.horizontal details[open] .accordion-item-body {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* Content */
 
 .accordion-title-section {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .accordion-title {
   margin: 0;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -146,7 +157,6 @@
   height: 32px;
   display: block;
   object-fit: cover;
-  border-radius: 2px;
 }
 
 .accordion-meta {
@@ -163,9 +173,9 @@
 .accordion-banner img {
   width: 100%;
   max-width: 900px;
-  height: 420px;
+  height: 450px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   display: block;
 }
 
@@ -177,10 +187,10 @@
 .accordion-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 24px;
-  text-decoration: none;
   font-weight: 700;
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
