@@ -32,16 +32,11 @@ export default function decorate(block) {
     if (layoutField) {
       const layout = layoutField.textContent.trim().toLowerCase();
 
-      if (layout === 'single-open') {
-        details.classList.add('single-open');
-      }
-
       if (layout === 'highlighted') {
         details.classList.add('highlighted');
       }
 
       if (layout === 'search') {
-        details.classList.add('search-layout');
         hasSearch = true;
       }
 
@@ -73,19 +68,27 @@ export default function decorate(block) {
       textColorField.remove();
     }
 
+    /* TITLE */
+
     const titleSection = document.createElement('div');
     titleSection.className = 'accordion-title-section';
 
     const flagPicture = flagField?.querySelector('picture');
 
     if (flagPicture) {
-      const flagWrapper = document.createElement('div');
+      const contentFlag = document.createElement('div');
+      contentFlag.className = 'accordion-flag';
 
-      flagWrapper.className = 'accordion-flag';
+      contentFlag.append(flagPicture.cloneNode(true));
 
-      flagWrapper.append(flagPicture.cloneNode(true));
+      titleSection.append(contentFlag);
 
-      titleSection.append(flagWrapper);
+      const summaryFlag = document.createElement('div');
+      summaryFlag.className = 'accordion-flag accordion-summary-flag';
+
+      summaryFlag.append(flagPicture.cloneNode(true));
+
+      summary.append(summaryFlag);
     }
 
     const title = document.createElement('h2');
@@ -95,32 +98,37 @@ export default function decorate(block) {
 
     titleSection.append(title);
 
-    body.prepend(titleSection);
+    body.append(titleSection);
 
-    if (
-      dateField?.textContent.trim()
-      || locationField?.textContent.trim()
-    ) {
-      const meta = document.createElement('div');
+    /* DATE + LOCATION */
 
+    const hasMeta = dateField?.textContent.trim()
+      || locationField?.textContent.trim();
+
+    let meta;
+
+    if (hasMeta) {
+      meta = document.createElement('div');
       meta.className = 'accordion-meta';
 
       meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''}`;
-
-      body.append(meta);
     }
+
+    /* IMAGE */
+
+    let bannerWrapper;
 
     const bannerPicture = bannerField?.querySelector('picture');
 
     if (bannerPicture) {
-      const bannerWrapper = document.createElement('div');
+      bannerWrapper = document.createElement('div');
 
       bannerWrapper.className = 'accordion-banner';
 
       bannerWrapper.append(bannerPicture.cloneNode(true));
-
-      body.append(bannerWrapper);
     }
+
+    /* DESCRIPTION */
 
     const description = body.querySelector('p');
 
@@ -128,16 +136,40 @@ export default function decorate(block) {
       description.classList.add('accordion-description');
     }
 
+    /* CTA */
+
+    let cta;
+
     if (
       ctaLabelField?.textContent.trim()
       && ctaLinkField?.textContent.trim()
     ) {
-      const cta = document.createElement('a');
+      cta = document.createElement('a');
 
       cta.href = ctaLinkField.textContent.trim();
       cta.textContent = ctaLabelField.textContent.trim();
       cta.className = 'accordion-cta';
+    }
 
+    /* ORDER */
+
+    body.innerHTML = '';
+
+    body.append(titleSection);
+
+    if (meta) {
+      body.append(meta);
+    }
+
+    if (bannerWrapper) {
+      body.append(bannerWrapper);
+    }
+
+    if (description) {
+      body.append(description);
+    }
+
+    if (cta) {
       body.append(cta);
     }
 
@@ -146,7 +178,7 @@ export default function decorate(block) {
     row.replaceWith(details);
   });
 
-  /* ONLY ONE ACCORDION OPEN AT A TIME */
+  /* ONLY ONE OPEN */
 
   const accordionItems = block.querySelectorAll('.accordion-item');
 
@@ -163,6 +195,8 @@ export default function decorate(block) {
       });
     });
   });
+
+  /* SEARCH */
 
   if (hasSearch) {
     const search = document.createElement('input');

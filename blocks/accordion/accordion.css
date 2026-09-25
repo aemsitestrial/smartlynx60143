@@ -62,7 +62,7 @@
 }
 
 .accordion .accordion-item-body {
-  padding: 40px;
+  padding: 32px;
   background-color: var(--accordion-bg, transparent);
   color: var(--accordion-text, inherit);
 }
@@ -90,7 +90,7 @@
   border-radius: 4px;
 }
 
-/* Horizontal Accordion */
+/* HORIZONTAL ACCORDION */
 
 .accordion.horizontal {
   display: flex;
@@ -107,7 +107,7 @@
 }
 
 .accordion.horizontal .accordion-item[open] {
-  flex: 1;
+  width: 900px;
 }
 
 .accordion.horizontal .accordion-item > summary {
@@ -117,34 +117,33 @@
   min-width: 90px;
   height: 700px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 12px;
+  padding-top: 24px;
   text-align: center;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4e7dbf;
   background: #f4f4f4;
 }
 
-.accordion.horizontal details[open] .accordion-item-body {
-  flex: 1;
-  min-width: 0;
-  overflow-y: auto;
-}
-
-/* Content */
+/* OPEN CONTENT */
 
 .accordion-title-section {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .accordion-title {
   margin: 0;
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 400;
   line-height: 1.2;
+  color: #000;
 }
 
 .accordion-flag {
@@ -159,29 +158,45 @@
   object-fit: cover;
 }
 
+.accordion-summary-flag {
+  margin-bottom: 16px;
+}
+
+.accordion-summary-flag picture,
+.accordion-summary-flag img {
+  width: 28px;
+  height: 18px;
+  display: block;
+  object-fit: cover;
+}
+
 .accordion-meta {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .accordion-banner {
-  margin: 24px 0;
+  margin: 20px 0;
 }
 
 .accordion-banner picture,
 .accordion-banner img {
   width: 100%;
-  max-width: 900px;
-  height: 450px;
+  max-width: 750px;
+  height: 420px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
 }
 
 .accordion-description {
-  font-size: 18px;
+  max-width: 750px;
+  margin-top: 20px;
+  font-size: 20px;
   line-height: 1.8;
+  color: #000;
 }
 
 .accordion-cta {
@@ -189,6 +204,7 @@
   align-items: center;
   gap: 10px;
   margin-top: 24px;
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -197,5 +213,13 @@
 
 .accordion-cta::after {
   content: '→';
-  font-size: 20px;
+  font-size: 22px;
+}
+
+/* KEEP LAST */
+
+.accordion.horizontal details[open] .accordion-item-body {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
 }
