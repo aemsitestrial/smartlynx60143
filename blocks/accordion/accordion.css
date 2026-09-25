@@ -26,7 +26,7 @@
 }
 
 .accordion .accordion-item-body {
-  padding: 32px;
+  padding: 24px 32px;
   background: var(--accordion-bg, transparent);
   color: var(--accordion-text, inherit);
 }
@@ -39,9 +39,19 @@
   display: block;
 }
 
+.accordion input[type='search'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #dadada;
+  border-radius: 4px;
+}
+
+/* HORIZONTAL ACCORDION */
+
 .accordion.horizontal {
   display: flex;
-  min-height: 700px;
+  min-height: 650px;
   overflow: hidden;
 }
 
@@ -54,31 +64,27 @@
 }
 
 .accordion.horizontal .accordion-item[open] {
-  width: 950px;
+  width: 800px;
 }
 
 .accordion.horizontal .accordion-item > summary {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   width: 95px;
   min-width: 95px;
-  height: 700px;
+  height: 650px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
-  gap: 12px;
-  padding-top: 24px;
-  font-size: 22px;
-  font-weight: 400;
+  align-items: center;
+  gap: 14px;
+  padding-top: 30px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   text-align: center;
+  font-size: 20px;
+  font-weight: 400;
   color: #4e7dbf;
   background: #f5f5f5;
-}
-
-.accordion.horizontal details[open] .accordion-item-body {
-  flex: 1;
-  min-width: 0;
+  border-right: 1px solid #ddd;
 }
 
 /* OPEN PANEL */
@@ -86,15 +92,16 @@
 .accordion-title-section {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 16px;
 }
 
 .accordion-title {
   margin: 0;
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 1.2;
+  color: #000;
 }
 
 .accordion-flag {
@@ -102,62 +109,74 @@
 }
 
 .accordion-flag img {
-  width: 48px;
-  height: 32px;
+  width: 40px;
+  height: 28px;
   object-fit: cover;
   display: block;
 }
 
 .accordion-meta {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  color: #000;
 }
 
 .accordion-banner {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .accordion-banner img {
   width: 100%;
-  max-width: 760px;
-  height: 420px;
+  max-width: 620px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   display: block;
 }
 
 .accordion-description {
-  max-width: 760px;
-  font-size: 20px;
-  line-height: 1.8;
-  margin-top: 20px;
-  margin-bottom: 24px;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .accordion-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .accordion-cta::after {
   content: '→';
+  font-size: 18px;
 }
 
-/* SUMMARY FLAG */
+/* FLAG ON CLOSED TAB */
 
 .accordion-summary-flag {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .accordion-summary-flag img {
-  width: 28px;
-  height: 18px;
-  display: block;
+  width: 22px;
+  height: 14px;
   object-fit: cover;
+  display: block;
+}
+
+/* KEEP LAST */
+
+.accordion.horizontal details[open] .accordion-item-body {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
 }
