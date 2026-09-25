@@ -22,6 +22,10 @@ export default function decorate(block) {
     const layoutField = row.children[2];
     const backgroundField = row.children[3];
     const textColorField = row.children[4];
+    const dateField = row.children[5];
+    const locationField = row.children[6];
+    const ctaLabelField = row.children[7];
+    const ctaLinkField = row.children[8];
 
     if (layoutField) {
       const layout = layoutField.textContent.trim().toLowerCase();
@@ -37,6 +41,11 @@ export default function decorate(block) {
       if (layout === 'search') {
         details.classList.add('search-layout');
         hasSearch = true;
+      }
+
+      if (layout === 'horizontal') {
+        block.classList.add('horizontal');
+        details.classList.add('horizontal-item');
       }
 
       layoutField.remove();
@@ -60,6 +69,31 @@ export default function decorate(block) {
       }
 
       textColorField.remove();
+    }
+
+    if (
+      dateField?.textContent.trim()
+      || locationField?.textContent.trim()
+    ) {
+      const meta = document.createElement('div');
+      meta.className = 'accordion-meta';
+
+      meta.textContent = `${dateField?.textContent.trim() || ''} ${locationField?.textContent.trim() || ''}`;
+
+      body.prepend(meta);
+    }
+
+    if (
+      ctaLabelField?.textContent.trim()
+      && ctaLinkField?.textContent.trim()
+    ) {
+      const cta = document.createElement('a');
+
+      cta.href = ctaLinkField.textContent.trim();
+      cta.textContent = ctaLabelField.textContent.trim();
+      cta.className = 'accordion-cta';
+
+      body.append(cta);
     }
 
     details.append(summary, body);
