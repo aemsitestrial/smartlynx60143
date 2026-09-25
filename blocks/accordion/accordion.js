@@ -26,6 +26,8 @@ export default function decorate(block) {
     const locationField = row.children[6];
     const ctaLabelField = row.children[7];
     const ctaLinkField = row.children[8];
+    const flagField = row.children[9];
+    const bannerField = row.children[10];
 
     if (layoutField) {
       const layout = layoutField.textContent.trim().toLowerCase();
@@ -71,11 +73,32 @@ export default function decorate(block) {
       textColorField.remove();
     }
 
+    if (flagField?.textContent.trim()) {
+      const flag = document.createElement('img');
+
+      flag.className = 'accordion-flag';
+      flag.src = flagField.textContent.trim();
+      flag.alt = 'Flag';
+
+      summary.prepend(flag);
+    }
+
+    if (bannerField?.textContent.trim()) {
+      const banner = document.createElement('img');
+
+      banner.className = 'accordion-banner';
+      banner.src = bannerField.textContent.trim();
+      banner.alt = 'Banner';
+
+      body.prepend(banner);
+    }
+
     if (
       dateField?.textContent.trim()
       || locationField?.textContent.trim()
     ) {
       const meta = document.createElement('div');
+
       meta.className = 'accordion-meta';
 
       meta.textContent = `${dateField?.textContent.trim() || ''} ${locationField?.textContent.trim() || ''}`;

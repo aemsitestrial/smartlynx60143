@@ -90,22 +90,38 @@
 }
 
 .accordion-meta {
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   margin-bottom: 16px;
 }
 
 .accordion-cta {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 24px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.accordion-flag {
+  width: 36px;
+  height: 24px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.accordion-banner {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 /* Horizontal Accordion */
 
 .accordion.horizontal {
   display: flex;
-  min-height: 500px;
+  min-height: 600px;
   overflow: hidden;
 }
 
@@ -116,16 +132,18 @@
 }
 
 .accordion.horizontal .accordion-item[open] {
-  width: 700px;
+  width: 900px;
 }
 
-.accordion.horizontal details > summary {
+.accordion.horizontal details > summary,
+.accordion.horizontal .accordion-item > summary {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  min-height: 500px;
+  min-height: 600px;
   width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 8px;
 }

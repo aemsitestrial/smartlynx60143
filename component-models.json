@@ -239,6 +239,18 @@
         "label": "CTA Link",
         "valueType": "string",
         "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "flagImage",
+        "label": "Flag Image",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "bannerImage",
+        "label": "Banner Image",
+        "valueType": "string"
       }
     ]
   },
