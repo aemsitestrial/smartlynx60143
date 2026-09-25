@@ -8,7 +8,7 @@ export default function decorate(block) {
 
     const summary = document.createElement('summary');
     summary.className = 'accordion-item-label';
-    summary.append(...label.childNodes);
+    summary.textContent = label.textContent.trim();
 
     const body = row.children[1];
     body.className = 'accordion-item-body';
@@ -88,7 +88,7 @@ export default function decorate(block) {
 
       summaryFlag.append(flagPicture.cloneNode(true));
 
-      summary.append(summaryFlag);
+      summary.prepend(summaryFlag);
     }
 
     const title = document.createElement('h2');
@@ -98,25 +98,24 @@ export default function decorate(block) {
 
     titleSection.append(title);
 
-    body.append(titleSection);
+    /* META */
 
-    /* DATE + LOCATION */
+    let meta = null;
 
-    const hasMeta = dateField?.textContent.trim()
-      || locationField?.textContent.trim();
-
-    let meta;
-
-    if (hasMeta) {
+    if (
+      dateField?.textContent.trim()
+      || locationField?.textContent.trim()
+    ) {
       meta = document.createElement('div');
+
       meta.className = 'accordion-meta';
 
       meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''}`;
     }
 
-    /* IMAGE */
+    /* BANNER */
 
-    let bannerWrapper;
+    let bannerWrapper = null;
 
     const bannerPicture = bannerField?.querySelector('picture');
 
@@ -138,7 +137,7 @@ export default function decorate(block) {
 
     /* CTA */
 
-    let cta;
+    let cta = null;
 
     if (
       ctaLabelField?.textContent.trim()
@@ -151,9 +150,9 @@ export default function decorate(block) {
       cta.className = 'accordion-cta';
     }
 
-    /* ORDER */
+    /* REBUILD CONTENT ORDER */
 
-    body.innerHTML = '';
+    body.replaceChildren();
 
     body.append(titleSection);
 
@@ -178,7 +177,7 @@ export default function decorate(block) {
     row.replaceWith(details);
   });
 
-  /* ONLY ONE OPEN */
+  /* ONE OPEN AT A TIME */
 
   const accordionItems = block.querySelectorAll('.accordion-item');
 
