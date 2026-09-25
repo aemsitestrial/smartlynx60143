@@ -73,26 +73,6 @@ export default function decorate(block) {
       textColorField.remove();
     }
 
-    if (flagField?.textContent.trim()) {
-      const flag = document.createElement('img');
-
-      flag.className = 'accordion-flag';
-      flag.src = flagField.textContent.trim();
-      flag.alt = 'Flag';
-
-      summary.prepend(flag);
-    }
-
-    if (bannerField?.textContent.trim()) {
-      const banner = document.createElement('img');
-
-      banner.className = 'accordion-banner';
-      banner.src = bannerField.textContent.trim();
-      banner.alt = 'Banner';
-
-      body.prepend(banner);
-    }
-
     if (
       dateField?.textContent.trim()
       || locationField?.textContent.trim()
@@ -100,7 +80,6 @@ export default function decorate(block) {
       const meta = document.createElement('div');
 
       meta.className = 'accordion-meta';
-
       meta.textContent = `${dateField?.textContent.trim() || ''} ${locationField?.textContent.trim() || ''}`;
 
       body.prepend(meta);
@@ -117,6 +96,30 @@ export default function decorate(block) {
       cta.className = 'accordion-cta';
 
       body.append(cta);
+    }
+
+    const flagPicture = flagField?.querySelector('picture');
+
+    if (flagPicture) {
+      const flagWrapper = document.createElement('div');
+
+      flagWrapper.className = 'accordion-flag';
+
+      flagWrapper.append(flagPicture.cloneNode(true));
+
+      summary.prepend(flagWrapper);
+    }
+
+    const bannerPicture = bannerField?.querySelector('picture');
+
+    if (bannerPicture) {
+      const bannerWrapper = document.createElement('div');
+
+      bannerWrapper.className = 'accordion-banner';
+
+      bannerWrapper.append(bannerPicture.cloneNode(true));
+
+      body.prepend(bannerWrapper);
     }
 
     details.append(summary, body);
