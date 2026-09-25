@@ -146,15 +146,17 @@ export default function decorate(block) {
     row.replaceWith(details);
   });
 
-  const singleOpenItems = block.querySelectorAll('.single-open');
+  /* ONLY ONE ACCORDION OPEN AT A TIME */
 
-  singleOpenItems.forEach((item) => {
+  const accordionItems = block.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach((item) => {
     item.addEventListener('toggle', () => {
       if (!item.open) {
         return;
       }
 
-      singleOpenItems.forEach((other) => {
+      accordionItems.forEach((other) => {
         if (other !== item) {
           other.removeAttribute('open');
         }
