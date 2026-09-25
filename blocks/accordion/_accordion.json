@@ -71,6 +71,10 @@
             {
               "name": "Search",
               "value": "search"
+            },
+            {
+              "name": "Horizontal Accordion",
+              "value": "horizontal"
             }
           ]
         },
@@ -85,6 +89,34 @@
           "component": "text",
           "name": "textColor",
           "label": "Text Color",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "date",
+          "label": "Date",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "location",
+          "label": "Location",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "ctaLabel",
+          "label": "CTA Label",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "ctaLink",
+          "label": "CTA Link",
           "valueType": "string",
           "value": ""
         }
