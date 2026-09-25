@@ -73,6 +73,30 @@ export default function decorate(block) {
       textColorField.remove();
     }
 
+    const titleSection = document.createElement('div');
+    titleSection.className = 'accordion-title-section';
+
+    const flagPicture = flagField?.querySelector('picture');
+
+    if (flagPicture) {
+      const flagWrapper = document.createElement('div');
+
+      flagWrapper.className = 'accordion-flag';
+
+      flagWrapper.append(flagPicture.cloneNode(true));
+
+      titleSection.append(flagWrapper);
+    }
+
+    const title = document.createElement('h2');
+
+    title.className = 'accordion-title';
+    title.textContent = label.textContent.trim();
+
+    titleSection.append(title);
+
+    body.prepend(titleSection);
+
     if (
       dateField?.textContent.trim()
       || locationField?.textContent.trim()
@@ -80,9 +104,28 @@ export default function decorate(block) {
       const meta = document.createElement('div');
 
       meta.className = 'accordion-meta';
-      meta.textContent = `${dateField?.textContent.trim() || ''} ${locationField?.textContent.trim() || ''}`;
 
-      body.prepend(meta);
+      meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''}`;
+
+      body.append(meta);
+    }
+
+    const bannerPicture = bannerField?.querySelector('picture');
+
+    if (bannerPicture) {
+      const bannerWrapper = document.createElement('div');
+
+      bannerWrapper.className = 'accordion-banner';
+
+      bannerWrapper.append(bannerPicture.cloneNode(true));
+
+      body.append(bannerWrapper);
+    }
+
+    const description = body.querySelector('p');
+
+    if (description) {
+      description.classList.add('accordion-description');
     }
 
     if (
@@ -96,30 +139,6 @@ export default function decorate(block) {
       cta.className = 'accordion-cta';
 
       body.append(cta);
-    }
-
-    const flagPicture = flagField?.querySelector('picture');
-
-    if (flagPicture) {
-      const flagWrapper = document.createElement('div');
-
-      flagWrapper.className = 'accordion-flag';
-
-      flagWrapper.append(flagPicture.cloneNode(true));
-
-      summary.prepend(flagWrapper);
-    }
-
-    const bannerPicture = bannerField?.querySelector('picture');
-
-    if (bannerPicture) {
-      const bannerWrapper = document.createElement('div');
-
-      bannerWrapper.className = 'accordion-banner';
-
-      bannerWrapper.append(bannerPicture.cloneNode(true));
-
-      body.prepend(bannerWrapper);
     }
 
     details.append(summary, body);
