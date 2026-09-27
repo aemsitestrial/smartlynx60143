@@ -17,7 +17,8 @@
 
 .accordion details summary {
   position: relative;
-  padding: 16px 48px 16px 16px;
+  padding: 16px;
+  padding-right: 46px;
   cursor: pointer;
   list-style: none;
   background: var(--accordion-bg, transparent);
@@ -55,7 +56,9 @@
   display: none;
 }
 
-/* SEARCH */
+.accordion details[open] .accordion-item-body {
+  display: block;
+}
 
 .accordion input[type='search'] {
   width: 100%;
@@ -65,8 +68,6 @@
   border-radius: 4px;
 }
 
-/* HORIZONTAL */
-
 .accordion.horizontal {
   display: flex;
   min-height: 620px;
@@ -75,7 +76,7 @@
 
 .accordion.horizontal .accordion-item {
   display: flex;
-  width: 90px;
+  width: 95px;
   flex-shrink: 0;
   overflow: hidden;
   transition: width 0.4s ease;
@@ -86,53 +87,57 @@
 }
 
 .accordion.horizontal .accordion-item > summary {
-  width: 90px;
-  min-width: 90px;
+  width: 95px;
+  min-width: 95px;
   height: 620px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding-top: 12px;
   text-align: center;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.2;
   background: #f5f5f5;
-  color: var(--accordion-text, #4e7dbf);
   border-right: 1px solid #ddd;
+  color: var(--accordion-text, #4e7dbf);
 }
 
 .accordion.horizontal .accordion-item > summary::after {
   display: none;
 }
 
-.accordion.horizontal .accordion-item[open] .accordion-item-body {
-  flex: 1;
-  overflow-y: auto;
-}
-
-/* FLAG */
-
 .accordion-summary-flag {
-  margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .accordion-summary-flag img {
-  width: 22px;
-  height: 14px;
-  object-fit: cover;
+  width: 28px;
+  height: 18px;
   display: block;
+  object-fit: cover;
 }
 
-.accordion-flag img {
-  width: 36px;
-  height: 24px;
-  object-fit: cover;
-  display: block;
+.accordion.horizontal .accordion-summary-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 100px;
 }
 
-/* OPEN PANEL */
+.accordion:not(.horizontal) .accordion-summary-text {
+  writing-mode: horizontal-tb;
+  transform: none;
+}
+
+.accordion.horizontal .accordion-item[open] .accordion-item-body {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
 
 .accordion-title-section {
   display: flex;
@@ -147,6 +152,13 @@
   font-weight: 400;
   line-height: 1.2;
   color: var(--accordion-text, #000);
+}
+
+.accordion-flag img {
+  width: 36px;
+  height: 24px;
+  display: block;
+  object-fit: cover;
 }
 
 .accordion-meta {
@@ -165,16 +177,16 @@
   max-width: 620px;
   height: 320px;
   object-fit: cover;
-  border-radius: 8px;
   display: block;
+  border-radius: 8px;
 }
 
 .accordion-description {
   max-width: 620px;
-  font-size: 16px;
-  line-height: 1.7;
   margin-top: 16px;
   margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--accordion-text, #000);
 }
 

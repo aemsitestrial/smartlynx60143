@@ -8,7 +8,12 @@ export default function decorate(block) {
 
     const summary = document.createElement('summary');
     summary.className = 'accordion-item-label';
-    summary.textContent = label.textContent.trim();
+
+    const summaryText = document.createElement('span');
+    summaryText.className = 'accordion-summary-text';
+    summaryText.textContent = label.textContent.trim();
+
+    summary.append(summaryText);
 
     const body = row.children[1];
     body.className = 'accordion-item-body';
@@ -103,7 +108,9 @@ export default function decorate(block) {
 
       meta.className = 'accordion-meta';
 
-      meta.textContent = `${dateField?.textContent.trim() || ''} | ${
+      meta.textContent = `${
+        dateField?.textContent.trim() || ''
+      } | ${
         locationField?.textContent.trim() || ''
       }`;
     }
