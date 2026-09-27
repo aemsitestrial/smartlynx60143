@@ -68,8 +68,6 @@ export default function decorate(block) {
       textColorField.remove();
     }
 
-    /* TITLE */
-
     const titleSection = document.createElement('div');
     titleSection.className = 'accordion-title-section';
 
@@ -80,25 +78,20 @@ export default function decorate(block) {
       contentFlag.className = 'accordion-flag';
 
       contentFlag.append(flagPicture.cloneNode(true));
-
       titleSection.append(contentFlag);
 
       const summaryFlag = document.createElement('div');
-      summaryFlag.className = 'accordion-flag accordion-summary-flag';
+      summaryFlag.className = 'accordion-summary-flag';
 
       summaryFlag.append(flagPicture.cloneNode(true));
-
       summary.prepend(summaryFlag);
     }
 
     const title = document.createElement('h2');
-
     title.className = 'accordion-title';
     title.textContent = label.textContent.trim();
 
     titleSection.append(title);
-
-    /* META */
 
     let meta = null;
 
@@ -110,10 +103,10 @@ export default function decorate(block) {
 
       meta.className = 'accordion-meta';
 
-      meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''}`;
+      meta.textContent = `${dateField?.textContent.trim() || ''} | ${
+        locationField?.textContent.trim() || ''
+      }`;
     }
-
-    /* BANNER */
 
     let bannerWrapper = null;
 
@@ -121,21 +114,16 @@ export default function decorate(block) {
 
     if (bannerPicture) {
       bannerWrapper = document.createElement('div');
-
       bannerWrapper.className = 'accordion-banner';
 
       bannerWrapper.append(bannerPicture.cloneNode(true));
     }
-
-    /* DESCRIPTION */
 
     const description = body.querySelector('p');
 
     if (description) {
       description.classList.add('accordion-description');
     }
-
-    /* CTA */
 
     let cta = null;
 
@@ -149,8 +137,6 @@ export default function decorate(block) {
       cta.textContent = ctaLabelField.textContent.trim();
       cta.className = 'accordion-cta';
     }
-
-    /* REBUILD CONTENT ORDER */
 
     body.replaceChildren();
 
@@ -177,8 +163,6 @@ export default function decorate(block) {
     row.replaceWith(details);
   });
 
-  /* ONE OPEN AT A TIME */
-
   const accordionItems = block.querySelectorAll('.accordion-item');
 
   accordionItems.forEach((item) => {
@@ -194,8 +178,6 @@ export default function decorate(block) {
       });
     });
   });
-
-  /* SEARCH */
 
   if (hasSearch) {
     const search = document.createElement('input');
