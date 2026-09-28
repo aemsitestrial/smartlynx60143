@@ -8,6 +8,7 @@ export default async function decorate(block) {
   const textColorField = block.children[6]?.firstElementChild;
   const quoteColorField = block.children[7]?.firstElementChild;
   const profileImageField = block.children[8];
+  const profileTextField = block.children[9]?.firstElementChild;
 
   const blockquote = document.createElement('blockquote');
 
@@ -47,13 +48,25 @@ export default async function decorate(block) {
 
   const hasImage = profileImageField?.innerHTML?.trim();
 
-  if (hasImage) {
-    const imageWrapper = document.createElement('div');
-    imageWrapper.className = 'quote-author-image';
+  if (hasImage || profileTextField?.textContent.trim()) {
+    const profileWrapper = document.createElement('div');
+    profileWrapper.className = 'quote-profile';
 
-    imageWrapper.innerHTML = profileImageField.innerHTML;
+    if (hasImage) {
+      const imageWrapper = document.createElement('div');
+      imageWrapper.className = 'quote-author-image';
+      imageWrapper.innerHTML = profileImageField.innerHTML;
+      profileWrapper.append(imageWrapper);
+    }
 
-    blockquote.append(imageWrapper);
+    if (profileTextField?.textContent.trim()) {
+      const profileText = document.createElement('div');
+      profileText.className = 'quote-profile-text';
+      profileText.textContent = profileTextField.textContent.trim();
+      profileWrapper.append(profileText);
+    }
+
+    blockquote.append(profileWrapper);
   }
 
   const ems = blockquote.querySelectorAll('em');

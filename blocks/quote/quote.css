@@ -80,3 +80,24 @@
   object-fit: cover;
   display: block;
 }
+
+.quote .quote-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.quote .quote-profile-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--quote-text, inherit);
+}
+
+.quote blockquote.centered .quote-profile {
+  justify-content: center;
+}
+
+.quote blockquote.right .quote-profile {
+  justify-content: flex-end;
+}

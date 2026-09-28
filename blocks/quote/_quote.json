@@ -96,6 +96,13 @@
           "label": "Profile Image",
           "valueType": "string",
           "multi": false
+        },
+        {
+          "component": "text",
+          "name": "profileText",
+          "label": "Profile Text",
+          "valueType": "string",
+          "value": ""
         }
       ]
     }
