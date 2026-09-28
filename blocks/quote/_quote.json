@@ -103,10 +103,44 @@
   "filters": [
     {
       "id": "richtext",
+      "components": [
+        "richtext"
+      ],
       "rte": {
         "toolbar": {
           "format": [
-            "bold"
+            "bold",
+            "italic",
+            "underline",
+            "text_color"
+          ],
+          "alignment": [
+            "left",
+            "center",
+            "right",
+            "justify"
+          ],
+          "blocks": [
+            "paragraph",
+            "h1",
+            "h2",
+            "h3"
+          ],
+          "list": [
+            "bullet_list",
+            "ordered_list"
+          ],
+          "insert": [
+            "link",
+            "unlink",
+            "special_characters"
+          ],
+          "sections": [
+            "format",
+            "alignment",
+            "blocks",
+            "list",
+            "insert"
           ]
         }
       }
