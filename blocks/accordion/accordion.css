@@ -36,7 +36,7 @@
   right: 18px;
   width: 8px;
   height: 8px;
-  border: solid currentcolor;
+  border: solid var(--accordion-arrow-color, #000);
   border-width: 0 2px 2px 0;
   transform: translateY(-50%) rotate(45deg);
   transition: transform 0.2s ease;
@@ -48,7 +48,7 @@
 
 .accordion .accordion-item-body {
   padding: 24px;
-  background: #fff;
+  background: var(--accordion-bg, #fff);
   color: var(--accordion-text, inherit);
 }
 
@@ -70,26 +70,26 @@
 
 .accordion.horizontal {
   display: flex;
-  min-height: 620px;
+  min-height: 520px;
   overflow: hidden;
 }
 
 .accordion.horizontal .accordion-item {
   display: flex;
-  width: 95px;
+  width: 110px;
   flex-shrink: 0;
   overflow: hidden;
   transition: width 0.4s ease;
 }
 
 .accordion.horizontal .accordion-item[open] {
-  width: 760px;
+  width: 620px;
 }
 
 .accordion.horizontal .accordion-item > summary {
-  width: 95px;
-  min-width: 95px;
-  height: 620px;
+  width: 110px;
+  min-width: 110px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +100,7 @@
   background: #fff;
   border-right: none;
   color: var(--accordion-text, #4e7dbf);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .accordion.horizontal .accordion-item > summary::after {
@@ -126,7 +126,7 @@
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .accordion:not(.horizontal) .accordion-summary-text {
@@ -140,14 +140,14 @@
 }
 
 .accordion.horizontal .accordion-item[open] .accordion-summary-text {
-  margin-top: 200px;
+  margin-top: 120px;
 }
 
 .accordion.horizontal .accordion-item[open] .accordion-item-body {
   flex: 1;
   min-width: 0;
   overflow-y: auto;
-  background: #fff;
+  background: var(--accordion-bg, #fff);
 }
 
 .accordion-title-section {
@@ -159,7 +159,7 @@
 
 .accordion-title {
   margin: 0;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.2;
   color: var(--accordion-text, #000);
@@ -185,8 +185,8 @@
 
 .accordion-banner img {
   width: 100%;
-  max-width: 620px;
-  height: 320px;
+  max-width: 520px;
+  height: 260px;
   object-fit: cover;
   display: block;
   border-radius: 8px;
@@ -209,7 +209,7 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
-  color: var(--accordion-text, inherit);
+  color: #000 !important;
 }
 
 .accordion-cta:link,
@@ -218,9 +218,11 @@
 .accordion-cta:focus,
 .accordion-cta:active {
   text-decoration: none !important;
+  color: #000 !important;
 }
 
 .accordion-cta::after {
   content: '→';
   font-size: 18px;
+  color: #000;
 }
