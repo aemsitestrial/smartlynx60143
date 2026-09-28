@@ -25,44 +25,28 @@
           "valueType": "string",
           "name": "quotation",
           "value": "",
-          "label": "Quotation",
-          "plugins": {
-            "alignment": {},
-            "textColor": {}
-          }
+          "label": "Quotation"
         },
         {
           "component": "richtext",
           "name": "attribution",
           "value": "",
           "label": "Attribution",
-          "valueType": "string",
-          "plugins": {
-            "alignment": {},
-            "textColor": {}
-          }
+          "valueType": "string"
         },
         {
           "component": "richtext",
           "valueType": "string",
           "name": "title",
           "value": "",
-          "label": "Title",
-          "plugins": {
-            "alignment": {},
-            "textColor": {}
-          }
+          "label": "Title"
         },
         {
           "component": "richtext",
           "valueType": "string",
           "name": "description",
           "value": "",
-          "label": "Description",
-          "plugins": {
-            "alignment": {},
-            "textColor": {}
-          }
+          "label": "Description"
         },
         {
           "component": "select",
