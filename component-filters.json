@@ -96,6 +96,57 @@
     ]
   },
   {
+    "id": "quote-richtext",
+    "components": [
+      "richtext"
+    ],
+    "rte": {
+      "toolbar": {
+        "format": [
+          "bold",
+          "italic",
+          "underline",
+          "strike",
+          "text_color"
+        ],
+        "alignment": [
+          "left",
+          "center",
+          "right",
+          "justify"
+        ],
+        "blocks": [
+          "paragraph",
+          "h1",
+          "h2",
+          "h3",
+          "blockquote"
+        ],
+        "list": [
+          "bullet_list",
+          "ordered_list"
+        ],
+        "insert": [
+          "link",
+          "unlink",
+          "special_characters"
+        ],
+        "sr_script": [
+          "superscript",
+          "subscript"
+        ],
+        "sections": [
+          "format",
+          "alignment",
+          "blocks",
+          "list",
+          "insert",
+          "sr_script"
+        ]
+      }
+    }
+  },
+  {
     "id": "table",
     "components": [
       "table-row"
