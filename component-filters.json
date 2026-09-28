@@ -96,19 +96,6 @@
     ]
   },
   {
-    "id": "quote-richtext",
-    "components": [
-      "quote"
-    ],
-    "rte": {
-      "toolbar": {
-        "format": [
-          "bold"
-        ]
-      }
-    }
-  },
-  {
     "id": "table",
     "components": [
       "table-row"

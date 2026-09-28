@@ -100,19 +100,5 @@
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "quote-richtext",
-      "components": [
-        "quote"
-      ],
-      "rte": {
-        "toolbar": {
-          "format": [
-            "bold"
-          ]
-        }
-      }
-    }
-  ]
+  "filters": []
 }
