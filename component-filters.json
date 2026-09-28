@@ -96,6 +96,17 @@
     ]
   },
   {
+    "id": "richtext",
+    "components": [
+      "richtext"
+    ],
+    "rte": {
+      "toolbar": {
+        "format": []
+      }
+    }
+  },
+  {
     "id": "table",
     "components": [
       "table-row"
