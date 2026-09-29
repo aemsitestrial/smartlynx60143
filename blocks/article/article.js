@@ -73,7 +73,7 @@ export default async function decorate(block) {
     ? aemauthorurl
     : aempublishurl;
 
-  const url = `${baseUrl}${persistedquery};path=${encodeURIComponent(articlepath)};variation=${encodeURIComponent(variationname)}`;
+  const url = `${baseUrl}${persistedquery};path=${articlepath};variation=${variationname}`;
 
   console.log('GRAPHQL URL:', url);
 
