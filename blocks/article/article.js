@@ -26,9 +26,20 @@ export default async function decorate(block) {
   const aemauthorurl = getAEMAuthor();
   const persistedquery = '/graphql/execute.json/tcs/ArticleByPath';
   const sourceLink = block.querySelector('a[href]');
-  const rawArticlePath = sourceLink
-    ? new URL(sourceLink.href, window.location.origin).pathname
-    : '';
+
+  let rawArticlePath = '';
+
+  if (sourceLink) {
+    rawArticlePath = new URL(
+      sourceLink.href,
+      window.location.origin,
+    ).pathname;
+  } else {
+    rawArticlePath = block
+      .querySelector(':scope div:first-child div')
+      ?.textContent
+      ?.trim() || '';
+  }
   const articlepath = rawArticlePath || block.dataset?.path || '';
   const variationname = block.querySelector(':scope div:nth-child(2) > div')?.innerHTML?.trim()
     || 'main';
@@ -68,7 +79,7 @@ export default async function decorate(block) {
     // Gracefully fall back to authored content if the endpoint is unavailable.
   }
 
-  const itemId = `urn:aemconnection:${encodeURIComponent(articlepath)}/jcr:content/data/master`;
+  const itemId = `urn:aemconnection:${articlepath}/jcr:content/data/master`;
 
   block.innerHTML = `
     <div class='article-content' data-aue-resource="${itemId}" data-aue-label="article content fragment" data-aue-type="reference" data-aue-filter="cf">
