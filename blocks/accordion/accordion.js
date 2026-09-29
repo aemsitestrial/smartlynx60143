@@ -33,9 +33,10 @@ export default function decorate(block) {
     const ctaLinkField = row.children[8];
     const flagField = row.children[9];
     const bannerField = row.children[10];
+    let layout = 'default';
 
     if (layoutField) {
-      const layout = layoutField.textContent.trim().toLowerCase();
+      layout = layoutField.textContent.trim().toLowerCase();
 
       if (layout === 'highlighted') {
         details.classList.add('highlighted');
@@ -113,10 +114,8 @@ export default function decorate(block) {
 
       meta.className = 'accordion-meta';
 
-      meta.textContent = `${
-        dateField?.textContent.trim() || ''
-      } | ${
-        locationField?.textContent.trim() || ''
+      meta.textContent = `${dateField?.textContent.trim() || ''
+      } | ${locationField?.textContent.trim() || ''
       }`;
     }
 
@@ -139,7 +138,7 @@ export default function decorate(block) {
 
     let preview = null;
 
-    if (block.classList.contains('split') && description) {
+    if (layout === 'split' && description) {
       preview = document.createElement('span');
       preview.className = 'accordion-summary-preview';
       preview.textContent = description.textContent.trim();
@@ -180,7 +179,11 @@ export default function decorate(block) {
       body.append(cta);
     }
 
-    details.append(summary, body);
+    if (layout === 'split') {
+      details.append(summary);
+    } else {
+      details.append(summary, body);
+    }
 
     row.replaceWith(details);
   });
