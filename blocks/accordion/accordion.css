@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-.accordion details + details {
+.accordion details+details {
   margin-top: 0;
 }
 
@@ -86,7 +86,7 @@
   width: 620px;
 }
 
-.accordion.horizontal .accordion-item > summary {
+.accordion.horizontal .accordion-item>summary {
   width: 110px;
   min-width: 110px;
   height: 520px;
@@ -103,7 +103,7 @@
   overflow: visible;
 }
 
-.accordion.horizontal .accordion-item > summary::after {
+.accordion.horizontal .accordion-item>summary::after {
   display: none;
 }
 

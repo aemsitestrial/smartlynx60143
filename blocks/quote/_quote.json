@@ -70,21 +70,21 @@
           ]
         },
         {
-          "component": "text",
+          "component": "color",
           "name": "backgroundColor",
           "label": "Background Color",
           "valueType": "string",
           "value": ""
         },
         {
-          "component": "text",
+          "component": "color",
           "name": "textColor",
           "label": "Text Color",
           "valueType": "string",
           "value": ""
         },
         {
-          "component": "text",
+          "component": "color",
           "name": "quoteColor",
           "label": "Quote Color",
           "valueType": "string",

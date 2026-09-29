@@ -1,15 +1,15 @@
 .quote blockquote {
   margin: 0 auto;
   max-width: 900px;
-  padding: 24px;
+  padding: 16px 8px;
   background-color: var(--quote-bg, transparent);
   color: var(--quote-text, inherit);
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 @media (width >= 900px) {
   .quote blockquote {
-    padding: 32px;
+    padding: 16px 8px;
   }
 }
 
@@ -25,7 +25,8 @@
 }
 
 .quote blockquote .quote-quotation {
-  font-size: 120%;
+  font-size: 190%;
+  line-height: 1.4;
   color: var(--quote-color, inherit);
 }
 
@@ -42,7 +43,7 @@
 }
 
 .quote blockquote .quote-attribution {
-  margin-top: 16px;
+  margin-top: 24px;
   text-align: left;
 }
 
