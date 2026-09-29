@@ -26,9 +26,6 @@ export default async function decorate(block) {
   const aempublishurl = getAEMPublish();
   const aemauthorurl = getAEMAuthor();
 
-  console.log('PUBLISH URL:', aempublishurl);
-  console.log('AUTHOR URL:', aemauthorurl);
-
   const persistedquery = '/graphql/execute.json/aem-boilerplate-frescopa/ArticleByPath';
 
   const sourceLink = block.querySelector('a[href]');
@@ -49,8 +46,11 @@ export default async function decorate(block) {
 
   const articlepath = (rawArticlePath || block.dataset?.path || '')
     .replace(/\.html$/, '');
+
   const variationname = 'main';
 
+  console.log('PUBLISH URL:', aempublishurl);
+  console.log('AUTHOR URL:', aemauthorurl);
   console.log('ARTICLE PATH:', articlepath);
   console.log('VARIATION:', variationname);
 
@@ -73,7 +73,7 @@ export default async function decorate(block) {
     ? aemauthorurl
     : aempublishurl;
 
-  const url = `${baseUrl}${persistedquery};path=${articlepath};variation=${variationname}`;
+  const url = `${baseUrl}${persistedquery};path=${articlepath};variation=${variationname};ts=${Date.now()}`;
 
   console.log('GRAPHQL URL:', url);
 
@@ -86,28 +86,18 @@ export default async function decorate(block) {
 
     console.log('FETCH STATUS:', response.status);
 
-    const responseText = await response.text();
+    const result = await response.json();
 
-    console.log('RAW RESPONSE:', responseText);
+    console.log('GRAPHQL RESPONSE:', result);
 
-    if (response.ok) {
-      try {
-        const result = JSON.parse(responseText);
-
-        console.log('GRAPHQL RESPONSE:', result);
-
-        if (result?.data?.articleByPath?.item) {
-          cfReq = result.data.articleByPath.item;
-        }
-      } catch (jsonError) {
-        console.error('INVALID JSON RESPONSE:', jsonError);
-      }
+    if (result?.data?.articleByPath?.item) {
+      cfReq = result.data.articleByPath.item;
     }
   } catch (error) {
     console.error('ARTICLE FETCH ERROR:', error);
   }
 
-  const itemId = `urn:aemconnection:${articlepath}/jcr:content/data/master`;
+  const itemId = `urn:aemconnection:${articlepath}/jcr:content/data/main`;
 
   block.innerHTML = `
     <div
