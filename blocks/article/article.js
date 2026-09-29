@@ -29,7 +29,7 @@ export default async function decorate(block) {
   console.log('PUBLISH URL:', aempublishurl);
   console.log('AUTHOR URL:', aemauthorurl);
 
-  const persistedquery = '/graphql/execute.json/tcs/ArticleByPath';
+  const persistedquery = '/graphql/execute.json/aem-boilerplate-frescopa/ArticleByPath';
 
   const sourceLink = block.querySelector('a[href]');
 
