@@ -44,8 +44,8 @@ export default async function decorate(block) {
       ?.trim() || '';
   }
 
-  const articlepath = (rawArticlePath || block.dataset?.path || '')
-    .replace(/\.html$/, '');
+  const articlepath = (rawArticlePath || block.dataset?.path || '');
+  // .replace(/\.html$/, '');
 
   const variationname = 'main';
 
