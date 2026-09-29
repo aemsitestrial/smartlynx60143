@@ -6006,25 +6006,25 @@
         ]
       },
       {
-        "component": "text",
+        "component": "color-picker",
         "name": "backgroundColor",
         "label": "Background Color",
         "valueType": "string",
         "value": ""
       },
       {
-        "component": "text",
+        "component": "color-picker",
         "name": "textColor",
         "label": "Text Color",
         "valueType": "string",
         "value": ""
       },
       {
-        "component": "text",
+        "component": "color-picker",
         "name": "quoteColor",
         "label": "Quote Color",
         "valueType": "string",
-        "value": ""
+        "value": "#4273FF"
       },
       {
         "component": "reference",
