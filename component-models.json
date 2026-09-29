@@ -195,6 +195,10 @@
           {
             "name": "Horizontal Accordion",
             "value": "horizontal"
+          },
+          {
+            "name": "Split Row",
+            "value": "split"
           }
         ]
       },

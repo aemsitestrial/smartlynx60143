@@ -50,6 +50,11 @@ export default function decorate(block) {
         details.classList.add('horizontal-item');
       }
 
+      if (layout === 'split') {
+        block.classList.add('split');
+        details.classList.add('split-item');
+      }
+
       layoutField.remove();
     }
 
@@ -130,6 +135,16 @@ export default function decorate(block) {
 
     if (description) {
       description.classList.add('accordion-description');
+    }
+
+    let preview = null;
+
+    if (block.classList.contains('split') && description) {
+      preview = document.createElement('span');
+      preview.className = 'accordion-summary-preview';
+      preview.textContent = description.textContent.trim();
+
+      summary.append(preview);
     }
 
     let cta = null;
