@@ -6006,25 +6006,28 @@
         ]
       },
       {
-        "component": "color",
+        "component": "text",
         "name": "backgroundColor",
         "label": "Background Color",
         "valueType": "string",
-        "value": ""
+        "value": "",
+        "format": "color-hex"
       },
       {
-        "component": "color",
+        "component": "text",
         "name": "textColor",
         "label": "Text Color",
         "valueType": "string",
-        "value": ""
+        "value": "",
+        "format": "color-hex"
       },
       {
-        "component": "color",
+        "component": "text",
         "name": "quoteColor",
         "label": "Quote Color",
         "valueType": "string",
-        "value": ""
+        "value": "",
+        "format": "color-hex"
       },
       {
         "component": "reference",
