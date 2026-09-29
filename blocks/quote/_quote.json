@@ -74,24 +74,21 @@
           "name": "backgroundColor",
           "label": "Background Color",
           "valueType": "string",
-          "value": "",
-          "format": "color-hex"
+          "value": ""
         },
         {
           "component": "text",
           "name": "textColor",
           "label": "Text Color",
           "valueType": "string",
-          "value": "",
-          "format": "color-hex"
+          "value": ""
         },
         {
           "component": "text",
           "name": "quoteColor",
           "label": "Quote Color",
           "valueType": "string",
-          "value": "",
-          "format": "color-hex"
+          "value": ""
         },
         {
           "component": "reference",
