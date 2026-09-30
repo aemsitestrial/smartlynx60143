@@ -140,7 +140,7 @@
   padding: 0;
   display: grid;
   gap: 24px;
-  align-items: center;
+  align-items: start;
   background: transparent;
   overflow: visible;
 }
@@ -156,9 +156,9 @@
 }
 
 .quote blockquote.image .quote-quotation {
-  font-size: clamp(1.9rem, 3.2vw, 3.35rem);
-  line-height: 1.45;
-  max-width: 12ch;
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  line-height: 1.5;
+  max-width: 20ch;
 }
 
 .quote blockquote.image .quote-quotation p:first-child::before,
@@ -203,6 +203,10 @@
     max-width: 560px;
     position: relative;
     z-index: 2;
+  }
+
+  .quote blockquote.image .quote-quotation {
+    max-width: 24ch;
   }
 
   .quote .quote-media {
