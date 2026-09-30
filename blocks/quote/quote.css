@@ -103,8 +103,8 @@
 }
 
 .quote .quote-media {
-  width: min(100%, 460px);
-  justify-self: end;
+  width: min(100%, 640px);
+  justify-self: center;
 }
 
 .quote .quote-media picture,
@@ -136,10 +136,10 @@
 }
 
 .quote blockquote.image {
-  max-width: 1080px;
+  max-width: 1240px;
   padding: 0;
   display: grid;
-  gap: 0;
+  gap: 24px;
   align-items: center;
   background: transparent;
   overflow: visible;
@@ -147,18 +147,18 @@
 
 .quote blockquote.image .quote-content {
   background: var(--quote-bg, #fff);
-  width: min(100%, 520px);
-  padding: 32px 28px;
+  width: min(100%, 560px);
+  padding: clamp(28px, 4vw, 48px);
   position: relative;
   z-index: 2;
-  margin: 0 auto -40px;
-  box-shadow: 0 24px 56px rgb(0 0 0 / 10%);
+  margin: 0 auto;
+  box-shadow: 0 24px 56px rgb(0 0 0 / 12%);
 }
 
 .quote blockquote.image .quote-quotation {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  line-height: 1.55;
-  max-width: 26ch;
+  font-size: clamp(1.9rem, 3.2vw, 3.35rem);
+  line-height: 1.45;
+  max-width: 12ch;
 }
 
 .quote blockquote.image .quote-quotation p:first-child::before,
@@ -169,7 +169,7 @@
 }
 
 .quote blockquote.image .quote-attribution {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 .quote blockquote.image .quote-attribution p:first-child::before {
@@ -178,7 +178,7 @@
 
 .quote blockquote.image .quote-profile {
   display: block;
-  margin-top: 6px;
+  margin-top: 12px;
 }
 
 .quote blockquote.image .quote-author-image {
@@ -186,25 +186,28 @@
 }
 
 .quote blockquote.image .quote-profile-text {
-  color: #9b9b9b;
+  color: #666;
   font-size: 1rem;
+  line-height: 1.7;
+  white-space: pre-line;
 }
 
 @media (width >=900px) {
   .quote blockquote.image {
-    grid-template-columns: minmax(0, 520px) minmax(360px, 1fr);
+    grid-template-columns: minmax(320px, 560px) minmax(420px, 1fr);
+    gap: clamp(24px, 4vw, 56px);
   }
 
   .quote blockquote.image .quote-content {
-    margin: 0 -92px 0 0;
-    padding: 40px 40px 32px;
-    max-width: 520px;
+    margin: 0 -72px 0 0;
+    max-width: 560px;
     position: relative;
     z-index: 2;
   }
 
   .quote .quote-media {
-    width: min(100%, 560px);
+    width: min(100%, 680px);
+    justify-self: end;
   }
 
   .quote .quote-media picture,
