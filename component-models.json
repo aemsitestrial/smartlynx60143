@@ -199,6 +199,10 @@
           {
             "name": "Split Row",
             "value": "split"
+          },
+          {
+            "name": "Corporate Accordion",
+            "value": "corporate"
           }
         ]
       },
