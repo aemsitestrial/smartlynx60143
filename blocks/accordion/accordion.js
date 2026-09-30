@@ -165,14 +165,18 @@ export default function decorate(block) {
 
     body.replaceChildren();
 
-    body.append(titleSection);
+    body.append(titleSection); body.replaceChildren();
 
-    if (meta) {
-      body.append(meta);
-    }
+    if (layout !== 'corporate') {
+      body.append(titleSection);
 
-    if (bannerWrapper) {
-      body.append(bannerWrapper);
+      if (meta) {
+        body.append(meta);
+      }
+
+      if (bannerWrapper) {
+        body.append(bannerWrapper);
+      }
     }
 
     if (description) {
