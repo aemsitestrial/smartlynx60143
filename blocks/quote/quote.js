@@ -14,13 +14,19 @@ export default async function decorate(block) {
   const quotationText = quotation?.textContent.trim() || '';
 
   const blockquote = document.createElement('blockquote');
+  const content = document.createElement('div');
+  content.className = 'quote-content';
 
   let layout = 'default';
 
   if (layoutField) {
     const value = layoutField.textContent.trim().toLowerCase();
 
-    if (value.includes('center')) {
+    if (value.includes('profile')) {
+      layout = 'profile';
+    } else if (value.includes('image')) {
+      layout = 'image';
+    } else if (value.includes('center')) {
       layout = 'centered';
     } else if (value.includes('right')) {
       layout = 'right';
@@ -31,22 +37,22 @@ export default async function decorate(block) {
 
   if (title?.textContent.trim()) {
     title.className = 'quote-title';
-    blockquote.append(title);
+    content.append(title);
   }
 
   if (quotation && !COLOR_VALUE_PATTERN.test(quotationText)) {
     quotation.className = 'quote-quotation';
-    blockquote.append(quotation);
+    content.append(quotation);
   }
 
   if (attribution) {
     attribution.className = 'quote-attribution';
-    blockquote.append(attribution);
+    content.append(attribution);
   }
 
   if (description?.textContent.trim()) {
     description.className = 'quote-description';
-    blockquote.append(description);
+    content.append(description);
   }
 
   const hasImage = profileImageField?.innerHTML?.trim();
@@ -69,7 +75,16 @@ export default async function decorate(block) {
       profileWrapper.append(profileText);
     }
 
-    blockquote.append(profileWrapper);
+    content.append(profileWrapper);
+  }
+
+  if (layout === 'image' && hasImage) {
+    const media = document.createElement('div');
+    media.className = 'quote-media';
+    media.innerHTML = profileImageField.innerHTML;
+    blockquote.append(content, media);
+  } else {
+    blockquote.append(content);
   }
 
   const ems = blockquote.querySelectorAll('em');

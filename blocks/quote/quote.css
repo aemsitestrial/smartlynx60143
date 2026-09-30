@@ -7,6 +7,11 @@
   border-radius: 16px;
 }
 
+.quote .quote-content {
+  position: relative;
+  z-index: 1;
+}
+
 @media (width >= 900px) {
   .quote blockquote {
     padding: 16px 8px;
@@ -93,6 +98,109 @@
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--quote-text, inherit);
+}
+
+.quote .quote-media {
+  order: 2;
+  min-height: 320px;
+}
+
+.quote .quote-media picture,
+.quote .quote-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.quote blockquote.profile {
+  max-width: 720px;
+}
+
+.quote blockquote.profile .quote-quotation {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.quote blockquote.profile .quote-profile {
+  max-width: 360px;
+}
+
+.quote blockquote.profile .quote-author-image picture,
+.quote blockquote.profile .quote-author-image img {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  max-width: 40px;
+}
+
+.quote blockquote.image {
+  max-width: 1120px;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  align-items: center;
+  background: transparent;
+  overflow: visible;
+}
+
+.quote blockquote.image .quote-content {
+  order: 1;
+  margin: 32px 0;
+  padding: 40px 32px;
+  background: var(--quote-bg, #fff);
+  box-shadow: 0 24px 48px rgb(0 0 0 / 10%);
+  max-width: 620px;
+}
+
+.quote blockquote.image .quote-quotation {
+  font-size: clamp(2rem, 2.8vw, 3.25rem);
+  line-height: 1.28;
+}
+
+.quote blockquote.image .quote-quotation p:first-child::before,
+.quote blockquote.image .quote-quotation p:last-child::after {
+  color: var(--quote-color, #4273ff);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.quote blockquote.image .quote-attribution {
+  margin-top: 28px;
+}
+
+.quote blockquote.image .quote-profile {
+  display: block;
+  margin-top: 12px;
+}
+
+.quote blockquote.image .quote-author-image {
+  display: none;
+}
+
+.quote blockquote.image .quote-profile-text {
+  color: #9b9b9b;
+}
+
+@media (width >= 900px) {
+  .quote blockquote.image {
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 530px);
+  }
+
+  .quote blockquote.image .quote-content {
+    margin-right: -72px;
+    padding: 48px 40px;
+  }
+
+  .quote .quote-media {
+    min-height: 650px;
+  }
+
+  .quote .quote-media picture,
+  .quote .quote-media img {
+    min-height: 650px;
+  }
 }
 
 .quote blockquote.centered .quote-profile {

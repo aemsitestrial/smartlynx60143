@@ -6010,6 +6010,14 @@
           {
             "name": "Right Quote",
             "value": "right"
+          },
+          {
+            "name": "Profile Quote",
+            "value": "profile"
+          },
+          {
+            "name": "Image Quote",
+            "value": "image"
           }
         ]
       },
