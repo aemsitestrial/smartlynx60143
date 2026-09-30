@@ -218,9 +218,9 @@
 }
 
 .quote blockquote.image .quote-media {
-  width: min(100%, 620px);
-  max-width: 620px;
-  aspect-ratio: 0.82;
+  width: min(100%, 540px);
+  max-width: 540px;
+  aspect-ratio: 0.76;
   justify-self: center;
   overflow: hidden;
   background: #f3f3f3;
@@ -245,7 +245,7 @@
 
 @media (width >=900px) {
   .quote blockquote.image {
-    grid-template-columns: minmax(360px, 520px) minmax(420px, 620px);
+    grid-template-columns: minmax(360px, 520px) minmax(320px, 540px);
     gap: 0;
     align-items: center;
   }
@@ -262,7 +262,7 @@
   }
 
   .quote blockquote.image .quote-media {
-    width: min(100%, 620px);
+    width: min(100%, 540px);
     justify-self: end;
   }
 }
