@@ -6032,7 +6032,7 @@
         "name": "quoteColor",
         "label": "Quote Color",
         "valueType": "string",
-        "value": "#4273FF"
+        "value": ""
       },
       {
         "component": "reference",

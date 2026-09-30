@@ -1,3 +1,5 @@
+const COLOR_VALUE_PATTERN = /^#(?:[\da-f]{3}|[\da-f]{6}|[\da-f]{8})$/i;
+
 export default async function decorate(block) {
   const quotation = block.children[0]?.firstElementChild;
   const attribution = block.children[1]?.firstElementChild;
@@ -9,6 +11,7 @@ export default async function decorate(block) {
   const quoteColorField = block.children[7]?.firstElementChild;
   const profileImageField = block.children[8];
   const profileTextField = block.children[9]?.firstElementChild;
+  const quotationText = quotation?.textContent.trim() || '';
 
   const blockquote = document.createElement('blockquote');
 
@@ -31,7 +34,7 @@ export default async function decorate(block) {
     blockquote.append(title);
   }
 
-  if (quotation) {
+  if (quotation && !COLOR_VALUE_PATTERN.test(quotationText)) {
     quotation.className = 'quote-quotation';
     blockquote.append(quotation);
   }
@@ -91,10 +94,13 @@ export default async function decorate(block) {
     );
   }
 
-  if (quoteColorField?.textContent.trim()) {
+  const quoteColor = quoteColorField?.textContent.trim()
+    || (COLOR_VALUE_PATTERN.test(quotationText) ? quotationText : '');
+
+  if (quoteColor) {
     blockquote.style.setProperty(
       '--quote-color',
-      quoteColorField.textContent.trim(),
+      quoteColor,
     );
   }
 
