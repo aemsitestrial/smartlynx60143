@@ -104,16 +104,13 @@
 
 .quote .quote-media {
   width: min(100%, 460px);
-  min-height: 420px;
   justify-self: end;
 }
 
 .quote .quote-media picture,
 .quote .quote-media img {
   width: 100%;
-  height: 100%;
-  min-height: 420px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -208,12 +205,11 @@
 
   .quote .quote-media {
     width: min(100%, 560px);
-    min-height: 640px;
   }
 
   .quote .quote-media picture,
   .quote .quote-media img {
-    min-height: 640px;
+    height: auto;
   }
 }
 
