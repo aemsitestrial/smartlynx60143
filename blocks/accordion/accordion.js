@@ -1,5 +1,9 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+function normalizeLayout(value) {
+  return value.trim().toLowerCase().replace(/\s+accordion$/, '');
+}
+
 export default function decorate(block) {
   let hasSearch = false;
 
@@ -36,7 +40,7 @@ export default function decorate(block) {
     let layout = 'default';
 
     if (layoutField) {
-      layout = layoutField.textContent.trim().toLowerCase();
+      layout = normalizeLayout(layoutField.textContent);
 
       if (layout === 'highlighted') {
         details.classList.add('highlighted');
