@@ -1,14 +1,14 @@
-:where(.accordion.split details) {
+:where(.accordion .accordion-item.split-item) {
   border-left: 0;
   border-right: 0;
   border-top: 0;
 }
 
-:where(.accordion.split details:first-child) {
+:where(.accordion .accordion-item.split-item:first-child) {
   border-top: 1px solid #dadada;
 }
 
-:where(.accordion.split details summary) {
+:where(.accordion .accordion-item.split-item > summary) {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
   align-items: center;
@@ -16,44 +16,44 @@
   padding: 22px 16px;
 }
 
-:where(.accordion.split details summary .accordion-summary-text) {
+:where(.accordion .accordion-item.split-item > summary .accordion-summary-text) {
   font-size: 2rem;
   line-height: 1.05;
   font-weight: 400;
 }
 
-:where(.accordion.split .accordion-summary-preview) {
+:where(.accordion .accordion-item.split-item .accordion-summary-preview) {
   font-size: 1rem;
   line-height: 1.5;
   opacity: 0.72;
 }
 
-:where(.accordion.split details summary)::after {
+:where(.accordion .accordion-item.split-item > summary)::after {
   position: static;
   justify-self: end;
   transform: rotate(45deg);
 }
 
-:where(.accordion.split details[open] summary)::after {
+:where(.accordion .accordion-item.split-item[open] > summary)::after {
   transform: rotate(-135deg);
 }
 
-:where(.accordion.split .accordion-item-body) {
+:where(.accordion .accordion-item.split-item .accordion-item-body) {
   padding: 0 16px 24px;
 }
 
-:where(.accordion.split .accordion-description) {
+:where(.accordion .accordion-item.split-item .accordion-description) {
   max-width: none;
   margin-top: 0;
 }
 
-:where(.accordion.split .accordion-cta) {
+:where(.accordion .accordion-item.split-item .accordion-cta) {
   margin-top: 8px;
 }
 
-:where(.accordion.split .accordion-title-section),
-:where(.accordion.split .accordion-meta),
-:where(.accordion.split .accordion-banner) {
+:where(.accordion .accordion-item.split-item .accordion-title-section),
+:where(.accordion .accordion-item.split-item .accordion-meta),
+:where(.accordion .accordion-item.split-item .accordion-banner) {
   display: none;
 }
 
@@ -61,16 +61,16 @@
   margin-bottom: 32px;
 }
 
-:where(.accordion.corporate details) {
+:where(.accordion .accordion-item.corporate-item) {
   border: 0;
   border-top: 1px solid #b5b5b5;
 }
 
-:where(.accordion.corporate details:last-child) {
+:where(.accordion .accordion-item.corporate-item:last-child) {
   border-bottom: 1px solid #b5b5b5;
 }
 
-:where(.accordion.corporate details summary) {
+:where(.accordion .accordion-item.corporate-item > summary) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -79,7 +79,7 @@
   position: relative;
 }
 
-:where(.accordion.corporate details summary)::after {
+:where(.accordion .accordion-item.corporate-item > summary)::after {
   content: '+' !important;
   width: 55px !important;
   height: 55px !important;
@@ -98,7 +98,7 @@
 }
 
 
-:where(.accordion.corporate details[open] summary)::after {
+:where(.accordion .accordion-item.corporate-item[open] > summary)::after {
   content: '−' !important;
   background: #000 !important;
   color: #fff !important;
@@ -106,24 +106,24 @@
   transform: none !important;
 }
 
-:where(.accordion.corporate .accordion-summary-text) {
+:where(.accordion .accordion-item.corporate-item .accordion-summary-text) {
   flex: 1;
   font-size: 32px;
   font-weight: 300;
   line-height: 1.25;
 }
 
-:where(.accordion.corporate .accordion-title-section),
-:where(.accordion.corporate .accordion-meta),
-:where(.accordion.corporate .accordion-banner) {
+:where(.accordion .accordion-item.corporate-item .accordion-title-section),
+:where(.accordion .accordion-item.corporate-item .accordion-meta),
+:where(.accordion .accordion-item.corporate-item .accordion-banner) {
   display: none;
 }
 
-:where(.accordion.corporate .accordion-item-body) {
+:where(.accordion .accordion-item.corporate-item .accordion-item-body) {
   padding: 0 0 32px;
 }
 
-:where(.accordion.corporate .accordion-description) {
+:where(.accordion .accordion-item.corporate-item .accordion-description) {
   max-width: 900px;
   margin-top: 0;
 }

@@ -56,11 +56,10 @@ export default function decorate(block) {
       }
 
       if (layout === 'split') {
-        block.classList.add('split');
         details.classList.add('split-item');
       }
+
       if (layout === 'corporate') {
-        block.classList.add('corporate');
         details.classList.add('corporate-item');
       }
 
