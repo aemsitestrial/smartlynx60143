@@ -28,13 +28,13 @@
   opacity: 0.72;
 }
 
-:where(.accordion.split details summary::after) {
+:where(.accordion.split details summary)::after {
   position: static;
   justify-self: end;
   transform: rotate(45deg);
 }
 
-:where(.accordion.split details[open] summary::after) {
+:where(.accordion.split details[open] summary)::after {
   transform: rotate(-135deg);
 }
 
@@ -79,7 +79,7 @@
   position: relative;
 }
 
-:where(.accordion.corporate details summary::after) {
+:where(.accordion.corporate details summary)::after {
   content: '+' !important;
   width: 55px !important;
   height: 55px !important;
@@ -98,7 +98,7 @@
 }
 
 
-:where(.accordion.corporate details[open] summary::after) {
+:where(.accordion.corporate details[open] summary)::after {
   content: '−' !important;
   background: #000 !important;
   color: #fff !important;
