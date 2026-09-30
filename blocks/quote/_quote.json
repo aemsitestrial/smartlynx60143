@@ -92,23 +92,41 @@
           "value": ""
         },
         {
-          "component": "text",
+          "component": "select",
           "name": "quoteColor",
           "label": "Quote Color",
           "valueType": "string",
-          "value": ""
+          "value": "blue",
+          "options": [
+            {
+              "name": "Blue",
+              "value": "blue"
+            },
+            {
+              "name": "Black",
+              "value": "black"
+            },
+            {
+              "name": "White",
+              "value": "white"
+            },
+            {
+              "name": "Grey",
+              "value": "grey"
+            }
+          ]
         },
         {
           "component": "reference",
           "name": "profileImage",
-          "label": "Profile Image",
+          "label": "Image",
           "valueType": "string",
           "multi": false
         },
         {
           "component": "text",
           "name": "profileText",
-          "label": "Profile Text",
+          "label": "Image Text",
           "valueType": "string",
           "value": ""
         }

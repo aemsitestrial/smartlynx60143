@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   .quote blockquote {
     padding: 16px 8px;
   }
@@ -35,16 +35,18 @@
   color: var(--quote-color, inherit);
 }
 
-.quote blockquote .quote-quotation > :first-child {
+.quote blockquote .quote-quotation> :first-child {
   text-indent: -0.5ch;
 }
 
 .quote blockquote .quote-quotation p:first-child::before {
   content: "“";
+  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-quotation p:last-child::after {
   content: "”";
+  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-attribution {
@@ -183,7 +185,7 @@
   color: #9b9b9b;
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   .quote blockquote.image {
     grid-template-columns: minmax(0, 1fr) minmax(420px, 530px);
   }

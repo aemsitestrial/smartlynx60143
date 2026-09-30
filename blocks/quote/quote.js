@@ -109,8 +109,16 @@ export default async function decorate(block) {
     );
   }
 
-  const quoteColor = quoteColorField?.textContent.trim()
-    || (COLOR_VALUE_PATTERN.test(quotationText) ? quotationText : '');
+  const quoteColors = {
+    blue: 'rgba(78, 132, 255, 1)',
+    black: 'rgba(0, 0, 0, 1)',
+    white: 'rgba(255, 255, 255, 1)',
+    grey: 'rgba(243, 243, 243, 1)',
+  };
+
+  const quoteColor = quoteColors[
+    quoteColorField?.textContent.trim().toLowerCase()
+  ] || '';
 
   if (quoteColor) {
     blockquote.style.setProperty(
