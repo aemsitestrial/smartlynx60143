@@ -116,9 +116,8 @@ export default async function decorate(block) {
     grey: 'rgba(243, 243, 243, 1)',
   };
 
-  const quoteColor = quoteColors[
-    quoteColorField?.textContent.trim().toLowerCase()
-  ] || '';
+  const quoteColorValue = quoteColorField?.textContent.trim() || '';
+  const quoteColor = quoteColors[quoteColorValue.toLowerCase()] || quoteColorValue;
 
   if (quoteColor) {
     blockquote.style.setProperty(
