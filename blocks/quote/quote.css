@@ -136,10 +136,10 @@
 }
 
 .quote blockquote.image {
-  max-width: 1240px;
+  max-width: 1180px;
   padding: 0;
   display: grid;
-  gap: 24px;
+  gap: 20px;
   align-items: start;
   background: transparent;
   overflow: visible;
@@ -147,29 +147,53 @@
 
 .quote blockquote.image .quote-content {
   background: var(--quote-bg, #fff);
-  width: min(100%, 560px);
-  padding: clamp(28px, 4vw, 48px);
+  width: min(100%, 540px);
+  padding: 40px 36px 32px;
   position: relative;
   z-index: 2;
   margin: 0 auto;
-  box-shadow: 0 24px 56px rgb(0 0 0 / 12%);
+  box-shadow: 0 20px 48px rgb(0 0 0 / 8%);
+}
+
+.quote blockquote.image .quote-content::before,
+.quote blockquote.image .quote-content::after {
+  position: absolute;
+  color: var(--quote-color, #4273ff);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.quote blockquote.image .quote-content::before {
+  content: "“";
+  top: 28px;
+  left: 18px;
+}
+
+.quote blockquote.image .quote-content::after {
+  content: "”";
+  right: 28px;
+  bottom: 18px;
 }
 
 .quote blockquote.image .quote-quotation {
-  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   line-height: 1.5;
-  max-width: 20ch;
+  max-width: 26ch;
+  color: var(--quote-text, #111);
+  padding: 0 34px 0 28px;
 }
 
 .quote blockquote.image .quote-quotation p:first-child::before,
 .quote blockquote.image .quote-quotation p:last-child::after {
-  color: var(--quote-color, #4273ff);
-  font-size: 1.35em;
-  font-weight: 700;
+  content: none;
 }
 
 .quote blockquote.image .quote-attribution {
   margin-top: 32px;
+  padding: 0 34px 0 28px;
+  font-size: 1.05rem;
+  color: var(--quote-text, #111);
 }
 
 .quote blockquote.image .quote-attribution p:first-child::before {
@@ -178,7 +202,8 @@
 
 .quote blockquote.image .quote-profile {
   display: block;
-  margin-top: 12px;
+  margin-top: 4px;
+  padding: 0 34px 0 28px;
 }
 
 .quote blockquote.image .quote-author-image {
@@ -186,37 +211,59 @@
 }
 
 .quote blockquote.image .quote-profile-text {
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.7;
+  color: #9a9a9a;
+  font-size: 0.95rem;
+  line-height: 1.45;
   white-space: pre-line;
+}
+
+.quote blockquote.image .quote-media {
+  width: min(100%, 620px);
+  max-width: 620px;
+  aspect-ratio: 0.82;
+  justify-self: center;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.quote blockquote.image .quote-media > * {
+  height: 100%;
+  margin: 0;
+}
+
+.quote blockquote.image .quote-media picture {
+  display: block;
+  height: 100%;
+}
+
+.quote blockquote.image .quote-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 @media (width >=900px) {
   .quote blockquote.image {
-    grid-template-columns: minmax(320px, 560px) minmax(420px, 1fr);
-    gap: clamp(24px, 4vw, 56px);
+    grid-template-columns: minmax(360px, 520px) minmax(420px, 620px);
+    gap: 0;
+    align-items: center;
   }
 
   .quote blockquote.image .quote-content {
-    margin: 0 -72px 0 0;
-    max-width: 560px;
+    margin: 0 -110px 0 0;
+    max-width: 540px;
     position: relative;
     z-index: 2;
   }
 
   .quote blockquote.image .quote-quotation {
-    max-width: 24ch;
+    max-width: 28ch;
   }
 
-  .quote .quote-media {
-    width: min(100%, 680px);
+  .quote blockquote.image .quote-media {
+    width: min(100%, 620px);
     justify-self: end;
-  }
-
-  .quote .quote-media picture,
-  .quote .quote-media img {
-    height: auto;
   }
 }
 
