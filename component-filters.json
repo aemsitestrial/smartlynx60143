@@ -37,7 +37,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
-    ]
+    ],
+    "rte": {
+      "toolbar": {
+        "format": []
+      }
+    }
   },
   {
     "id": "cards",
