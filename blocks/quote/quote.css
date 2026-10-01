@@ -1,10 +1,11 @@
 .quote blockquote {
   margin: 0 auto;
   max-width: 900px;
-  padding: 16px 8px;
+  padding: 48px;
   background-color: var(--quote-bg, transparent);
   color: var(--quote-text, inherit);
   border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .quote .quote-content {
@@ -14,7 +15,7 @@
 
 @media (width >=900px) {
   .quote blockquote {
-    padding: 16px 8px;
+    padding: 48px;
   }
 }
 
@@ -251,4 +252,10 @@
 
 .quote blockquote.right .quote-profile {
   justify-content: flex-end;
+}
+
+@media (width <=768px) {
+  .quote blockquote {
+    padding: 24px;
+  }
 }
