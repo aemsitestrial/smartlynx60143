@@ -221,16 +221,30 @@ export default function decorate(block) {
     search.type = 'search';
     search.placeholder = 'Search...';
 
+    const noResults = document.createElement('div');
+    noResults.className = 'accordion-no-results';
+    noResults.textContent = 'No Matches Found';
+    noResults.style.display = 'none';
+
     search.addEventListener('input', () => {
       const term = search.value.toLowerCase();
+      let matches = 0;
 
       block.querySelectorAll('.accordion-item').forEach((item) => {
         const text = item.textContent.toLowerCase();
+        const isMatch = text.includes(term);
 
-        item.style.display = text.includes(term) ? '' : 'none';
+        item.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+          matches += 1;
+        }
       });
+
+      noResults.style.display = matches === 0 ? 'block' : 'none';
     });
 
+    block.prepend(noResults);
     block.prepend(search);
   }
 }
