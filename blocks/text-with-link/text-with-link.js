@@ -30,11 +30,7 @@ export default function decorate(block) {
 
   const linkText = rows[2]?.textContent?.trim() || '';
 
-  const linkSource = rows[3]?.querySelector('a');
-
-  const linkUrl = linkSource?.href
-    || rows[3]?.textContent?.trim()
-    || '#';
+  const linkUrl = rows[3]?.textContent?.trim() || '#';
 
   const variant = (
     rows[4]?.textContent?.trim().toLowerCase()
@@ -48,15 +44,13 @@ export default function decorate(block) {
           ${title}
         </div>
 
-        ${
-  description
+        ${description
     ? `<div class="textwithlink-description">${description}</div>`
     : ''
 }
       </div>
 
-      ${
-  linkText
+      ${linkText
     ? `
             <div class="textwithlink-link">
               <a href ="${linkUrl}">
