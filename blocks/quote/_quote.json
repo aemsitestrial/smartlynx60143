@@ -199,6 +199,20 @@
               "value": "light-blue"
             }
           ]
+        },
+        {
+          "component": "reference",
+          "name": "profileImage",
+          "label": "Image",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "profileText",
+          "label": "Image Text",
+          "valueType": "string",
+          "value": ""
         }
       ]
     }
