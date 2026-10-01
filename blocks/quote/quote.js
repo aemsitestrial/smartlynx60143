@@ -13,6 +13,17 @@ export default async function decorate(block) {
   const profileTextField = block.children[9]?.firstElementChild;
   const quotationText = quotation?.textContent.trim() || '';
 
+  const colors = {
+    'dark-navy': 'rgba(32, 41, 60, 1)',
+    'royal-blue': 'rgba(70, 115, 219, 1)',
+    'light-grey': 'rgba(217, 217, 217, 1)',
+    white: 'rgba(255, 255, 255, 1)',
+    black: 'rgba(12, 12, 13, 1)',
+    'off-white': 'rgba(245, 245, 245, 1)',
+    'dark-grey': 'rgba(90, 90, 90, 1)',
+    'light-blue': 'rgba(167, 200, 241, 1)',
+  };
+
   const blockquote = document.createElement('blockquote');
   const content = document.createElement('div');
   content.className = 'quote-content';
@@ -95,29 +106,25 @@ export default async function decorate(block) {
     em.replaceWith(cite);
   });
 
-  if (backgroundField?.textContent.trim()) {
-    blockquote.style.setProperty(
-      '--quote-bg',
-      backgroundField.textContent.trim(),
-    );
+  const bgColor = colors[
+    backgroundField?.textContent.trim().toLowerCase()
+  ];
+
+  if (bgColor) {
+    blockquote.style.setProperty('--quote-bg', bgColor);
   }
 
-  if (textColorField?.textContent.trim()) {
-    blockquote.style.setProperty(
-      '--quote-text',
-      textColorField.textContent.trim(),
-    );
+  const textColor = colors[
+    textColorField?.textContent.trim().toLowerCase()
+  ];
+
+  if (textColor) {
+    blockquote.style.setProperty('--quote-text', textColor);
   }
 
-  const quoteColors = {
-    blue: 'rgba(78, 132, 255, 1)',
-    black: 'rgba(0, 0, 0, 1)',
-    white: 'rgba(255, 255, 255, 1)',
-    grey: 'rgba(243, 243, 243, 1)',
-  };
-
-  const quoteColorValue = quoteColorField?.textContent.trim() || '';
-  const quoteColor = quoteColors[quoteColorValue.toLowerCase()] || quoteColorValue;
+  const quoteColor = colors[
+    quoteColorField?.textContent.trim().toLowerCase()
+  ];
 
   if (quoteColor) {
     blockquote.style.setProperty(

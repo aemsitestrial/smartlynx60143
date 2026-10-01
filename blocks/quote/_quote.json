@@ -78,57 +78,127 @@
           ]
         },
         {
-          "component": "text",
+          "component": "select",
           "name": "backgroundColor",
           "label": "Background Color",
           "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "name": "textColor",
-          "label": "Text Color",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "select",
-          "name": "quoteColor",
-          "label": "Quote Color",
-          "valueType": "string",
-          "value": "blue",
+          "value": "white",
           "options": [
             {
-              "name": "Blue",
-              "value": "blue"
+              "name": "Dark Navy",
+              "value": "dark-navy"
             },
             {
-              "name": "Black",
-              "value": "black"
+              "name": "Royal Blue",
+              "value": "royal-blue"
+            },
+            {
+              "name": "Light Grey",
+              "value": "light-grey"
             },
             {
               "name": "White",
               "value": "white"
             },
             {
-              "name": "Grey",
-              "value": "grey"
+              "name": "Black",
+              "value": "black"
+            },
+            {
+              "name": "Off White",
+              "value": "off-white"
+            },
+            {
+              "name": "Dark Grey",
+              "value": "dark-grey"
+            },
+            {
+              "name": "Light Blue",
+              "value": "light-blue"
             }
           ]
         },
         {
-          "component": "reference",
-          "name": "profileImage",
-          "label": "Image",
+          "component": "select",
+          "name": "textColor",
+          "label": "Text Color",
           "valueType": "string",
-          "multi": false
+          "value": "black",
+          "options": [
+            {
+              "name": "Dark Navy",
+              "value": "dark-navy"
+            },
+            {
+              "name": "Royal Blue",
+              "value": "royal-blue"
+            },
+            {
+              "name": "Light Grey",
+              "value": "light-grey"
+            },
+            {
+              "name": "White",
+              "value": "white"
+            },
+            {
+              "name": "Black",
+              "value": "black"
+            },
+            {
+              "name": "Off White",
+              "value": "off-white"
+            },
+            {
+              "name": "Dark Grey",
+              "value": "dark-grey"
+            },
+            {
+              "name": "Light Blue",
+              "value": "light-blue"
+            }
+          ]
         },
         {
-          "component": "text",
-          "name": "profileText",
-          "label": "Image Text",
+          "component": "select",
+          "name": "quoteColor",
+          "label": "Quote Color",
           "valueType": "string",
-          "value": ""
+          "value": "royal-blue",
+          "options": [
+            {
+              "name": "Dark Navy",
+              "value": "dark-navy"
+            },
+            {
+              "name": "Royal Blue",
+              "value": "royal-blue"
+            },
+            {
+              "name": "Light Grey",
+              "value": "light-grey"
+            },
+            {
+              "name": "White",
+              "value": "white"
+            },
+            {
+              "name": "Black",
+              "value": "black"
+            },
+            {
+              "name": "Off White",
+              "value": "off-white"
+            },
+            {
+              "name": "Dark Grey",
+              "value": "dark-grey"
+            },
+            {
+              "name": "Light Blue",
+              "value": "light-blue"
+            }
+          ]
         }
       ]
     }
