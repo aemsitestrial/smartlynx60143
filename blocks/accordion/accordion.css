@@ -304,3 +304,16 @@
   border-radius: 4px;
   margin-bottom: 16px;
 }
+
+.accordion-description p {
+  margin-bottom: 16px;
+}
+
+.accordion-description ul {
+  padding-left: 20px;
+  margin: 16px 0;
+}
+
+.accordion-description li {
+  margin-bottom: 8px;
+}

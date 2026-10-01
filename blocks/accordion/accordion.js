@@ -150,11 +150,10 @@ export default function decorate(block) {
       bannerWrapper.append(bannerPicture.cloneNode(true));
     }
 
-    const description = body.querySelector('p');
+    const description = document.createElement('div');
+    description.className = 'accordion-description';
+    description.innerHTML = body.innerHTML;
 
-    if (description) {
-      description.classList.add('accordion-description');
-    }
     let cta = null;
 
     if (
