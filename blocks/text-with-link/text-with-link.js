@@ -41,8 +41,13 @@ export default function decorate(block) {
     || 'white'
   ).replace(/\s+/g, '-');
 
+  const textColor = (
+    rows[5]?.textContent?.trim().toLowerCase()
+    || 'black'
+  ).replace(/\s+/g, '-');
+
   block.innerHTML = `
-    <div class="textwithlink ${backgroundColor}">
+    <div class="textwithlink ${backgroundColor} ${textColor}-text">
       <div class="textwithlink-left">
         <div class="textwithlink-title">
           ${title}
