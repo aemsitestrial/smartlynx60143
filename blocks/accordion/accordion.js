@@ -88,6 +88,12 @@ export default function decorate(block) {
 
       if (color) {
         details.style.setProperty('--accordion-text', color);
+
+        if (color === 'rgba(255, 255, 255, 1)') {
+          details.style.setProperty('--accordion-arrow-color', '#fff');
+        } else {
+          details.style.setProperty('--accordion-arrow-color', '#000');
+        }
       }
 
       textColorField.remove();
