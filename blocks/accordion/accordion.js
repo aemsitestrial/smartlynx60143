@@ -159,11 +159,16 @@ export default function decorate(block) {
 
     if (
       ctaLabelField?.textContent.trim()
-      && ctaLinkField?.textContent.trim()
+      && ctaLinkField
     ) {
       cta = document.createElement('a');
 
-      cta.href = ctaLinkField.textContent.trim();
+      const ctaSource = ctaLinkField.querySelector('a');
+
+      cta.href = ctaSource?.href
+        || ctaLinkField.textContent.trim()
+        || '#';
+
       cta.textContent = ctaLabelField.textContent.trim();
       cta.className = 'accordion-cta';
     }

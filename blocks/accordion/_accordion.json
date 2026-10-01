@@ -140,11 +140,9 @@
           "value": ""
         },
         {
-          "component": "text",
+          "component": "aem-content",
           "name": "ctaLink",
-          "label": "CTA Link",
-          "valueType": "string",
-          "value": ""
+          "label": "CTA Link"
         },
         {
           "component": "reference",
