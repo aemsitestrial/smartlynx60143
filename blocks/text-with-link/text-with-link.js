@@ -36,13 +36,13 @@ export default function decorate(block) {
     || rows[3]?.textContent?.trim()
     || '#';
 
-  const variant = (
+  const backgroundColor = (
     rows[4]?.textContent?.trim().toLowerCase()
-    || 'default'
+    || 'white'
   ).replace(/\s+/g, '-');
 
   block.innerHTML = `
-    <div class="textwithlink ${variant}">
+    <div class="textwithlink ${backgroundColor}">
       <div class="textwithlink-left">
         <div class="textwithlink-title">
           ${title}

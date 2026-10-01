@@ -6576,21 +6576,42 @@
       },
       {
         "component": "select",
-        "name": "variant",
-        "label": "Variant",
-        "required": true,
+        "name": "backgroundColor",
+        "label": "Background Color",
+        "valueType": "string",
+        "value": "white",
         "options": [
           {
-            "name": "Default",
-            "value": "default"
+            "name": "Dark Navy",
+            "value": "dark-navy"
           },
           {
-            "name": "Dark",
-            "value": "dark"
+            "name": "Royal Blue",
+            "value": "royal-blue"
           },
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Light Grey",
+            "value": "light-grey"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Black",
+            "value": "black"
+          },
+          {
+            "name": "Off White",
+            "value": "off-white"
+          },
+          {
+            "name": "Dark Grey",
+            "value": "dark-grey"
+          },
+          {
+            "name": "Light Blue",
+            "value": "light-blue"
           }
         ]
       }

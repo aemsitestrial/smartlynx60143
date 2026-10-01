@@ -102,37 +102,73 @@
   border-bottom: none !important;
 }
 
-/* Highlight */
-
-.textwithlink.highlight {
-  background-color: #e5e5e5;
+.textwithlink.dark-navy {
+  background-color: rgb(32 41 60 / 100%);
 }
 
-.textwithlink.highlight .textwithlink-title *,
-.textwithlink.highlight .textwithlink-description,
-.textwithlink.highlight .textwithlink-link a {
-  color: #222;
+.textwithlink.royal-blue {
+  background-color: rgb(70 115 219 / 100%);
 }
 
-/* Dark */
-
-.textwithlink.dark {
-  background-color: #222;
+.textwithlink.light-grey {
+  background-color: rgb(217 217 217 / 100%);
 }
 
-.textwithlink.dark .textwithlink-title,
-.textwithlink.dark .textwithlink-title *,
-.textwithlink.dark .textwithlink-description,
-.textwithlink.dark .textwithlink-link,
-.textwithlink.dark .textwithlink-link a,
-.textwithlink.dark .link-text,
-.textwithlink.dark .arrow {
+.textwithlink.white {
+  background-color: rgb(255 255 255 / 100%);
+}
+
+.textwithlink.black {
+  background-color: rgb(12 12 13 / 100%);
+}
+
+.textwithlink.off-white {
+  background-color: rgb(245 245 245 / 100%);
+}
+
+.textwithlink.dark-grey {
+  background-color: rgb(90 90 90 / 100%);
+}
+
+.textwithlink.light-blue {
+  background-color: rgb(167 200 241 / 100%);
+}
+
+/* White text for dark backgrounds */
+
+.textwithlink.dark-navy .textwithlink-title,
+.textwithlink.dark-navy .textwithlink-title *,
+.textwithlink.dark-navy .textwithlink-description,
+.textwithlink.dark-navy .textwithlink-link a,
+.textwithlink.dark-navy .link-text,
+.textwithlink.dark-navy .arrow,
+
+.textwithlink.royal-blue .textwithlink-title,
+.textwithlink.royal-blue .textwithlink-title *,
+.textwithlink.royal-blue .textwithlink-description,
+.textwithlink.royal-blue .textwithlink-link a,
+.textwithlink.royal-blue .link-text,
+.textwithlink.royal-blue .arrow,
+
+.textwithlink.black .textwithlink-title,
+.textwithlink.black .textwithlink-title *,
+.textwithlink.black .textwithlink-description,
+.textwithlink.black .textwithlink-link a,
+.textwithlink.black .link-text,
+.textwithlink.black .arrow,
+
+.textwithlink.dark-grey .textwithlink-title,
+.textwithlink.dark-grey .textwithlink-title *,
+.textwithlink.dark-grey .textwithlink-description,
+.textwithlink.dark-grey .textwithlink-link a,
+.textwithlink.dark-grey .link-text,
+.textwithlink.dark-grey .arrow {
   color: #fff !important;
 }
 
 /* Mobile */
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .textwithlink {
     flex-direction: column;
     align-items: flex-start;
