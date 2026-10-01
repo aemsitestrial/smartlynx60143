@@ -30,7 +30,11 @@ export default function decorate(block) {
 
   const linkText = rows[2]?.textContent?.trim() || '';
 
-  const linkUrl = rows[3]?.textContent?.trim() || '#';
+  const linkSource = rows[3]?.querySelector('a');
+
+  const linkUrl = linkSource?.href
+    || rows[3]?.textContent?.trim()
+    || '#';
 
   const variant = (
     rows[4]?.textContent?.trim().toLowerCase()
