@@ -77,10 +77,6 @@
               "value": "horizontal"
             },
             {
-              "name": "Split Row",
-              "value": "split"
-            },
-            {
               "name": "Corporate Accordion",
               "value": "corporate"
             }
@@ -94,11 +90,37 @@
           "value": ""
         },
         {
-          "component": "text",
+          "component": "select",
           "name": "textColor",
           "label": "Text Color",
           "valueType": "string",
-          "value": ""
+          "value": "black",
+          "options": [
+            {
+              "name": "Royal Blue",
+              "value": "royal-blue"
+            },
+            {
+              "name": "Black",
+              "value": "black"
+            },
+            {
+              "name": "Sky Blue",
+              "value": "sky-blue"
+            },
+            {
+              "name": "Dark Grey",
+              "value": "dark-grey"
+            },
+            {
+              "name": "Navy",
+              "value": "navy"
+            },
+            {
+              "name": "White",
+              "value": "white"
+            }
+          ]
         },
         {
           "component": "text",
@@ -147,8 +169,7 @@
     {
       "id": "accordion",
       "components": [
-        "accordion-item",
-        "article"
+        "accordion-item"
       ]
     }
   ]

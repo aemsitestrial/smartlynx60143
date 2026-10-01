@@ -55,10 +55,6 @@ export default function decorate(block) {
         details.classList.add('horizontal-item');
       }
 
-      if (layout === 'split') {
-        details.classList.add('split-item');
-      }
-
       if (layout === 'corporate') {
         details.classList.add('corporate-item');
       }
@@ -77,7 +73,18 @@ export default function decorate(block) {
     }
 
     if (textColorField) {
-      const color = textColorField.textContent.trim();
+      const textColors = {
+        'royal-blue': 'rgba(70, 115, 219, 1)',
+        black: 'rgba(12, 12, 13, 1)',
+        'sky-blue': 'rgb(37, 150, 190)',
+        'dark-grey': 'rgba(90, 90, 90, 1)',
+        navy: 'rgba(1, 22, 39, 1)',
+        white: 'rgba(255, 255, 255, 1)',
+      };
+
+      const color = textColors[
+        textColorField.textContent.trim().toLowerCase()
+      ];
 
       if (color) {
         details.style.setProperty('--accordion-text', color);
@@ -142,17 +149,6 @@ export default function decorate(block) {
     if (description) {
       description.classList.add('accordion-description');
     }
-
-    let preview = null;
-
-    if (layout === 'split' && description) {
-      preview = document.createElement('span');
-      preview.className = 'accordion-summary-preview';
-      preview.textContent = description.textContent.trim();
-
-      summary.append(preview);
-    }
-
     let cta = null;
 
     if (
@@ -167,8 +163,6 @@ export default function decorate(block) {
     }
 
     body.replaceChildren();
-
-    body.append(titleSection); body.replaceChildren();
 
     if (layout !== 'corporate') {
       body.append(titleSection);
@@ -189,12 +183,7 @@ export default function decorate(block) {
     if (cta) {
       body.append(cta);
     }
-
-    if (layout === 'split') {
-      details.append(summary);
-    } else {
-      details.append(summary, body);
-    }
+    details.append(summary, body);
 
     row.replaceWith(details);
   });
