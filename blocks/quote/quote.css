@@ -258,10 +258,9 @@
 
 .quote blockquote.big {
   max-width: 1280px;
-  padding: 32px 0;
-  background: transparent;
-  border-radius: 0;
-  box-sizing: border-box;
+  padding: 48px;
+  background-color: var(--quote-bg, transparent);
+  border-radius: 16px;
 }
 
 .quote blockquote.big .quote-content {
@@ -271,17 +270,17 @@
 .quote blockquote.big .quote-content::before {
   content: "❝";
   display: block;
-  font-size: 120px;
+  font-size: 72px;
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
 .quote blockquote.big .quote-quotation {
-  font-size: 72px;
-  line-height: 1.2;
+  font-size: 48px;
+  line-height: 1.25;
   font-weight: 300;
-  max-width: 1300px;
+  max-width: 1200px;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
@@ -291,10 +290,10 @@
 }
 
 .quote blockquote.big .quote-attribution {
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid #d9d9d9;
-  font-size: 32px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(0 0 0 / 10%);
+  font-size: 24px;
   font-weight: 500;
   color: var(--quote-text, #0c0c0d);
 }
@@ -316,16 +315,20 @@
     padding: 24px;
   }
 
+  .quote blockquote.big {
+    padding: 24px;
+  }
+
   .quote blockquote.big .quote-content::before {
-    font-size: 72px;
+    font-size: 48px;
   }
 
   .quote blockquote.big .quote-quotation {
-    font-size: 36px;
-    line-height: 1.2;
+    font-size: 28px;
+    line-height: 1.3;
   }
 
   .quote blockquote.big .quote-attribution {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
