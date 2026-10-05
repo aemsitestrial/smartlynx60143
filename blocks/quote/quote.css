@@ -293,7 +293,8 @@
   display: block;
   font-size: 96px;
   line-height: 0.8;
-  margin-top: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
   text-align: right;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
@@ -308,8 +309,8 @@
 
 .quote blockquote.big .quote-attribution {
   max-width: 1200px;
-  margin-top: 16px;
-  padding-top: 12px;
+  margin-top: 0;
+  padding-top: 8px;
   border-top: 1px solid rgb(0 0 0 / 10%);
   font-size: 20px;
   line-height: 1.4;
