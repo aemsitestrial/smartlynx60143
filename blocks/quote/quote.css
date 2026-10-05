@@ -269,17 +269,17 @@
 
 .quote blockquote.big .quote-content::before {
   content: "❝";
+  font-size: 110px;
   display: block;
-  font-size: 64px;
-  line-height: 1;
-  margin-bottom: 16px;
+  line-height: 0.8;
+  margin-bottom: 32px;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
 .quote blockquote.big .quote-quotation {
   font-size: 32px;
   line-height: 1.4;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
