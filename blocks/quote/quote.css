@@ -257,37 +257,53 @@
 /* Big Quote Layout */
 
 .quote blockquote.big {
-  max-width: 1280px;
-  padding: 48px;
+  max-width: 1200px;
+  padding: 64px 80px;
   background-color: var(--quote-bg, transparent);
   border-radius: 16px;
+  box-sizing: border-box;
 }
 
 .quote blockquote.big .quote-content {
+  max-width: 900px;
+  margin: 0 auto;
   position: relative;
 }
 
 .quote blockquote.big .quote-content::before {
   content: "❝";
-  font-size: 110px;
   display: block;
+  font-size: 96px;
   line-height: 0.8;
   margin-bottom: 32px;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
 .quote blockquote.big .quote-quotation {
-  font-size: 32px;
-  line-height: 1.4;
+  max-width: 1200px;
+  font-size: 28px;
+  line-height: 1.5;
   font-weight: 400;
   color: var(--quote-color, rgb(70 115 219 / 100%));
 }
 
+.quote blockquote.big .quote-quotation p:first-child::before {
+  content: "“";
+  color: var(--quote-color, rgb(70 115 219 / 100%));
+}
+
+.quote blockquote.big .quote-quotation p:last-child::after {
+  content: "”";
+  color: var(--quote-color, rgb(70 115 219 / 100%));
+}
+
 .quote blockquote.big .quote-attribution {
-  margin-top: 32px;
+  max-width: 1200px;
+  margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid rgb(0 0 0 / 10%);
   font-size: 20px;
+  line-height: 1.4;
   color: var(--quote-text, #0c0c0d);
 }
 
@@ -300,7 +316,7 @@
 }
 
 .quote blockquote.big .quote-description {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .quote blockquote.big .quote-profile {
@@ -313,14 +329,16 @@
   }
 
   .quote blockquote.big .quote-content::before {
-    font-size: 48px;
+    font-size: 56px;
+    margin-bottom: 16px;
   }
 
   .quote blockquote.big .quote-quotation {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.4;
   }
 
   .quote blockquote.big .quote-attribution {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
