@@ -164,6 +164,11 @@
 
 .quote blockquote.image .quote-quotation p {
   margin: 0;
+  padding: 0;
+}
+
+.quote blockquote.image .quote-quotation p+p {
+  margin-top: 0;
 }
 
 .quote blockquote.image .quote-quotation p:first-child::before {
