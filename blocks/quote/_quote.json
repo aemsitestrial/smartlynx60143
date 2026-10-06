@@ -35,6 +35,13 @@
           "valueType": "string"
         },
         {
+          "component": "text",
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "valueType": "string",
+          "value": ""
+        },
+        {
           "component": "richtext",
           "valueType": "string",
           "name": "title",

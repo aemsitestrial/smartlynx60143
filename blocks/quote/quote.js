@@ -3,14 +3,18 @@ const COLOR_VALUE_PATTERN = /^#(?:[\da-f]{3}|[\da-f]{6}|[\da-f]{8})$/i;
 export default async function decorate(block) {
   const quotation = block.children[0]?.firstElementChild;
   const attribution = block.children[1]?.firstElementChild;
-  const title = block.children[2]?.firstElementChild;
-  const description = block.children[3]?.firstElementChild;
-  const layoutField = block.children[4]?.firstElementChild;
-  const backgroundField = block.children[5]?.firstElementChild;
-  const textColorField = block.children[6]?.firstElementChild;
-  const quoteColorField = block.children[7]?.firstElementChild;
-  const profileImageField = block.children[8];
-  const profileTextField = block.children[9]?.firstElementChild;
+
+  const eyebrowField = block.children[2]?.firstElementChild;
+
+  const title = block.children[3]?.firstElementChild;
+  const description = block.children[4]?.firstElementChild;
+  const layoutField = block.children[5]?.firstElementChild;
+  const backgroundField = block.children[6]?.firstElementChild;
+  const textColorField = block.children[7]?.firstElementChild;
+  const quoteColorField = block.children[8]?.firstElementChild;
+  const profileImageField = block.children[9];
+  const profileTextField = block.children[10]?.firstElementChild;
+
   const quotationText = quotation?.textContent.trim() || '';
 
   const colors = {
@@ -47,6 +51,14 @@ export default async function decorate(block) {
   }
 
   blockquote.classList.add(layout);
+
+  if (eyebrowField?.textContent.trim()) {
+    const eyebrow = document.createElement('p');
+    eyebrow.className = 'quote-eyebrow';
+    eyebrow.textContent = eyebrowField.textContent.trim();
+
+    content.append(eyebrow);
+  }
 
   if (title?.textContent.trim()) {
     title.className = 'quote-title';
