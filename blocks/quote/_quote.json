@@ -220,8 +220,15 @@
         },
         {
           "component": "text",
-          "name": "profileText",
-          "label": "Image Text",
+          "name": "authorName",
+          "label": "Author Name",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "authorRole",
+          "label": "Author Role",
           "valueType": "string",
           "value": ""
         }

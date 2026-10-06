@@ -13,7 +13,8 @@ export default async function decorate(block) {
   const textColorField = block.children[7]?.firstElementChild;
   const quoteColorField = block.children[8]?.firstElementChild;
   const profileImageField = block.children[9];
-  const profileTextField = block.children[10]?.firstElementChild;
+  const authorNameField = block.children[10]?.firstElementChild;
+  const authorRoleField = block.children[11]?.firstElementChild;
 
   const quotationText = quotation?.textContent.trim() || '';
 
@@ -82,7 +83,11 @@ export default async function decorate(block) {
 
   const hasImage = profileImageField?.innerHTML?.trim();
 
-  if (hasImage || profileTextField?.textContent.trim()) {
+  if (
+    hasImage
+    || authorNameField?.textContent.trim()
+    || authorRoleField?.textContent.trim()
+  ) {
     const profileWrapper = document.createElement('div');
     profileWrapper.className = 'quote-profile';
 
@@ -93,26 +98,25 @@ export default async function decorate(block) {
       profileWrapper.append(imageWrapper);
     }
 
-    if (profileTextField?.textContent.trim()) {
-      const profileText = profileTextField.textContent.trim();
-
-      const [nameText, roleText] = profileText.split('\n');
-
+    if (
+      authorNameField?.textContent.trim()
+      || authorRoleField?.textContent.trim()
+    ) {
       const profileTextWrapper = document.createElement('div');
       profileTextWrapper.className = 'quote-profile-text';
 
-      if (nameText) {
-        const name = document.createElement('div');
-        name.className = 'quote-author-name';
-        name.textContent = nameText;
-        profileTextWrapper.append(name);
+      if (authorNameField?.textContent.trim()) {
+        const authorName = document.createElement('div');
+        authorName.className = 'quote-author-name';
+        authorName.textContent = authorNameField.textContent.trim();
+        profileTextWrapper.append(authorName);
       }
 
-      if (roleText) {
-        const role = document.createElement('div');
-        role.className = 'quote-author-role';
-        role.textContent = roleText;
-        profileTextWrapper.append(role);
+      if (authorRoleField?.textContent.trim()) {
+        const authorRole = document.createElement('div');
+        authorRole.className = 'quote-author-role';
+        authorRole.textContent = authorRoleField.textContent.trim();
+        profileTextWrapper.append(authorRole);
       }
 
       profileWrapper.append(profileTextWrapper);
