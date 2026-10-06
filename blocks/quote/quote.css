@@ -345,3 +345,16 @@
   letter-spacing: 1px;
   color: var(--quote-text, inherit);
 }
+
+.quote .quote-author-name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.quote .quote-author-role {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #777;
+}

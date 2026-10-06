@@ -94,10 +94,28 @@ export default async function decorate(block) {
     }
 
     if (profileTextField?.textContent.trim()) {
-      const profileText = document.createElement('div');
-      profileText.className = 'quote-profile-text';
-      profileText.textContent = profileTextField.textContent.trim();
-      profileWrapper.append(profileText);
+      const profileText = profileTextField.textContent.trim();
+
+      const [nameText, roleText] = profileText.split('\n');
+
+      const profileTextWrapper = document.createElement('div');
+      profileTextWrapper.className = 'quote-profile-text';
+
+      if (nameText) {
+        const name = document.createElement('div');
+        name.className = 'quote-author-name';
+        name.textContent = nameText;
+        profileTextWrapper.append(name);
+      }
+
+      if (roleText) {
+        const role = document.createElement('div');
+        role.className = 'quote-author-role';
+        role.textContent = roleText;
+        profileTextWrapper.append(role);
+      }
+
+      profileWrapper.append(profileTextWrapper);
     }
 
     content.append(profileWrapper);
