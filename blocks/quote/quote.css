@@ -148,7 +148,7 @@
 .quote blockquote.image .quote-content {
   background: #fff;
   width: 430px;
-  padding: 30px 28px 24px;
+  padding: 36px 32px 28px;
   position: relative;
   z-index: 2;
   margin-right: -110px;
@@ -156,15 +156,19 @@
 }
 
 .quote blockquote.image .quote-quotation {
+  position: relative;
   font-size: 1.1rem;
   line-height: 1.25;
-  max-width: 325px;
+  max-width: 360px;
   color: #111;
+  hyphens: none;
 }
 
 .quote blockquote.image .quote-quotation p {
   margin: 0;
   padding: 0;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .quote blockquote.image .quote-quotation p+p {
@@ -174,17 +178,24 @@
 .quote blockquote.image .quote-quotation p:first-child::before {
   content: "“";
   color: var(--quote-color, #4273ff);
-  font-size: 1.55em;
+  font-size: 42px;
   font-weight: 700;
-  margin-right: 8px;
+  line-height: 1;
+  position: relative;
+  left: -10px;
+  top: 8px;
+  margin-right: 6px;
 }
 
 .quote blockquote.image .quote-quotation p:last-child::after {
   content: "”";
+  position: absolute;
+  right: -18px;
+  bottom: -12px;
   color: var(--quote-color, #4273ff);
-  font-size: 1.55em;
+  font-size: 42px;
   font-weight: 700;
-  margin-left: 6px;
+  line-height: 1;
 }
 
 .quote blockquote.image .quote-attribution {
