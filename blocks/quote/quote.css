@@ -147,21 +147,19 @@
 
 .quote blockquote.image .quote-content {
   background: #fff;
-  width: 430px;
-  padding: 40px 32px 32px;
+  width: 380px;
+  padding: 32px 36px 28px;
   position: relative;
   z-index: 2;
-  margin-right: -250px;
-  box-shadow: 0 8px 20px rgb(0 0 0 / 5%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 3%);
 }
 
 .quote blockquote.image .quote-quotation {
   position: relative;
+  max-width: 320px;
   font-size: 1.1rem;
-  line-height: 1.35;
-  max-width: 390px;
+  line-height: 1.38;
   color: #111;
-  hyphens: none;
 }
 
 .quote blockquote.image .quote-quotation p {
@@ -172,10 +170,10 @@
 .quote blockquote.image .quote-quotation p:first-child::before {
   content: "“";
   position: absolute;
-  top: -20px;
   left: -24px;
+  top: -2px;
   color: var(--quote-color, #4273ff);
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1;
 }
@@ -183,10 +181,10 @@
 .quote blockquote.image .quote-quotation p:last-child::after {
   content: "”";
   position: absolute;
-  right: -34px;
-  bottom: -105px;
+  right: -8px;
+  bottom: -42px;
   color: var(--quote-color, #4273ff);
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 700;
   line-height: 1;
 }
@@ -204,7 +202,7 @@
 
 .quote blockquote.image .quote-profile {
   display: block;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .quote blockquote.image .quote-author-image {
@@ -221,7 +219,6 @@
   width: 480px;
   max-width: 480px;
   aspect-ratio: 0.62;
-  justify-self: center;
   overflow: hidden;
 }
 
@@ -231,25 +228,68 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center top;
+  object-position: 25% top;
 }
 
 @media (width >=900px) {
   .quote blockquote.image {
-    grid-template-columns: 350px 480px;
+    grid-template-columns: 300px 480px;
     justify-content: center;
-    padding: 68px 28px 32px;
+    padding: 60px 20px;
   }
 
   .quote blockquote.image .quote-content {
-    margin-top: 56px;
-    margin-right: -180px;
+    margin-top: 45px;
+    margin-right: -340px;
   }
 
   .quote blockquote.image .quote-media {
-    width: 480px;
-    margin-top: 20px;
-    justify-self: end;
+    justify-self: start;
+  }
+}
+
+@media (width <=1024px) and (width > 768px) {
+  .quote blockquote.image {
+    grid-template-columns: 320px 420px;
+    justify-content: center;
+  }
+
+  .quote blockquote.image .quote-content {
+    width: 340px;
+    margin-top: 40px;
+    margin-right: -150px;
+    padding: 32px 24px;
+  }
+
+  .quote blockquote.image .quote-quotation {
+    max-width: 260px;
+  }
+
+  .quote blockquote.image .quote-media {
+    width: 420px;
+    max-width: 420px;
+  }
+}
+
+@media (width <=768px) {
+  .quote blockquote.image {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .quote blockquote.image .quote-content {
+    width: auto;
+    margin: -60px 20px 0;
+    padding: 28px 24px;
+  }
+
+  .quote blockquote.image .quote-media {
+    width: 100%;
+    max-width: none;
+  }
+
+  .quote blockquote.image .quote-quotation {
+    max-width: none;
   }
 }
 
@@ -261,7 +301,6 @@
   justify-content: flex-end;
 }
 
-/* Big Quote Layout */
 
 /* Big Quote Layout */
 .quote blockquote.big {
@@ -370,27 +409,23 @@
 
 @media (width <=1024px) and (width > 768px) {
   .quote blockquote.image {
-    grid-template-columns: 380px 420px;
+    grid-template-columns: 320px 440px;
     justify-content: center;
   }
 
   .quote blockquote.image .quote-content {
-    width: 380px;
-    margin-right: -140px;
-    padding: 32px 28px 24px;
-  }
-
-  .quote blockquote.image .quote-media {
-    width: 420px;
-    max-width: 420px;
+    width: min(100%, 360px);
+    margin-top: 40px;
+    margin-right: -88px;
+    padding: 32px 24px;
   }
 
   .quote blockquote.image .quote-quotation {
-    max-width: 320px;
+    max-width: 290px;
   }
 
-  .quote blockquote.image .quote-quotation p:last-child::after {
-    right: -20px;
-    bottom: -90px;
+  .quote blockquote.image .quote-media {
+    width: 440px;
+    max-width: 440px;
   }
 }
