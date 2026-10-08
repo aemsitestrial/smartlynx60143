@@ -138,10 +138,10 @@
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: -8px;
-    bottom: -70px;
+    right: -20px;
+    bottom: -60px;
     color: rgb(70 115 219 / 100%);
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1;
 }
