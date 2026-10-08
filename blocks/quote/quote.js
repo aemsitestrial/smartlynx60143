@@ -1,12 +1,12 @@
 const COLOR_VALUE_PATTERN = /^#(?:[\da-f]{3}|[\da-f]{6}|[\da-f]{8})$/i;
-
 export default async function decorate(block) {
-  const eyebrowField = block.children[0]?.firstElementChild;
-  const title = block.children[1]?.firstElementChild;
-  const quotation = block.children[2]?.firstElementChild;
-  const attribution = block.children[3]?.firstElementChild;
-  const layoutField = block.children[4]?.firstElementChild;
-  const description = block.children[5]?.firstElementChild;
+  const quotation = block.children[0]?.firstElementChild;
+  const attribution = block.children[1]?.firstElementChild;
+  const eyebrowField = block.children[2]?.firstElementChild;
+
+  const title = block.children[3]?.firstElementChild;
+  const description = block.children[4]?.firstElementChild;
+  const layoutField = block.children[5]?.firstElementChild;
   const backgroundField = block.children[6]?.firstElementChild;
   const textColorField = block.children[7]?.firstElementChild;
   const quoteColorField = block.children[8]?.firstElementChild;
@@ -60,10 +60,8 @@ export default async function decorate(block) {
   }
 
   if (title?.textContent.trim()) {
-    const titleElement = document.createElement('h2');
-    titleElement.className = 'quote-title';
-    titleElement.textContent = title.textContent.trim();
-    content.append(titleElement);
+    title.className = 'quote-title';
+    content.append(title);
   }
 
   if (quotation && !COLOR_VALUE_PATTERN.test(quotationText)) {
