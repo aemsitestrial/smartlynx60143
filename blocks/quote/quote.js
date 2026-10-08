@@ -60,8 +60,10 @@ export default async function decorate(block) {
   }
 
   if (title?.textContent.trim()) {
-    title.className = 'quote-title';
-    content.append(title);
+    const titleElement = document.createElement('h2');
+    titleElement.className = 'quote-title';
+    titleElement.textContent = title.textContent.trim();
+    content.append(titleElement);
   }
 
   if (quotation && !COLOR_VALUE_PATTERN.test(quotationText)) {
