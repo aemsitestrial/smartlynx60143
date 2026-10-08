@@ -30,7 +30,8 @@
       "title",
       "teaser",
       "video",
-      "text-with-link"
+      "text-with-link",
+      "quotes"
     ]
   },
   {
@@ -100,6 +101,17 @@
       "tnc",
       "wizard"
     ]
+  },
+  {
+    "id": "richtext",
+    "components": [
+      "richtext"
+    ],
+    "rte": {
+      "toolbar": {
+        "format": []
+      }
+    }
   },
   {
     "id": "richtext",
