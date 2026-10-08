@@ -6180,6 +6180,13 @@
       },
       {
         "component": "text",
+        "name": "imageAltText",
+        "label": "Image Alt Text",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
         "name": "authorName",
         "label": "Author Name",
         "valueType": "string",
