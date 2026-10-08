@@ -5,10 +5,9 @@ export default async function decorate(block) {
   const quotation = block.children[2]?.firstElementChild;
   const layoutField = block.children[3]?.firstElementChild;
   const backgroundField = block.children[4]?.firstElementChild;
-  const quoteColorField = block.children[5]?.firstElementChild;
-  const profileImageField = block.children[6];
-  const imageAltTextField = block.children[7];
-  const authorDetailsField = block.children[8]?.firstElementChild;
+  const profileImageField = block.children[5];
+  const imageAltTextField = block.children[6];
+  const authorDetailsField = block.children[7]?.firstElementChild;
 
   const quotationText = quotation?.textContent.trim() || '';
 
@@ -120,17 +119,6 @@ export default async function decorate(block) {
 
   if (bgColor) {
     blockquote.style.setProperty('--quote-bg', bgColor);
-  }
-
-  const quoteColor = colors[
-    quoteColorField?.textContent.trim().toLowerCase()
-  ];
-
-  if (quoteColor) {
-    blockquote.style.setProperty(
-      '--quote-color',
-      quoteColor,
-    );
   }
 
   block.innerHTML = '';

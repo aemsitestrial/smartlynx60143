@@ -27,7 +27,6 @@
 .quote blockquote .quote-quotation {
   font-size: 190%;
   line-height: 1.4;
-  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-quotation> :first-child {
@@ -36,12 +35,10 @@
 
 .quote blockquote .quote-quotation p:first-child::before {
   content: "“";
-  color: var(--quote-color, inherit);
 }
 
 .quote blockquote .quote-quotation p:last-child::after {
   content: "”";
-  color: var(--quote-color, inherit);
 }
 
 .quote blockquote.centered {
@@ -150,7 +147,7 @@
   position: absolute;
   left: -40px;
   top: -2px;
-  color: var(--quote-color, #4273ff);
+  color: #4273ff;
   font-size: 42px;
   font-weight: 700;
   line-height: 1;

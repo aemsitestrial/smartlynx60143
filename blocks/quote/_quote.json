@@ -116,47 +116,6 @@
           ]
         },
         {
-          "component": "select",
-          "name": "quoteColor",
-          "label": "Quote Color",
-          "valueType": "string",
-          "value": "royal-blue",
-          "options": [
-            {
-              "name": "Dark Navy",
-              "value": "dark-navy"
-            },
-            {
-              "name": "Royal Blue",
-              "value": "royal-blue"
-            },
-            {
-              "name": "Light Grey",
-              "value": "light-grey"
-            },
-            {
-              "name": "White",
-              "value": "white"
-            },
-            {
-              "name": "Black",
-              "value": "black"
-            },
-            {
-              "name": "Off White",
-              "value": "off-white"
-            },
-            {
-              "name": "Dark Grey",
-              "value": "dark-grey"
-            },
-            {
-              "name": "Light Blue",
-              "value": "light-blue"
-            }
-          ]
-        },
-        {
           "component": "reference",
           "name": "profileImage",
           "label": "Image",
