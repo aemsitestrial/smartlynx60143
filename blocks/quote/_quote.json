@@ -226,16 +226,9 @@
           "value": ""
         },
         {
-          "component": "text",
-          "name": "authorName",
-          "label": "Author Name",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "name": "authorRole",
-          "label": "Author Role",
+          "component": "textarea",
+          "name": "authorDetails",
+          "label": "Author Details",
           "valueType": "string",
           "value": ""
         }

@@ -11,8 +11,7 @@ export default async function decorate(block) {
   const quoteColorField = block.children[8]?.firstElementChild;
   const profileImageField = block.children[9];
   const imageAltTextField = block.children[10];
-  const authorNameField = block.children[11]?.firstElementChild;
-  const authorRoleField = block.children[12]?.firstElementChild;
+  const authorDetailsField = block.children[11]?.firstElementChild;
 
   const quotationText = quotation?.textContent.trim() || '';
 
@@ -81,11 +80,7 @@ export default async function decorate(block) {
 
   const hasImage = profileImageField?.innerHTML?.trim();
 
-  if (
-    hasImage
-    || authorNameField?.textContent.trim()
-    || authorRoleField?.textContent.trim()
-  ) {
+  if (hasImage || authorDetailsField?.textContent.trim()) {
     const profileWrapper = document.createElement('div');
     profileWrapper.className = 'quote-profile';
 
@@ -96,28 +91,11 @@ export default async function decorate(block) {
       profileWrapper.append(imageWrapper);
     }
 
-    if (
-      authorNameField?.textContent.trim()
-      || authorRoleField?.textContent.trim()
-    ) {
-      const profileTextWrapper = document.createElement('div');
-      profileTextWrapper.className = 'quote-profile-text';
-
-      if (authorNameField?.textContent.trim()) {
-        const authorName = document.createElement('div');
-        authorName.className = 'quote-author-name';
-        authorName.textContent = authorNameField.textContent.trim();
-        profileTextWrapper.append(authorName);
-      }
-
-      if (authorRoleField?.textContent.trim()) {
-        const authorRole = document.createElement('div');
-        authorRole.className = 'quote-author-role';
-        authorRole.textContent = authorRoleField.textContent.trim();
-        profileTextWrapper.append(authorRole);
-      }
-
-      profileWrapper.append(profileTextWrapper);
+    if (authorDetailsField?.textContent.trim()) {
+      const details = document.createElement('div');
+      details.className = 'quote-author-details';
+      details.textContent = authorDetailsField.textContent.trim();
+      profileWrapper.append(details);
     }
 
     content.append(profileWrapper);
