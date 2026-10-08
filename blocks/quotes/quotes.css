@@ -190,20 +190,21 @@
 
 @media (width <=1024px) and (width > 768px) {
     .quotes blockquote.image {
-        grid-template-columns: 260px 420px;
+        grid-template-columns: 220px 420px;
         justify-content: center;
     }
 
     .quotes blockquote.image .quote-content {
-        width: 340px;
-        margin-top: 40px;
-        margin-right: -120px;
-        padding: 24px 18px 14px 40px;
+        width: 400px;
+        margin-top: 50px;
+        margin-right: -200px;
+        padding: 24px 18px 14px 45px;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 280px;
-        font-size: 18px;
+        max-width: 330px;
+        font-size: 20px;
+        line-height: 1.5;
     }
 
     .quotes blockquote.image .quote-media {
