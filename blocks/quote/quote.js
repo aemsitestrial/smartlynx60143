@@ -10,7 +10,7 @@ export default async function decorate(block) {
   const textColorField = block.children[7]?.firstElementChild;
   const quoteColorField = block.children[8]?.firstElementChild;
   const profileImageField = block.children[9];
-  const imageAltTextField = block.children[10]?.firstElementChild;
+  const imageAltTextField = block.children[10];
   const authorNameField = block.children[11]?.firstElementChild;
   const authorRoleField = block.children[12]?.firstElementChild;
 
@@ -129,7 +129,7 @@ export default async function decorate(block) {
       media.className = 'quote-media';
       media.innerHTML = profileImageField.innerHTML;
       blockquote.append(content, media);
-    } else if (imageAltTextField?.textContent.trim()) {
+    } else if (imageAltTextField?.textContent) {
       const media = document.createElement('div');
       media.className = 'quote-media quote-media-alt';
       media.textContent = imageAltTextField.textContent.trim();
