@@ -6011,10 +6011,6 @@
           {
             "name": "Image Quote",
             "value": "image"
-          },
-          {
-            "name": "Big Quote",
-            "value": "big"
           }
         ]
       },
