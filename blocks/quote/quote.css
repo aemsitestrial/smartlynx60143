@@ -3,7 +3,7 @@
   max-width: 900px;
   padding: 48px;
   background-color: var(--quote-bg, transparent);
-  color: var(--quote-text, inherit);
+  color: inherit;
   border-radius: 16px;
   box-sizing: border-box;
 }
@@ -21,12 +21,6 @@
 
 .quote blockquote .quote-title {
   margin-bottom: 16px;
-  line-height: 1.6;
-}
-
-.quote blockquote .quote-description {
-  margin-top: 16px;
-  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -50,28 +44,11 @@
   color: var(--quote-color, inherit);
 }
 
-.quote blockquote .quote-attribution {
-  margin-top: 24px;
-  text-align: left;
-}
-
-.quote blockquote .quote-attribution p:first-child::before {
-  content: "— ";
-}
-
 .quote blockquote.centered {
   text-align: center;
 }
 
-.quote blockquote.centered .quote-attribution {
-  text-align: center;
-}
-
 .quote blockquote.right {
-  text-align: right;
-}
-
-.quote blockquote.right .quote-attribution {
   text-align: right;
 }
 
@@ -100,7 +77,7 @@
 .quote .quote-profile-text {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: var(--quote-text, inherit);
+  color: inherit;
 }
 
 .quote .quote-media {
@@ -188,17 +165,6 @@
   font-size: 42px;
   font-weight: 700;
   line-height: 1;
-}
-
-.quote blockquote.image .quote-attribution {
-  margin-top: 24px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #111;
-}
-
-.quote blockquote.image .quote-attribution p:first-child::before {
-  content: '';
 }
 
 .quote blockquote.image .quote-profile {

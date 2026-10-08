@@ -3,15 +3,12 @@ export default async function decorate(block) {
   const eyebrowField = block.children[0]?.firstElementChild;
   const title = block.children[1]?.firstElementChild;
   const quotation = block.children[2]?.firstElementChild;
-  const attribution = block.children[3]?.firstElementChild;
-  const description = block.children[4]?.firstElementChild;
-  const layoutField = block.children[5]?.firstElementChild;
-  const backgroundField = block.children[6]?.firstElementChild;
-  const textColorField = block.children[7]?.firstElementChild;
-  const quoteColorField = block.children[8]?.firstElementChild;
-  const profileImageField = block.children[9];
-  const imageAltTextField = block.children[10];
-  const authorDetailsField = block.children[11]?.firstElementChild;
+  const layoutField = block.children[3]?.firstElementChild;
+  const backgroundField = block.children[4]?.firstElementChild;
+  const quoteColorField = block.children[5]?.firstElementChild;
+  const profileImageField = block.children[6];
+  const imageAltTextField = block.children[7];
+  const authorDetailsField = block.children[8]?.firstElementChild;
 
   const quotationText = quotation?.textContent.trim() || '';
 
@@ -66,16 +63,6 @@ export default async function decorate(block) {
   if (quotation && !COLOR_VALUE_PATTERN.test(quotationText)) {
     quotation.className = 'quote-quotation';
     content.append(quotation);
-  }
-
-  if (attribution) {
-    attribution.className = 'quote-attribution';
-    content.append(attribution);
-  }
-
-  if (description?.textContent.trim()) {
-    description.className = 'quote-description';
-    content.append(description);
   }
 
   const hasImage = profileImageField?.innerHTML?.trim();
@@ -133,14 +120,6 @@ export default async function decorate(block) {
 
   if (bgColor) {
     blockquote.style.setProperty('--quote-bg', bgColor);
-  }
-
-  const textColor = colors[
-    textColorField?.textContent.trim().toLowerCase()
-  ];
-
-  if (textColor) {
-    blockquote.style.setProperty('--quote-text', textColor);
   }
 
   const quoteColor = colors[

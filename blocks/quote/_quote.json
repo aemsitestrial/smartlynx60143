@@ -42,20 +42,6 @@
           "label": "Quotation"
         },
         {
-          "component": "richtext",
-          "name": "attribution",
-          "value": "",
-          "label": "Attribution",
-          "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "description",
-          "value": "",
-          "label": "Description"
-        },
-        {
           "component": "select",
           "name": "layout",
           "label": "Layout",
@@ -94,47 +80,6 @@
           "label": "Background Color",
           "valueType": "string",
           "value": "white",
-          "options": [
-            {
-              "name": "Dark Navy",
-              "value": "dark-navy"
-            },
-            {
-              "name": "Royal Blue",
-              "value": "royal-blue"
-            },
-            {
-              "name": "Light Grey",
-              "value": "light-grey"
-            },
-            {
-              "name": "White",
-              "value": "white"
-            },
-            {
-              "name": "Black",
-              "value": "black"
-            },
-            {
-              "name": "Off White",
-              "value": "off-white"
-            },
-            {
-              "name": "Dark Grey",
-              "value": "dark-grey"
-            },
-            {
-              "name": "Light Blue",
-              "value": "light-blue"
-            }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "textColor",
-          "label": "Text Color",
-          "valueType": "string",
-          "value": "black",
           "options": [
             {
               "name": "Dark Navy",
