@@ -6186,7 +6186,7 @@
         "value": ""
       },
       {
-        "component": "textarea",
+        "component": "richtext",
         "name": "authorDetails",
         "label": "Author Details",
         "valueType": "string",

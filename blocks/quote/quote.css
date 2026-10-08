@@ -148,7 +148,7 @@
 .quote blockquote.image .quote-content {
   background: #fff;
   width: 380px;
-  padding: 40px 40px 36px 52px;
+  padding: 44px 40px 40px 64px;
   position: relative;
   z-index: 2;
   box-shadow: 0 2px 8px rgb(0 0 0 / 3%);
@@ -156,10 +156,10 @@
 
 .quote blockquote.image .quote-quotation {
   position: relative;
-  max-width: 320px;
-  margin-left: 8px;
-  font-size: 1.1rem;
-  line-height: 1.38;
+  max-width: 270px;
+  margin-left: 0;
+  font-size: 22px;
+  line-height: 1.45;
   color: #111;
 }
 
@@ -171,7 +171,7 @@
 .quote blockquote.image .quote-quotation p:first-child::before {
   content: "“";
   position: absolute;
-  left: -24px;
+  left: -48px;
   top: -2px;
   color: var(--quote-color, #4273ff);
   font-size: 42px;
@@ -182,8 +182,8 @@
 .quote blockquote.image .quote-quotation p:last-child::after {
   content: "”";
   position: absolute;
-  right: -8px;
-  bottom: -42px;
+  right: 0;
+  bottom: -55px;
   color: var(--quote-color, #4273ff);
   font-size: 42px;
   font-weight: 700;
@@ -192,8 +192,8 @@
 
 .quote blockquote.image .quote-attribution {
   margin-top: 24px;
-  font-size: 0.98rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   color: #111;
 }
 
@@ -203,17 +203,11 @@
 
 .quote blockquote.image .quote-profile {
   display: block;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .quote blockquote.image .quote-author-image {
   display: none;
-}
-
-.quote blockquote.image .quote-profile-text {
-  color: #9a9a9a;
-  font-size: 0.82rem;
-  line-height: 1.35;
 }
 
 .quote blockquote.image .quote-media {
@@ -240,7 +234,7 @@
   }
 
   .quote blockquote.image .quote-content {
-    margin-top: 90px;
+    margin-top: 70px;
     margin-right: -220px;
   }
 
@@ -294,135 +288,9 @@
   }
 }
 
-.quote blockquote.centered .quote-profile {
-  justify-content: center;
-}
-
-.quote blockquote.right .quote-profile {
-  justify-content: flex-end;
-}
-
-
-/* Big Quote Layout */
-.quote blockquote.big {
-  max-width: 1200px;
-  padding: 64px 80px;
-  background-color: var(--quote-bg, transparent);
-  border-radius: 16px;
-  box-sizing: border-box;
-}
-
-.quote blockquote.big .quote-content {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Big opening quote */
-.quote blockquote.big .quote-content::before {
-  content: "❝";
-  display: block;
-  font-size: 96px;
-  line-height: 0.8;
-  margin-bottom: 32px;
-  color: var(--quote-color, rgb(70 115 219 / 100%));
-}
-
-/* Hide default small quotes */
-.quote blockquote.big .quote-quotation p:first-child::before,
-.quote blockquote.big .quote-quotation p:last-child::after {
-  content: none;
-}
-
-/* Big closing quote */
-.quote blockquote.big .quote-quotation::after {
-  content: "❞";
-  display: block;
-  font-size: 96px;
-  line-height: 0.8;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: right;
-  color: var(--quote-color, rgb(70 115 219 / 100%));
-}
-
-.quote blockquote.big .quote-quotation {
-  max-width: 1200px;
-  font-size: 28px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: var(--quote-color, rgb(70 115 219 / 100%));
-}
-
-.quote blockquote.big .quote-attribution {
-  max-width: 1200px;
-  margin-top: 0;
-  padding-top: 8px;
-  border-top: 1px solid rgb(0 0 0 / 10%);
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--quote-text, #0c0c0d);
-}
-
-@media (width <=768px) {
-  .quote blockquote.big {
-    padding: 24px;
-  }
-
-  .quote blockquote.big .quote-content::before {
-    font-size: 56px;
-    margin-bottom: 16px;
-  }
-
-  .quote blockquote.big .quote-quotation {
-    font-size: 22px;
-    line-height: 1.4;
-  }
-
-  .quote blockquote.big .quote-attribution {
-    font-size: 16px;
-  }
-}
-
-.quote .quote-eyebrow {
-  margin-bottom: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--quote-text, inherit);
-}
-
-.quote .quote-author-name {
+.quote-author-details {
+  margin-top: 60px;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #111;
-}
-
-.quote .quote-author-role {
-  margin-top: 2px;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.3;
-  color: #9a9a9a;
-}
-
-.quote .quote-media-alt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  background: #f5f5f5;
-  color: #5a5a5a;
-  font-size: 18px;
-  text-align: center;
-  padding: 24px;
-}
-
-.quote .quote-author-details {
-  font-size: 16px;
-  font-weight: 400;
   line-height: 1.5;
   color: #111;
   white-space: pre-line;
