@@ -30,6 +30,13 @@
         {
           "component": "richtext",
           "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
           "name": "quotation",
           "value": "",
           "label": "Quotation"
@@ -40,13 +47,6 @@
           "value": "",
           "label": "Attribution",
           "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "title",
-          "value": "",
-          "label": "Title"
         },
         {
           "component": "richtext",

@@ -1,9 +1,9 @@
 const COLOR_VALUE_PATTERN = /^#(?:[\da-f]{3}|[\da-f]{6}|[\da-f]{8})$/i;
 export default async function decorate(block) {
   const eyebrowField = block.children[0]?.firstElementChild;
-  const quotation = block.children[1]?.firstElementChild;
-  const attribution = block.children[2]?.firstElementChild;
-  const title = block.children[3]?.firstElementChild;
+  const title = block.children[1]?.firstElementChild;
+  const quotation = block.children[2]?.firstElementChild;
+  const attribution = block.children[3]?.firstElementChild;
   const description = block.children[4]?.firstElementChild;
   const layoutField = block.children[5]?.firstElementChild;
   const backgroundField = block.children[6]?.firstElementChild;
