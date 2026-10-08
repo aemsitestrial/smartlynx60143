@@ -190,19 +190,20 @@
 
 @media (width <=1024px) and (width > 768px) {
     .quotes blockquote.image {
-        grid-template-columns: 320px 420px;
+        grid-template-columns: 260px 420px;
         justify-content: center;
     }
 
     .quotes blockquote.image .quote-content {
-        width: 380px;
+        width: 340px;
         margin-top: 40px;
-        margin-right: -150px;
-        padding: 32px 24px;
+        margin-right: -120px;
+        padding: 24px 18px 14px 40px;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 220px;
+        max-width: 280px;
+        font-size: 18px;
     }
 
     .quotes blockquote.image .quote-media {
@@ -219,16 +220,24 @@
 
     .quotes blockquote.image .quote-content {
         width: auto;
-        margin: -60px 20px 0;
-        padding: 28px 24px;
-    }
-
-    .quotes blockquote.image .quote-media {
-        width: 100%;
-        max-width: none;
+        margin: -60px 16px 0;
+        padding: 24px 16px 20px 36px;
     }
 
     .quotes blockquote.image .quote-quotation {
         max-width: none;
+        font-size: 18px;
+    }
+
+    .quotes blockquote.image .quote-quotation p:first-child::before {
+        left: -24px;
+        top: -4px;
+        font-size: 40px;
+    }
+
+    .quotes blockquote.image .quote-quotation p:last-child::after {
+        right: 0;
+        bottom: -45px;
+        font-size: 40px;
     }
 }
