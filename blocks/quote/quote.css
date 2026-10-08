@@ -95,7 +95,7 @@
 
 .quote blockquote.image .quote-content {
   background: #fff;
-  width: 400px;
+  width: 550px;
   padding: 44px 40px 40px 64px;
   position: relative;
   z-index: 2;
@@ -112,7 +112,7 @@
 }
 
 .quote-author-details {
-  margin-top: 60px;
+  margin-top: 32px;
   font-size: 16px;
   line-height: 1.5;
   color: #111;
@@ -183,7 +183,7 @@
 
   .quote blockquote.image .quote-content {
     margin-top: 70px;
-    margin-right: -320px;
+    margin-right: -260px;
   }
 
   .quote blockquote.image .quote-media {
