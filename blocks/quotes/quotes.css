@@ -248,3 +248,23 @@
         font-size: 40px;
     }
 }
+
+@media (width >=900px) {
+    .quotes blockquote.image-left {
+        grid-template-columns: 480px 240px;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .quotes blockquote.image-left .quote-content {
+        order: 2;
+        margin-top: 70px;
+        margin-left: -340px;
+        margin-right: 0;
+    }
+
+    .quotes blockquote.image-left .quote-media {
+        order: 1;
+        justify-self: end;
+    }
+}

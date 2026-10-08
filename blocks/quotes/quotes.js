@@ -4,7 +4,7 @@ export default async function decorate(block) {
   const eyebrowField = block.children[0]?.firstElementChild;
   const title = block.children[1]?.firstElementChild;
   const quotation = block.children[2]?.firstElementChild;
-  /* const layoutField = block.children[3]?.firstElementChild; */
+  const layoutField = block.children[3]?.firstElementChild;
   const backgroundField = block.children[4]?.firstElementChild;
   const profileImageField = block.children[5];
   const imageAltTextField = block.children[6];
@@ -24,8 +24,9 @@ export default async function decorate(block) {
   const content = document.createElement('div');
   content.className = 'quote-content';
 
-  blockquote.classList.add('image');
+  const layout = layoutField?.textContent.trim() || 'image';
 
+  blockquote.classList.add(layout);
   if (eyebrowField?.textContent.trim()) {
     const eyebrow = document.createElement('p');
     eyebrow.className = 'quote-eyebrow';
