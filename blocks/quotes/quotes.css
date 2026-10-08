@@ -92,8 +92,8 @@
 
 .quotes blockquote.image .quote-content {
     background-color: var(--quote-bg, #fff);
-    width: 380px;
-    padding: 26px 18px 14px 26px;
+    width: 360px;
+    padding: 26px 18px 14px 55px;
     position: relative;
     z-index: 2;
 }
