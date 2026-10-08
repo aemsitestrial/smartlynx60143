@@ -41,13 +41,8 @@
   content: "”";
 }
 
-.quote blockquote.centered {
-  text-align: center;
-}
 
-.quote blockquote.right {
-  text-align: right;
-}
+
 
 .quote .quote-author-image {
   margin-top: 24px;
@@ -87,27 +82,6 @@
   width: 100%;
   height: auto;
   display: block;
-}
-
-.quote blockquote.profile {
-  max-width: 720px;
-}
-
-.quote blockquote.profile .quote-quotation {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-.quote blockquote.profile .quote-profile {
-  max-width: 360px;
-}
-
-.quote blockquote.profile .quote-author-image picture,
-.quote blockquote.profile .quote-author-image img {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  max-width: 40px;
 }
 
 .quote blockquote.image {
@@ -158,7 +132,7 @@
   position: absolute;
   right: 0;
   bottom: -55px;
-  color: var(--quote-color, #4273ff);
+  color: #4273ff;
   font-size: 42px;
   font-weight: 700;
   line-height: 1;

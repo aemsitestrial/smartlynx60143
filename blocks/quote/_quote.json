@@ -46,24 +46,8 @@
           "name": "layout",
           "label": "Layout",
           "valueType": "string",
-          "value": "default",
+          "value": "image",
           "options": [
-            {
-              "name": "Default",
-              "value": "default"
-            },
-            {
-              "name": "Centered Quote",
-              "value": "centered"
-            },
-            {
-              "name": "Right Quote",
-              "value": "right"
-            },
-            {
-              "name": "Profile Quote",
-              "value": "profile"
-            },
             {
               "name": "Image Quote",
               "value": "image"

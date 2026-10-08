@@ -26,21 +26,15 @@ export default async function decorate(block) {
   const content = document.createElement('div');
   content.className = 'quote-content';
 
-  let layout = 'default';
+  let layout = 'image';
 
   if (layoutField) {
     const value = layoutField.textContent.trim().toLowerCase();
 
-    if (value.includes('profile')) {
-      layout = 'profile';
-    } else if (value.includes('image')) {
-      layout = 'image';
-    } else if (value.includes('big')) {
+    if (value.includes('big')) {
       layout = 'big';
-    } else if (value.includes('center')) {
-      layout = 'centered';
-    } else if (value.includes('right')) {
-      layout = 'right';
+    } else {
+      layout = 'image';
     }
   }
 
