@@ -95,7 +95,7 @@
 
 .quote blockquote.image .quote-content {
   background: #fff;
-  width: 450px;
+  width: 400px;
   padding: 44px 40px 40px 64px;
   position: relative;
   z-index: 2;
@@ -109,6 +109,17 @@
   font-size: 22px;
   line-height: 1.45;
   color: #111;
+}
+
+.quote-author-details {
+  margin-top: 60px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+}
+
+.quote-author-details p {
+  margin: 0;
 }
 
 .quote blockquote.image .quote-quotation p {
@@ -172,7 +183,7 @@
 
   .quote blockquote.image .quote-content {
     margin-top: 70px;
-    margin-right: -180px;
+    margin-right: -320px;
   }
 
   .quote blockquote.image .quote-media {
@@ -223,12 +234,4 @@
   .quote blockquote.image .quote-quotation {
     max-width: none;
   }
-}
-
-.quote-author-details {
-  margin-top: 60px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #111;
-  white-space: pre-line;
 }

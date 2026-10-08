@@ -62,7 +62,7 @@ export default async function decorate(block) {
     if (authorDetailsField?.textContent.trim()) {
       const details = document.createElement('div');
       details.className = 'quote-author-details';
-      details.textContent = authorDetailsField.textContent.trim();
+      details.innerHTML = authorDetailsField.innerHTML;
       profileWrapper.append(details);
     }
 
