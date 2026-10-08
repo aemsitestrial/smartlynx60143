@@ -5981,6 +5981,13 @@
     "id": "quote",
     "fields": [
       {
+        "component": "text",
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "valueType": "string",
+        "value": ""
+      },
+      {
         "component": "richtext",
         "valueType": "string",
         "name": "quotation",
@@ -5993,13 +6000,6 @@
         "value": "",
         "label": "Attribution",
         "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "eyebrow",
-        "label": "Eyebrow",
-        "valueType": "string",
-        "value": ""
       },
       {
         "component": "richtext",
