@@ -93,26 +93,19 @@
   overflow: visible;
 }
 
-.quote blockquote.image .quote-content {
-  background: #fff;
-  width: 550px;
-  padding: 44px 40px 40px 64px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 3%);
-}
+
 
 .quote blockquote.image .quote-quotation {
   position: relative;
-  max-width: 340px;
-  margin-left: -20px;
+  max-width: 320px;
+  margin-left: 0;
   font-size: 22px;
   line-height: 1.45;
   color: #111;
 }
 
 .quote-author-details {
-  margin-top: 32px;
+  margin-top: 24px;
   font-size: 16px;
   line-height: 1.5;
   color: #111;
@@ -130,10 +123,10 @@
 .quote blockquote.image .quote-quotation p:first-child::before {
   content: "“";
   position: absolute;
-  left: -40px;
-  top: -2px;
+  left: -38px;
+  top: -8px;
   color: #4273ff;
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1;
 }
@@ -141,10 +134,10 @@
 .quote blockquote.image .quote-quotation p:last-child::after {
   content: "”";
   position: absolute;
-  right: 0;
+  right: 8px;
   bottom: -55px;
   color: #4273ff;
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1;
 }
@@ -183,7 +176,7 @@
 
   .quote blockquote.image .quote-content {
     margin-top: 70px;
-    margin-right: -260px;
+    margin-right: -230px;
   }
 
   .quote blockquote.image .quote-media {
@@ -205,7 +198,7 @@
   }
 
   .quote blockquote.image .quote-quotation {
-    max-width: 260px;
+    max-width: 220px;
   }
 
   .quote blockquote.image .quote-media {
