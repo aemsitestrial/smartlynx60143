@@ -176,7 +176,7 @@
         grid-template-columns: 240px 480px;
         justify-content: center;
         padding: 60px 20px;
-    }   
+    }
 
     .quotes blockquote.image .quote-content {
         margin-top: 100px;
@@ -225,10 +225,11 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width: calc(100% - 16px);
+        width:100%;
         margin: -50px 8px 0;
         padding: 20px;
         box-sizing: border-box;
+        max-width: none;
     }
 
     .quotes blockquote.image .quote-media {
