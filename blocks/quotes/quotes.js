@@ -75,7 +75,7 @@ export default async function decorate(block) {
 
     const altText = imageAltTextField?.textContent?.trim();
 
-    media.textContent = altText || 'No Image Available';
+    media.textContent = altText || '';
   }
 
   blockquote.append(content, media);
