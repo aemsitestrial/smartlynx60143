@@ -51,10 +51,6 @@
                         {
                             "name": "Default",
                             "value": "image"
-                        },
-                        {
-                            "name": "Image Left",
-                            "value": "image-left"
                         }
                     ]
                 },
