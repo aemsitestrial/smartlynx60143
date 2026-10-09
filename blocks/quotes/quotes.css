@@ -171,6 +171,12 @@
     object-position: 25% top;
 }
 
+@media (width <=820px) and (width >=768px) {
+    .quotes blockquote.image .quote-content {
+        margin: -160px 16px 0;
+    }
+}
+
 @media (width >=900px) {
     .quotes blockquote.image {
         grid-template-columns: 240px 480px;
@@ -178,9 +184,10 @@
         padding: 60px 20px;
     }
 
-    .quotes blockquote.image .quote-content {
-        margin-top: 70px;
-        margin-right: -340px;
+    .quotes blockquote.image .quote-content{
+        align-self: center;
+        margin-top: -70px;
+        margin-right: -180px;
     }
 
     .quotes blockquote.image .quote-media {
@@ -226,7 +233,7 @@
 
     .quotes blockquote.image .quote-content {
         width: calc(100% - 32px);
-        margin: -50px 16px 0;
+        margin: -120px 16px 0;
         padding: 24px 20px 24px 36px;
         box-sizing: border-box;
     }
