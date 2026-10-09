@@ -4,10 +4,8 @@ export default async function decorate(block) {
   const eyebrowField = block.children[0]?.firstElementChild;
   const title = block.children[1]?.firstElementChild;
   const quotation = block.children[2]?.firstElementChild;
-  /* const layoutField = block.children[3]?.firstElementChild; */
   const backgroundField = block.children[4]?.firstElementChild;
   const profileImageField = block.children[5];
-  console.log('IMAGE ALT FIELD', block.children[6]);
   const imageAltTextField = block.children[6];
   const authorDetailsField = block.children[7]?.firstElementChild;
 
@@ -23,14 +21,14 @@ export default async function decorate(block) {
 
   const blockquote = document.createElement('blockquote');
   const content = document.createElement('div');
-  content.className = 'quote-content';
 
+  content.className = 'quote-content';
   blockquote.classList.add('image');
+
   if (eyebrowField?.textContent.trim()) {
     const eyebrow = document.createElement('p');
     eyebrow.className = 'quote-eyebrow';
     eyebrow.textContent = eyebrowField.textContent.trim();
-
     content.append(eyebrow);
   }
 
@@ -44,10 +42,7 @@ export default async function decorate(block) {
     content.append(quotation);
   }
 
-  const hasImage = profileImageField?.innerHTML?.trim();
-
-  console.log('HAS IMAGE:', hasImage);
-  console.log('ALT TEXT:', imageAltTextField?.textContent);
+  const hasImage = profileImageField?.querySelector('img');
 
   if (hasImage || authorDetailsField?.textContent.trim()) {
     const profileWrapper = document.createElement('div');
@@ -70,19 +65,20 @@ export default async function decorate(block) {
     content.append(profileWrapper);
   }
 
+  const media = document.createElement('div');
+
   if (hasImage) {
-    const media = document.createElement('div');
     media.className = 'quote-media';
     media.innerHTML = profileImageField.innerHTML;
-
-    blockquote.append(content, media);
   } else {
-    const media = document.createElement('div');
     media.className = 'quote-media quote-media-alt';
-    media.textContent = imageAltTextField?.textContent?.trim() || 'No Image Available';
 
-    blockquote.append(content, media);
+    const altText = imageAltTextField?.textContent?.trim();
+
+    media.textContent = altText || 'No Image Available';
   }
+
+  blockquote.append(content, media);
 
   const ems = blockquote.querySelectorAll('em');
 
@@ -99,7 +95,7 @@ export default async function decorate(block) {
   if (bgColor) {
     blockquote.style.setProperty('--quote-bg', bgColor);
   }
-  console.log(blockquote.outerHTML);
+
   block.innerHTML = '';
   block.append(blockquote);
 }
