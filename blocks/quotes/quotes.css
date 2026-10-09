@@ -262,5 +262,8 @@
     text-align: center;
     font-size: 18px;
     color: #555;
-    overflow: hidden;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
