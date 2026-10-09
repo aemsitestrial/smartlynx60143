@@ -7,6 +7,7 @@ export default async function decorate(block) {
   /* const layoutField = block.children[3]?.firstElementChild; */
   const backgroundField = block.children[4]?.firstElementChild;
   const profileImageField = block.children[5];
+  console.log('IMAGE ALT FIELD', block.children[6]);
   const imageAltTextField = block.children[6];
   const authorDetailsField = block.children[7]?.firstElementChild;
 
@@ -44,6 +45,9 @@ export default async function decorate(block) {
   }
 
   const hasImage = profileImageField?.innerHTML?.trim();
+
+  console.log('HAS IMAGE:', hasImage);
+  console.log('ALT TEXT:', imageAltTextField?.textContent);
 
   if (hasImage || authorDetailsField?.textContent.trim()) {
     const profileWrapper = document.createElement('div');
@@ -95,7 +99,7 @@ export default async function decorate(block) {
   if (bgColor) {
     blockquote.style.setProperty('--quote-bg', bgColor);
   }
-
+  console.log(blockquote.outerHTML);
   block.innerHTML = '';
   block.append(blockquote);
 }
