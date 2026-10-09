@@ -244,7 +244,7 @@
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -20px;
+        left: -18px;
         top: -4px;
         font-size: 40px;
     }
