@@ -87,7 +87,11 @@ export default async function decorate(block) {
     media.textContent = imageAltTextField.textContent.trim();
     blockquote.append(content, media);
   } else {
-    blockquote.append(content);
+    const media = document.createElement('div');
+    media.className = 'quote-media quote-media-alt';
+    media.textContent = 'IMAGE ALT TEXT TEST';
+
+    blockquote.append(content, media);
   }
 
   const ems = blockquote.querySelectorAll('em');
