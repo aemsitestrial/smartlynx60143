@@ -226,8 +226,8 @@
 
     .quotes blockquote.image .quote-content {
         width: calc(100% - 16px);
-        margin: -50px 16px 0;
-        padding: 24px 20px 24px 36px;
+        margin: -50px 8px 0;
+        padding: 20px;
         box-sizing: border-box;
     }
 
@@ -243,7 +243,7 @@
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -24px;
+        left: -12px;
         top: -4px;
         font-size: 40px;
     }
