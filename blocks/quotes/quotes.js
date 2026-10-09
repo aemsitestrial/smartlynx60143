@@ -70,8 +70,18 @@ export default async function decorate(block) {
     const media = document.createElement('div');
     media.className = 'quote-media';
     media.innerHTML = profileImageField.innerHTML;
+
+    const img = media.querySelector('img');
+
+    if (img && imageAltTextField?.textContent?.trim()) {
+      img.onerror = () => {
+        media.className = 'quote-media quote-media-alt';
+        media.textContent = imageAltTextField.textContent.trim();
+      };
+    }
+
     blockquote.append(content, media);
-  } else if (imageAltTextField?.textContent) {
+  } else if (imageAltTextField?.textContent?.trim()) {
     const media = document.createElement('div');
     media.className = 'quote-media quote-media-alt';
     media.textContent = imageAltTextField.textContent.trim();
