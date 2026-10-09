@@ -210,6 +210,12 @@
         width: 420px;
         max-width: 420px;
     }
+
+    .quotes blockquote.image .quote-quotation p:first-child::before {
+        left: -24px;
+        top: -8px;
+        font-size: 50px;
+    }
 }
 
 @media (width <=768px) {
