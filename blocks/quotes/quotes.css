@@ -148,7 +148,7 @@
 
 .quotes blockquote.image .quote-profile {
     display: block;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .quotes blockquote.image .quote-author-image {
@@ -227,7 +227,7 @@
     .quotes blockquote.image .quote-content {
         width:100%;
         margin: -50px 8px 0;
-        padding: 20px;
+        padding: 12px 16px;
         box-sizing: border-box;
         max-width: none;
     }
@@ -239,7 +239,7 @@
 
     .quotes blockquote.image .quote-quotation {
         max-width: 100%;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.5;
     }
 
@@ -251,8 +251,8 @@
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: 4px;
-        bottom: -40px;
-        font-size: 40px;
+        bottom: -20px;
+        font-size: 32px;
     }
 }
 
