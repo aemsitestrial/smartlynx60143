@@ -250,10 +250,10 @@
 }
 
 
-.quotes .quote-media-alt {
+.quotes .quote-media.quote-media-alt {
     width: 480px;
     max-width: 480px;
-    min-height: 500px;
+    aspect-ratio: 0.62;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,4 +262,5 @@
     text-align: center;
     font-size: 18px;
     color: #555;
+    overflow: hidden;
 }
