@@ -241,11 +241,11 @@
         max-width: 100%;
         font-size: 16px;
         line-height: 1.5;
-        padding-left: 10px;
+        padding-left: 0;
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: 0;
+        left: -8px;
         top: -4px;
         font-size: 40px;
     }
