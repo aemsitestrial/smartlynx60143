@@ -225,7 +225,7 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width:100%;
+        width: calc(100% - 8px);
         margin: -50px 8px 0;
         padding: 12px 20px;
         box-sizing: border-box;
