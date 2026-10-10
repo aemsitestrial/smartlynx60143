@@ -148,7 +148,7 @@
 
 .quotes blockquote.image .quote-profile {
     display: block;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 .quotes blockquote.image .quote-author-image {
@@ -225,7 +225,7 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width:100%;
+        width:calc(100% - 4px);
         margin: -50px 8px 0;
         padding: 12px 20px;
         box-sizing: border-box;
@@ -239,8 +239,8 @@
 
     .quotes blockquote.image .quote-quotation {
         max-width: 100%;
-        font-size: 16px;
-        line-height: 1.5;
+        font-size: 15px;
+        line-height: 1.4;
         padding-left: 0;
     }
 
