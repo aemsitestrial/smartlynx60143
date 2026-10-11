@@ -188,7 +188,7 @@
     }
 }
 
-@media (width <=1024px) and (width > 768px) {
+@media (width <=1024px) and (width >=768px) {
     .quotes blockquote.image {
         grid-template-columns: 260px 420px;
         justify-content: center;
@@ -224,7 +224,7 @@
     }
 }
 
-@media (width <=768px) {
+@media (width < 768px) {
     .quotes blockquote.image {
         display: flex;
         flex-direction: column-reverse;
