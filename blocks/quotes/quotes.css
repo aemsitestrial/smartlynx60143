@@ -216,6 +216,12 @@
         top: -8px;
         font-size: 50px;
     }
+
+    .quotes blockquote.image .quote-quotation p:last-child::after {
+        right: 8px;
+        bottom: -35px;
+        font-size: 50px;
+    }
 }
 
 @media (width <=768px) {
@@ -225,7 +231,7 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width:calc(100% - 26px);
+        width: calc(100% - 26px);
         margin: -50px 8px 0;
         padding: 12px 20px;
         box-sizing: border-box;
