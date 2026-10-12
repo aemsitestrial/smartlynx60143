@@ -31,7 +31,7 @@
     line-height: 1.4;
 }
 
-.quotes blockquote .quote-quotation > :first-child {
+.quotes blockquote .quote-quotation> :first-child {
     text-indent: -0.5ch;
 }
 
@@ -139,25 +139,23 @@
 .quotes blockquote.image .quote-quotation p:first-child::before {
     content: "“";
     position: absolute;
-    left: -30px;
-    top: -6px;
+    left: -42px;
+    top: -8px;
     color: var(--color-brand-500);
-    font-size: 34px;
-    font-weight: var(--font-weight-bold);
+    font-size: 60px;
+    font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.22em;
 }
 
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: 4px;
-    bottom: -28px;
+    right: -8px;
+    bottom: -70px;
     color: var(--color-brand-500);
-    font-size: 34px;
-    font-weight: var(--font-weight-bold);
+    font-size: 60px;
+    font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.22em;
 }
 
 .quotes blockquote.image .quote-profile {
