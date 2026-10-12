@@ -219,7 +219,7 @@
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: 8px;
-        bottom: -35px;
+        bottom: -20px;
         font-size: 50px;
     }
 }
