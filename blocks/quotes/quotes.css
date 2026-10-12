@@ -1,3 +1,87 @@
+.quotes blockquote {
+    margin: 0 auto !important;
+    max-width: 900px !important;
+    padding: 48px !important;
+    background-color: var(--quote-bg, transparent) !important;
+    color: inherit !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+}
+
+.quotes .quote-content {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+@media (width >=900px) {
+    .quotes blockquote {
+        padding: 48px !important;
+    }
+}
+
+.quotes blockquote .quote-title {
+    margin-bottom: 16px !important;
+    line-height: 1.6 !important;
+    overflow-wrap: anywhere !important;
+}
+
+.quotes blockquote .quote-quotation {
+    font-size: 190% !important;
+    line-height: 1.4 !important;
+}
+
+.quotes blockquote .quote-quotation> :first-child {
+    text-indent: -0.5ch !important;
+}
+
+.quotes blockquote .quote-quotation p:first-child::before {
+    content: "“";
+}
+
+.quotes blockquote .quote-quotation p:last-child::after {
+    content: "”";
+}
+
+.quotes .quote-author-image {
+    margin-top: 24px !important;
+}
+
+.quotes .quote-author-image picture,
+.quotes .quote-author-image img {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.quotes .quote-profile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+}
+
+.quotes .quote-profile-text {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    color: inherit !important;
+}
+
+.quotes .quote-media {
+    width: min(100%, 640px) !important;
+    justify-self: center !important;
+}
+
+.quotes .quote-media picture,
+.quotes .quote-media img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
 .quotes blockquote.image {
     max-width: 1120px !important;
     display: grid !important;
@@ -180,6 +264,24 @@
     }
 }
 
+/* .quotes .quote-media.quote-media-alt {
+    width: 220px;
+    height: 330px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 120px;
+    background: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    overflow: hidden;
+} */
 .quotes .quote-media-alt {
     width: 480px !important;
     max-width: 480px !important;
