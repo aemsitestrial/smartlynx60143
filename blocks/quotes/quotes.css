@@ -94,33 +94,39 @@
 
 .quotes blockquote.image .quote-content {
     background-color: var(--quote-bg, var(--surface-color));
-    width: 360px;
-    padding: 26px var(--spacing-m) 14px 55px;
+    width: 380px;
+    padding: 28px var(--spacing-l) 18px 56px;
     position: relative;
     z-index: 2;
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
 }
 
 .quotes blockquote.image .quote-quotation {
     position: relative;
-    max-width: 340px;
+    max-width: 300px;
     margin-left: 0;
-    font-size: clamp(1.125rem, 1rem + 0.35vw, 1.25rem);
+    margin-bottom: var(--spacing-xl);
+    font-size: clamp(1.375rem, 1.1rem + 0.5vw, 1.875rem);
     font-weight: var(--font-weight-regular);
-    line-height: 1.5;
+    line-height: 1.38;
     color: var(--heading-color);
 }
 
 .quotes .quote-author-details {
-    margin-top: var(--spacing-xs);
-    font-size: var(--body-font-size-m);
-    line-height: 1.4;
+    margin-top: 0;
+    font-size: 1.05rem;
+    line-height: 1.35;
     color: var(--heading-color);
 }
 
 .quotes .quote-author-details p {
     margin: 0;
     color: inherit;
+}
+
+.quotes .quote-author-details p:first-child {
+    margin-bottom: var(--spacing-xxs);
+    font-weight: var(--font-weight-medium);
 }
 
 .quotes blockquote.image .quote-quotation p {
@@ -132,10 +138,10 @@
 .quotes blockquote.image .quote-quotation p:first-child::before {
     content: "“";
     position: absolute;
-    left: -42px;
-    top: -8px;
+    left: -38px;
+    top: -6px;
     color: var(--color-brand-500);
-    font-size: 60px;
+    font-size: 56px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
 }
@@ -143,10 +149,10 @@
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: -8px;
-    bottom: -70px;
+    right: -2px;
+    bottom: -56px;
     color: var(--color-brand-500);
-    font-size: 60px;
+    font-size: 56px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
 }
@@ -185,8 +191,8 @@
     }
 
     .quotes blockquote.image .quote-content {
-        margin-top: 100px;
-        margin-right: -340px;
+        margin-top: 132px;
+        margin-right: -330px;
     }
 
     .quotes blockquote.image .quote-media {
@@ -201,15 +207,15 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width: 360px;
+        width: 350px;
         margin-top: 50px;
         margin-right: -200px;
-        padding: var(--spacing-l) 18px 14px 45px;
+        padding: var(--spacing-l) var(--spacing-m) var(--spacing-m) 44px;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 280px;
-        font-size: var(--body-font-size-m);
+        max-width: 270px;
+        font-size: 1.125rem;
     }
 
     .quotes blockquote.image .quote-media {
@@ -239,7 +245,7 @@
     .quotes blockquote.image .quote-content {
         width: calc(100% - var(--spacing-xs));
         margin: calc(var(--spacing-5xl) * -0.625) var(--spacing-xxs) 0;
-        padding: 20px var(--spacing-l);
+        padding: var(--spacing-l);
         box-sizing: border-box;
         max-width: none;
     }
@@ -251,9 +257,14 @@
 
     .quotes blockquote.image .quote-quotation {
         max-width: 100%;
-        font-size: var(--body-font-size-s);
+        margin-bottom: var(--spacing-l);
+        font-size: 0.95rem;
         line-height: 1.4;
         padding-left: var(--spacing-xs);
+    }
+
+    .quotes .quote-author-details {
+        font-size: var(--body-font-size-s);
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
