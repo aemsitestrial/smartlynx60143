@@ -228,11 +228,12 @@
     .quotes blockquote.image {
         display: flex;
         flex-direction: column-reverse;
+        padding-bottom: 40px;
     }
 
     .quotes blockquote.image .quote-content {
         width: calc(100% - 8px);
-        margin: -50px 4px 0;
+        margin: -30px 4px 0;
         padding: 20px 24px;
         box-sizing: border-box;
         max-width: none;
