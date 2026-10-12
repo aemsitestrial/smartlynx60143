@@ -137,25 +137,27 @@
 }
 
 .quotes blockquote.image .quote-quotation p:first-child::before {
-    content: "“";
+    content: "““";
     position: absolute;
-    left: -34px;
-    top: -4px;
+    left: -30px;
+    top: -6px;
     color: var(--color-brand-500);
-    font-size: 52px;
+    font-size: 34px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
+    letter-spacing: -0.22em;
 }
 
 .quotes blockquote.image .quote-quotation p:last-child::after {
-    content: "”";
+    content: "””";
     position: absolute;
-    right: 0;
-    bottom: -42px;
+    right: 4px;
+    bottom: -28px;
     color: var(--color-brand-500);
-    font-size: 52px;
+    font-size: 34px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
+    letter-spacing: -0.22em;
 }
 
 .quotes blockquote.image .quote-profile {
@@ -225,15 +227,15 @@
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -24px;
-        top: -8px;
-        font-size: 50px;
+        left: -20px;
+        top: -6px;
+        font-size: 30px;
     }
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: 8px;
-        bottom: -25px;
-        font-size: 50px;
+        bottom: -20px;
+        font-size: 30px;
     }
 }
 
@@ -269,15 +271,15 @@
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -14px;
-        top: -4px;
-        font-size: 40px;
+        left: -10px;
+        top: -2px;
+        font-size: 26px;
     }
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: var(--spacing-xs);
-        bottom: -28px;
-        font-size: 32px;
+        bottom: -18px;
+        font-size: 26px;
     }
 }
 
