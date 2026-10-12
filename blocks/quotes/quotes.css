@@ -258,7 +258,7 @@
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: 8px;
-        bottom: -18px;
+        bottom: -28px;
         font-size: 32px;
     }
 }
