@@ -1,10 +1,10 @@
 .quotes blockquote {
     margin: 0 auto;
     max-width: 900px;
-    padding: var(--spacing-3xl);
+    padding: 48px;
     background-color: var(--quote-bg, transparent);
     color: inherit;
-    border-radius: var(--radius-md);
+    border-radius: 16px;
     box-sizing: border-box;
 }
 
@@ -15,12 +15,12 @@
 
 @media (width >=900px) {
     .quotes blockquote {
-        padding: var(--spacing-3xl);
+        padding: 48px;
     }
 }
 
 .quotes blockquote .quote-title {
-    margin-bottom: var(--spacing-m);
+    margin-bottom: 16px;
     line-height: 1.6;
     overflow-wrap: anywhere;
 }
@@ -30,7 +30,7 @@
     line-height: 1.4;
 }
 
-.quotes blockquote .quote-quotation > :first-child {
+.quotes blockquote .quote-quotation> :first-child {
     text-indent: -0.5ch;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .quotes .quote-author-image {
-    margin-top: var(--spacing-l);
+    margin-top: 24px;
 }
 
 .quotes .quote-author-image picture,
@@ -60,12 +60,12 @@
 .quotes .quote-profile {
     display: flex;
     align-items: center;
-    gap: var(--spacing-s);
-    margin-top: var(--spacing-l);
+    gap: 12px;
+    margin-top: 24px;
 }
 
 .quotes .quote-profile-text {
-    font-size: var(--body-font-size-s);
+    font-size: 0.95rem;
     line-height: 1.4;
     color: inherit;
 }
@@ -92,12 +92,11 @@
 }
 
 .quotes blockquote.image .quote-content {
-    background-color: var(--quote-bg, var(--surface-color));
+    background-color: var(--quote-bg, #fff);
     width: 360px;
     padding: 26px 18px 14px 55px;
     position: relative;
     z-index: 2;
-    border-radius: var(--radius-md);
 }
 
 .quotes blockquote.image .quote-quotation {
@@ -107,14 +106,14 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--text-color);
+    color: #111;
 }
 
 .quotes .quote-author-details {
-    margin-top: var(--spacing-xs);
-    font-size: var(--body-font-size-m);
+    margin-top: 6px;
+    font-size: 16px;
     line-height: 1.4;
-    color: var(--text-color);
+    color: #111;
 }
 
 .quotes .quote-author-details p {
@@ -131,7 +130,7 @@
     position: absolute;
     left: -42px;
     top: -8px;
-    color: var(--color-brand-500);
+    color: rgb(70 115 219 / 100%);
     font-size: 60px;
     font-weight: 700;
     line-height: 1;
@@ -142,7 +141,7 @@
     position: absolute;
     right: -8px;
     bottom: -70px;
-    color: var(--color-brand-500);
+    color: rgb(70 115 219 / 100%);
     font-size: 60px;
     font-weight: 700;
     line-height: 1;
@@ -150,7 +149,7 @@
 
 .quotes blockquote.image .quote-profile {
     display: block;
-    margin-top: var(--spacing-xxs);
+    margin-top: 4px;
 }
 
 .quotes blockquote.image .quote-author-image {
@@ -265,12 +264,30 @@
     }
 }
 
+/* .quotes .quote-media.quote-media-alt {
+    width: 220px;
+    height: 330px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 120px;
+    background: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    overflow: hidden;
+} */
 .quotes .quote-media-alt {
     width: 480px;
     max-width: 480px;
     align-self: center;
-    font-size: var(--body-font-size-m);
-    color: var(--text-color-muted);
+    font-size: 16px;
+    color: #666;
     text-align: center;
 }
 
