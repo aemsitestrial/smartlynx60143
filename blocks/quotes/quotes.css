@@ -94,8 +94,8 @@
 
 .quotes blockquote.image .quote-content {
     background-color: var(--quote-bg, var(--surface-color));
-    width: 380px;
-    padding: 28px var(--spacing-l) 18px 56px;
+    width: 420px;
+    padding: 22px 22px 16px 48px;
     position: relative;
     z-index: 2;
     box-shadow: none;
@@ -103,18 +103,18 @@
 
 .quotes blockquote.image .quote-quotation {
     position: relative;
-    max-width: 300px;
+    max-width: 340px;
     margin-left: 0;
-    margin-bottom: var(--spacing-xl);
-    font-size: clamp(1.375rem, 1.1rem + 0.5vw, 1.875rem);
+    margin-bottom: 22px;
+    font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
     font-weight: var(--font-weight-regular);
-    line-height: 1.38;
+    line-height: 1.45;
     color: var(--heading-color);
 }
 
 .quotes .quote-author-details {
     margin-top: 0;
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     line-height: 1.35;
     color: var(--heading-color);
 }
@@ -122,11 +122,12 @@
 .quotes .quote-author-details p {
     margin: 0;
     color: inherit;
+    font-weight: var(--font-weight-regular);
 }
 
 .quotes .quote-author-details p:first-child {
-    margin-bottom: var(--spacing-xxs);
-    font-weight: var(--font-weight-medium);
+    margin-bottom: 2px;
+    font-weight: var(--font-weight-regular);
 }
 
 .quotes blockquote.image .quote-quotation p {
@@ -138,10 +139,10 @@
 .quotes blockquote.image .quote-quotation p:first-child::before {
     content: "“";
     position: absolute;
-    left: -38px;
-    top: -6px;
+    left: -34px;
+    top: -4px;
     color: var(--color-brand-500);
-    font-size: 56px;
+    font-size: 52px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
 }
@@ -149,10 +150,10 @@
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: -2px;
-    bottom: -56px;
+    right: 0;
+    bottom: -42px;
     color: var(--color-brand-500);
-    font-size: 56px;
+    font-size: 52px;
     font-weight: var(--font-weight-bold);
     line-height: 1;
 }
@@ -192,7 +193,7 @@
 
     .quotes blockquote.image .quote-content {
         margin-top: 132px;
-        margin-right: -330px;
+        margin-right: -360px;
     }
 
     .quotes blockquote.image .quote-media {
@@ -207,15 +208,15 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width: 350px;
+        width: 390px;
         margin-top: 50px;
         margin-right: -200px;
-        padding: var(--spacing-l) var(--spacing-m) var(--spacing-m) 44px;
+        padding: 20px 18px 14px 40px;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 270px;
-        font-size: 1.125rem;
+        max-width: 315px;
+        font-size: 1rem;
     }
 
     .quotes blockquote.image .quote-media {
@@ -257,14 +258,14 @@
 
     .quotes blockquote.image .quote-quotation {
         max-width: 100%;
-        margin-bottom: var(--spacing-l);
+        margin-bottom: var(--spacing-m);
         font-size: 0.95rem;
         line-height: 1.4;
         padding-left: var(--spacing-xs);
     }
 
     .quotes .quote-author-details {
-        font-size: var(--body-font-size-s);
+        font-size: 0.92rem;
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
