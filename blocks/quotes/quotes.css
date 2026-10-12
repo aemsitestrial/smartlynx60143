@@ -297,3 +297,11 @@
     color: #666;
     text-align: center;
 }
+
+@media (width < 768px) {
+    .quotes .quote-media.quote-media-alt {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
