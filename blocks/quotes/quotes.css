@@ -1,3 +1,5 @@
+
+
 .quotes blockquote {
     margin: 0 auto !important;
     max-width: 900px !important;
@@ -83,6 +85,7 @@
 }
 
 .quotes blockquote.image {
+    border: 10px solid red !important;
     max-width: 1120px !important;
     display: grid !important;
     gap: 0 !important;
