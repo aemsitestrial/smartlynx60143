@@ -228,7 +228,6 @@
     .quotes blockquote.image {
         display: flex;
         flex-direction: column-reverse;
-        padding-bottom: 40px;
     }
 
     .quotes blockquote.image .quote-content {
