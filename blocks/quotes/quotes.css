@@ -1,37 +1,38 @@
 .quotes blockquote {
-    margin: 0 auto !important;
-    max-width: 900px !important;
-    padding: 48px !important;
-    background-color: var(--quote-bg, transparent) !important;
-    color: inherit !important;
-    border-radius: 16px !important;
-    box-sizing: border-box !important;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: var(--spacing-3xl);
+    background-color: var(--quote-bg, transparent);
+    color: var(--text-color);
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
 }
 
 .quotes .quote-content {
-    position: relative !important;
-    z-index: 1 !important;
+    position: relative;
+    z-index: 1;
 }
 
 @media (width >=900px) {
     .quotes blockquote {
-        padding: 48px !important;
+        padding: var(--spacing-3xl);
     }
 }
 
 .quotes blockquote .quote-title {
-    margin-bottom: 16px !important;
-    line-height: 1.6 !important;
-    overflow-wrap: anywhere !important;
+    margin-bottom: var(--spacing-m);
+    color: var(--heading-color);
+    line-height: 1.6;
 }
 
 .quotes blockquote .quote-quotation {
-    font-size: 190% !important;
-    line-height: 1.4 !important;
+    color: var(--text-color);
+    font-size: clamp(1.875rem, 1.4rem + 1vw, 2.125rem);
+    line-height: 1.4;
 }
 
-.quotes blockquote .quote-quotation> :first-child {
-    text-indent: -0.5ch !important;
+.quotes blockquote .quote-quotation > :first-child {
+    text-indent: -0.5ch;
 }
 
 .quotes blockquote .quote-quotation p:first-child::before {
@@ -43,259 +44,247 @@
 }
 
 .quotes .quote-author-image {
-    margin-top: 24px !important;
+    margin-top: var(--spacing-l);
 }
 
 .quotes .quote-author-image picture,
 .quotes .quote-author-image img {
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    max-width: 48px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    display: block !important;
+    width: var(--spacing-3xl);
+    height: var(--spacing-3xl);
+    min-width: var(--spacing-3xl);
+    max-width: var(--spacing-3xl);
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    display: block;
 }
 
 .quotes .quote-profile {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    margin-top: 24px !important;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    margin-top: var(--spacing-l);
 }
 
 .quotes .quote-profile-text {
-    font-size: 0.95rem !important;
-    line-height: 1.4 !important;
-    color: inherit !important;
+    font-size: var(--body-font-size-s);
+    line-height: 1.4;
+    color: var(--text-color);
 }
 
 .quotes .quote-media {
-    width: min(100%, 640px) !important;
-    justify-self: center !important;
+    width: min(100%, 640px);
+    justify-self: center;
 }
 
 .quotes .quote-media picture,
 .quotes .quote-media img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .quotes blockquote.image {
-    max-width: 1120px !important;
-    display: grid !important;
-    gap: 0 !important;
-    align-items: start !important;
-    background: transparent !important;
-    overflow: visible !important;
+    max-width: 1120px;
+    display: grid;
+    gap: 0;
+    align-items: start;
+    background: transparent;
+    overflow: visible;
 }
 
 .quotes blockquote.image .quote-content {
-    background-color: var(--quote-bg, #fff) !important;
-    width: 360px !important;
-    padding: 26px 18px 14px 55px !important;
-    position: relative !important;
-    z-index: 2 !important;
+    background-color: var(--quote-bg, var(--surface-color));
+    width: 360px;
+    padding: 26px var(--spacing-m) 14px 55px;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-sm);
 }
 
 .quotes blockquote.image .quote-quotation {
-    position: relative !important;
-    max-width: 340px !important;
-    margin-left: 0 !important;
-    font-size: 20px !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    color: #111 !important;
+    position: relative;
+    max-width: 340px;
+    margin-left: 0;
+    font-size: clamp(1.125rem, 1rem + 0.35vw, 1.25rem);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    color: var(--heading-color);
 }
 
 .quotes .quote-author-details {
-    margin-top: 6px !important;
-    font-size: 16px !important;
-    line-height: 1.4 !important;
-    color: #111 !important;
+    margin-top: var(--spacing-xs);
+    font-size: var(--body-font-size-m);
+    line-height: 1.4;
+    color: var(--heading-color);
 }
 
 .quotes .quote-author-details p {
-    margin: 0 !important;
+    margin: 0;
+    color: inherit;
 }
 
 .quotes blockquote.image .quote-quotation p {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
+    color: inherit;
 }
 
 .quotes blockquote.image .quote-quotation p:first-child::before {
     content: "“";
-    position: absolute !important;
-    left: -42px !important;
-    top: -8px !important;
-    color: rgb(70 115 219 / 100%) !important;
-    font-size: 60px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
+    position: absolute;
+    left: -42px;
+    top: -8px;
+    color: var(--color-brand-500);
+    font-size: 60px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
 }
 
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
-    position: absolute !important;
-    right: -8px !important;
-    bottom: -70px !important;
-    color: rgb(70 115 219 / 100%) !important;
-    font-size: 60px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
+    position: absolute;
+    right: -8px;
+    bottom: -70px;
+    color: var(--color-brand-500);
+    font-size: 60px;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
 }
 
 .quotes blockquote.image .quote-profile {
-    display: block !important;
-    margin-top: 4px !important;
+    display: block;
+    margin-top: var(--spacing-xxs);
 }
 
 .quotes blockquote.image .quote-author-image {
-    display: none !important;
+    display: none;
 }
 
 .quotes blockquote.image .quote-media {
-    width: 480px !important;
-    max-width: 480px !important;
-    aspect-ratio: 0.62 !important;
-    overflow: hidden !important;
+    width: 480px;
+    max-width: 480px;
+    aspect-ratio: 0.62;
+    overflow: hidden;
+    border-radius: var(--radius-md);
 }
 
 .quotes blockquote.image .quote-media picture,
 .quotes blockquote.image .quote-media img {
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-    object-fit: cover !important;
-    object-position: 25% top !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 25% top;
 }
 
 @media (width >=900px) {
     .quotes blockquote.image {
-        grid-template-columns: 240px 480px !important;
-        justify-content: center !important;
-        padding: 60px 20px !important;
+        grid-template-columns: 240px 480px;
+        justify-content: center;
+        padding: 60px var(--container-gutter);
     }
 
     .quotes blockquote.image .quote-content {
-        margin-top: 100px !important;
-        margin-right: -340px !important;
+        margin-top: 100px;
+        margin-right: -340px;
     }
 
     .quotes blockquote.image .quote-media {
-        justify-self: start !important;
+        justify-self: start;
     }
 }
 
 @media (width <=1024px) and (width >=768px) {
     .quotes blockquote.image {
-        grid-template-columns: 260px 420px !important;
-        justify-content: center !important;
+        grid-template-columns: 260px 420px;
+        justify-content: center;
     }
 
     .quotes blockquote.image .quote-content {
-        width: 360px !important;
-        margin-top: 50px !important;
-        margin-right: -200px !important;
-        padding: 24px 18px 14px 45px !important;
+        width: 360px;
+        margin-top: 50px;
+        margin-right: -200px;
+        padding: var(--spacing-l) 18px 14px 45px;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 280px !important;
-        font-size: 18px !important;
+        max-width: 280px;
+        font-size: var(--body-font-size-m);
     }
 
     .quotes blockquote.image .quote-media {
-        width: 420px !important;
-        max-width: 420px !important;
+        width: 420px;
+        max-width: 420px;
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -24px !important;
-        top: -8px !important;
-        font-size: 50px !important;
+        left: -24px;
+        top: -8px;
+        font-size: 50px;
     }
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
-        right: 8px !important;
-        bottom: -25px !important;
-        font-size: 50px !important;
+        right: 8px;
+        bottom: -25px;
+        font-size: 50px;
     }
 }
 
 @media (width < 768px) {
     .quotes blockquote.image {
-        display: flex !important;
-        flex-direction: column-reverse !important;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .quotes blockquote.image .quote-content {
-        width: calc(100% - 8px) !important;
-        margin: -50px 4px 0 !important;
-        padding: 20px 24px !important;
-        box-sizing: border-box !important;
-        max-width: none !important;
+        width: calc(100% - var(--spacing-xs));
+        margin: calc(var(--spacing-5xl) * -0.625) var(--spacing-xxs) 0;
+        padding: 20px var(--spacing-l);
+        box-sizing: border-box;
+        max-width: none;
     }
 
     .quotes blockquote.image .quote-media {
-        width: 100% !important;
-        max-width: none !important;
+        width: 100%;
+        max-width: none;
     }
 
     .quotes blockquote.image .quote-quotation {
-        max-width: 100% !important;
-        font-size: 15px !important;
-        line-height: 1.4 !important;
-        padding-left: 8px !important;
+        max-width: 100%;
+        font-size: var(--body-font-size-s);
+        line-height: 1.4;
+        padding-left: var(--spacing-xs);
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -14px !important;
-        top: -4px !important;
-        font-size: 40px !important;
+        left: -14px;
+        top: -4px;
+        font-size: 40px;
     }
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
-        right: 8px !important;
-        bottom: -28px !important;
-        font-size: 32px !important;
+        right: var(--spacing-xs);
+        bottom: -28px;
+        font-size: 32px;
     }
 }
 
-/* .quotes .quote-media.quote-media-alt {
+.quotes .quote-media.quote-media-alt {
     width: 220px;
     height: 330px;
     min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
-    margin-left: 120px;
-    background: #f2f2f2;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
+    margin-top: var(--spacing-5xl);
+    margin-left: var(--spacing-6xl);
+    padding: var(--spacing-m);
+    background: var(--surface-subtle);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
     box-sizing: border-box;
-    font-size: 16px;
-    color: #666;
+    font-size: var(--body-font-size-m);
+    color: var(--text-color-muted);
     text-align: center;
     overflow: hidden;
-} */
-.quotes .quote-media-alt {
-    width: 480px !important;
-    max-width: 480px !important;
-    align-self: center !important;
-    font-size: 16px !important;
-    color: #666 !important;
-    text-align: center !important;
-}
-
-@media (width < 768px) {
-    .quotes .quote-media-alt {
-        width: 100% !important;
-        max-width: none !important;
-        text-align: center !important;
-        margin-bottom: 60px !important;
-    }
 }
