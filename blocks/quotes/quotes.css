@@ -282,26 +282,19 @@
     text-align: center;
     overflow: hidden;
 } */
-.quotes .quote-media.quote-media-alt {
+.quotes .quote-media-alt {
     width: 480px;
     max-width: 480px;
-    aspect-ratio: 0.62;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f2f2f2;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
-    box-sizing: border-box;
+    align-self: center;
     font-size: 16px;
     color: #666;
     text-align: center;
 }
 
 @media (width < 768px) {
-    .quotes .quote-media.quote-media-alt {
+    .quotes .quote-media-alt {
         width: 100%;
         max-width: none;
-        margin: 0;
+        text-align: center;
     }
 }
