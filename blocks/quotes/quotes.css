@@ -231,9 +231,9 @@
     }
 
     .quotes blockquote.image .quote-content {
-        width: calc(100% - 26px);
-        margin: -50px 8px 0;
-        padding: 12px 20px;
+        width: calc(100% - 8px);
+        margin: -50px 4px 0;
+        padding: 20px 24px;
         box-sizing: border-box;
         max-width: none;
     }
@@ -258,7 +258,7 @@
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
         right: 8px;
-        bottom: -8px;
+        bottom: 2px;
         font-size: 32px;
     }
 }
