@@ -247,7 +247,7 @@
         max-width: 100%;
         font-size: 15px;
         line-height: 1.4;
-        padding-left: 0;
+        padding-left: 8px;
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
