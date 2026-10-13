@@ -291,3 +291,20 @@
 .accordion-description li {
   margin-bottom: 8px;
 }
+
+.accordion-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #0057b8;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.accordion-cta:hover {
+  text-decoration: none;
+}

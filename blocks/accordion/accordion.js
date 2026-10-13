@@ -171,8 +171,14 @@ export default function decorate(block) {
     const nextRow = rows[index + 1];
 
     if (isCtaRow(nextRow)) {
-      cta = nextRow.cloneNode(true);
-      cta.classList.add('cta');
+      const ctaLabel = nextRow.children[0]?.textContent.trim();
+      const ctaLink = nextRow.children[1]?.textContent.trim();
+
+      cta = document.createElement('a');
+      cta.className = 'accordion-cta';
+      cta.href = ctaLink;
+      cta.textContent = ctaLabel;
+
       nextRow.remove();
     }
 
