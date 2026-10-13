@@ -49,6 +49,12 @@
     }
   },
   {
+    "id": "accordion-item",
+    "components": [
+      "accordion-cta"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"

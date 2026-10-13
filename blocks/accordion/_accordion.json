@@ -170,6 +170,12 @@
           "format": []
         }
       }
+    },
+    {
+      "id": "accordion-item",
+      "components": [
+        "accordion-cta"
+      ]
     }
   ]
 }
