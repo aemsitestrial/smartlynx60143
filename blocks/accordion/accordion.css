@@ -291,17 +291,3 @@
 .accordion-description li {
   margin-bottom: 8px;
 }
-
-/* CTA inside accordion */
-
-.accordion .cta {
-  margin-top: 24px;
-}
-
-.accordion .cta-link {
-  margin-top: 8px;
-}
-
-.accordion .accordion-item-body .cta {
-  display: block;
-}
