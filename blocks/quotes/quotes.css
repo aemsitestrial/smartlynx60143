@@ -290,8 +290,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: var(--spacing-5xl);
-    margin-left: var(--spacing-6xl);
+    margin-top: 132px;
+    margin-left: 24px;
     padding: var(--spacing-m);
     background: var(--surface-subtle);
     border: 1px solid var(--border-color);
