@@ -298,13 +298,14 @@
   justify-content: center;
   margin-top: 24px;
   padding: 12px 24px;
-  border-radius: 999px;
   background: #0057b8;
   color: #fff;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
 }
 
 .accordion-cta:hover {
+  color: #fff;
   text-decoration: none;
 }

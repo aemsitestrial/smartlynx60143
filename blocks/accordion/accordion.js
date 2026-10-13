@@ -9,11 +9,8 @@ function isCtaRow(row) {
     return false;
   }
 
-  if (row.classList.contains('cta')) {
-    return true;
-  }
-
-  return row.children.length > 9;
+  return row.classList.contains('cta')
+    || row.children.length > 9;
 }
 
 export default function decorate(block) {
@@ -176,8 +173,8 @@ export default function decorate(block) {
 
       cta = document.createElement('a');
       cta.className = 'accordion-cta';
-      cta.href = ctaLink;
-      cta.textContent = ctaLabel;
+      cta.href = ctaLink || '#';
+      cta.textContent = ctaLabel || 'Learn More';
 
       nextRow.remove();
     }
