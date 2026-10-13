@@ -174,7 +174,7 @@
     max-width: 480px;
     aspect-ratio: 0.62;
     overflow: hidden;
-    border-radius: var(--radius-md);
+    border-radius: 0;
 }
 
 .quotes blockquote.image .quote-media picture,
