@@ -172,8 +172,6 @@ export default function decorate(block) {
       cta.classList.add('cta');
 
       decorateCTA(cta);
-      console.log('CTA CHILDREN', cta.children.length);
-      console.log(cta);
 
       nextRow.remove();
     }
