@@ -9,8 +9,7 @@ function isCtaRow(row) {
     return false;
   }
 
-  return row.classList.contains('cta')
-    || row.children.length > 9;
+  return row.children.length > 9;
 }
 
 export default function decorate(block) {
@@ -20,9 +19,9 @@ export default function decorate(block) {
 
   rows.forEach((row, index) => {
     if (isCtaRow(row)) {
+      row.remove();
       return;
     }
-
     const label = row.children[0];
 
     const summary = document.createElement('summary');
@@ -176,6 +175,7 @@ export default function decorate(block) {
       cta.href = ctaLink || '#';
       cta.textContent = ctaLabel || 'Learn More';
 
+      nextRow.style.display = 'none';
       nextRow.remove();
     }
 
