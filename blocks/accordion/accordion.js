@@ -170,10 +170,12 @@ export default function decorate(block) {
       const ctaLabel = nextRow.children[0]?.textContent.trim();
       const ctaLink = nextRow.children[1]?.textContent.trim();
 
-      cta = document.createElement('a');
-      cta.className = 'accordion-cta';
-      cta.href = ctaLink || '#';
-      cta.textContent = ctaLabel || 'Learn More';
+      if (ctaLabel) {
+        cta = document.createElement('a');
+        cta.className = 'accordion-cta';
+        cta.href = ctaLink || '#';
+        cta.textContent = ctaLabel;
+      }
 
       nextRow.style.display = 'none';
       nextRow.remove();
