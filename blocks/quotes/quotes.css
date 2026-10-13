@@ -188,24 +188,25 @@
 
 @media (width >=900px) {
     .quotes blockquote.image {
-        grid-template-columns: 240px 480px;
+        grid-template-columns: 420px 480px;
         justify-content: center;
         padding: 60px var(--container-gutter);
-    }
-
-    .quotes .quote-media.quote-media-alt {
-        justify-self: start;
+        gap: 24px;
     }
 
     .quotes blockquote.image .quote-content {
+        grid-column: 1;
         margin-top: 132px;
-        margin-right: -360px;
+        margin-right: 0;
     }
 
-    .quotes blockquote.image .quote-media {
+    .quotes blockquote.image .quote-media,
+    .quotes .quote-media.quote-media-alt {
+        grid-column: 2;
         justify-self: start;
     }
 }
+
 
 @media (width <=1024px) and (width >=768px) {
     .quotes blockquote.image {
