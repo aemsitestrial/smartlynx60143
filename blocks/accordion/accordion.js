@@ -6,14 +6,8 @@ function normalizeLayout(value) {
 
 export default function decorate(block) {
   let hasSearch = false;
-  const ctaBlocks = [...block.children].filter(
-    (child) => child.classList.contains('cta'),
-  );
 
   [...block.children].forEach((row) => {
-    if (row.classList.contains('cta')) {
-      return;
-    }
     const label = row.children[0];
 
     const summary = document.createElement('summary');
@@ -152,7 +146,6 @@ export default function decorate(block) {
     const description = document.createElement('div');
     description.className = 'accordion-description';
     description.innerHTML = body.innerHTML;
-    const cta = ctaBlocks.length ? ctaBlocks.shift() : null;
 
     body.replaceChildren();
 
@@ -172,9 +165,6 @@ export default function decorate(block) {
       body.append(description);
     }
 
-    if (cta) {
-      body.append(cta);
-    }
     details.append(summary, body);
 
     row.replaceWith(details);
