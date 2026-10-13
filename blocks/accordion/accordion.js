@@ -19,7 +19,6 @@ export default function decorate(block) {
 
   rows.forEach((row, index) => {
     if (isCtaRow(row)) {
-      row.remove();
       return;
     }
     const label = row.children[0];
@@ -178,7 +177,6 @@ export default function decorate(block) {
       }
 
       nextRow.style.display = 'none';
-      nextRow.remove();
     }
 
     body.replaceChildren();
