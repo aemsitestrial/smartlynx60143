@@ -67,7 +67,8 @@
         "video",
         "text-with-link",
         "quotes",
-        "tcs-footer"
+        "tcs-footer",
+        "cta"
       ]
     }
   ]
