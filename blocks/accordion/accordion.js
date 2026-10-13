@@ -143,7 +143,7 @@ export default function decorate(block) {
       meta.className = 'accordion-meta';
 
       meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''
-      }`;
+        }`;
     }
 
     let bannerWrapper = null;
@@ -166,16 +166,7 @@ export default function decorate(block) {
     const nextRow = rows[index + 1];
 
     if (isCtaRow(nextRow)) {
-      const ctaLabel = nextRow.children[0]?.textContent.trim();
-      const ctaLink = nextRow.children[1]?.textContent.trim();
-
-      if (ctaLabel) {
-        cta = document.createElement('a');
-        cta.className = 'accordion-cta';
-        cta.href = ctaLink || '#';
-        cta.textContent = ctaLabel;
-      }
-
+      cta = nextRow.cloneNode(true);
       nextRow.style.display = 'none';
     }
 
