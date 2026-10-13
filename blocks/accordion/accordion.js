@@ -7,7 +7,13 @@ function normalizeLayout(value) {
 export default function decorate(block) {
   let hasSearch = false;
 
-  [...block.children].forEach((row) => {
+  const rows = [...block.children];
+
+  rows.forEach((row, index) => {
+    if (row.classList.contains('cta')) {
+      return;
+    }
+
     const label = row.children[0];
 
     const summary = document.createElement('summary');
@@ -35,10 +41,12 @@ export default function decorate(block) {
     const locationField = row.children[6];
     const flagField = row.children[7];
     const bannerField = row.children[8];
+
     let layout = 'default';
 
     if (layoutField) {
       layout = normalizeLayout(layoutField.textContent);
+
       if (layout === 'search') {
         hasSearch = true;
       }
@@ -127,8 +135,7 @@ export default function decorate(block) {
 
       meta.className = 'accordion-meta';
 
-      meta.textContent = `${dateField?.textContent.trim() || ''
-      } | ${locationField?.textContent.trim() || ''
+      meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''
       }`;
     }
 
@@ -147,6 +154,15 @@ export default function decorate(block) {
     description.className = 'accordion-description';
     description.innerHTML = body.innerHTML;
 
+    let cta = null;
+
+    const nextRow = rows[index + 1];
+
+    if (nextRow && nextRow.classList.contains('cta')) {
+      cta = nextRow.cloneNode(true);
+      nextRow.remove();
+    }
+
     body.replaceChildren();
 
     if (layout !== 'corporate') {
@@ -163,6 +179,10 @@ export default function decorate(block) {
 
     if (description) {
       body.append(description);
+    }
+
+    if (cta) {
+      body.append(cta);
     }
 
     details.append(summary, body);

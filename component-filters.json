@@ -39,17 +39,7 @@
   {
     "id": "accordion",
     "components": [
-      "accordion-item"
-    ],
-    "rte": {
-      "toolbar": {
-        "format": []
-      }
-    }
-  },
-  {
-    "id": "accordion-item",
-    "components": [
+      "accordion-item",
       "accordion-cta"
     ]
   },
