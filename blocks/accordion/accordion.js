@@ -1,4 +1,5 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
+import decorateCTA from '../cta/cta.js';
 
 function normalizeLayout(value) {
   return value.trim().toLowerCase().replace(/\s+accordion$/, '');
@@ -167,9 +168,13 @@ export default function decorate(block) {
 
     if (isCtaRow(nextRow)) {
       cta = nextRow.cloneNode(true);
-      nextRow.style.display = 'none';
-    }
 
+      cta.classList.add('cta');
+
+      decorateCTA(cta);
+
+      nextRow.remove();
+    }
     body.replaceChildren();
 
     if (layout !== 'corporate') {
