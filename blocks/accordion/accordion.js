@@ -6,8 +6,14 @@ function normalizeLayout(value) {
 
 export default function decorate(block) {
   let hasSearch = false;
+  const ctaBlocks = [...block.children].filter(
+    (child) => child.classList.contains('cta'),
+  );
 
   [...block.children].forEach((row) => {
+    if (row.classList.contains('cta')) {
+      return;
+    }
     const label = row.children[0];
 
     const summary = document.createElement('summary');
@@ -33,10 +39,8 @@ export default function decorate(block) {
     const textColorField = row.children[4];
     const dateField = row.children[5];
     const locationField = row.children[6];
-    const ctaLabelField = row.children[7];
-    const ctaLinkField = row.children[8];
-    const flagField = row.children[9];
-    const bannerField = row.children[10];
+    const flagField = row.children[7];
+    const bannerField = row.children[8];
     let layout = 'default';
 
     if (layoutField) {
@@ -148,24 +152,7 @@ export default function decorate(block) {
     const description = document.createElement('div');
     description.className = 'accordion-description';
     description.innerHTML = body.innerHTML;
-
-    let cta = null;
-
-    if (
-      ctaLabelField?.textContent.trim()
-      && ctaLinkField
-    ) {
-      cta = document.createElement('a');
-
-      const ctaSource = ctaLinkField.querySelector('a');
-
-      cta.href = ctaSource?.href
-        || ctaLinkField.textContent.trim()
-        || '#';
-
-      cta.textContent = ctaLabelField.textContent.trim();
-      cta.className = 'accordion-cta';
-    }
+    const cta = ctaBlocks.length ? ctaBlocks.shift() : null;
 
     body.replaceChildren();
 

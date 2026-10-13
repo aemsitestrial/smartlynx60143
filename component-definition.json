@@ -127,6 +127,21 @@
           }
         },
         {
+          "title": "CTA",
+          "id": "accordion-cta",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "cta",
+                  "model": "cta"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Article",
           "id": "article",
           "plugins": {

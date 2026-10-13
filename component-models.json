@@ -249,18 +249,6 @@
         "value": ""
       },
       {
-        "component": "text",
-        "name": "ctaLabel",
-        "label": "CTA Label",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "aem-content",
-        "name": "ctaLink",
-        "label": "CTA Link"
-      },
-      {
         "component": "reference",
         "name": "flagImage",
         "label": "Flag Image",

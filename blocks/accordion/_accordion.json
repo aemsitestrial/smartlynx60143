@@ -29,6 +29,21 @@
           }
         }
       }
+    },
+    {
+      "title": "CTA",
+      "id": "accordion-cta",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "cta",
+              "model": "cta"
+            }
+          }
+        }
+      }
     }
   ],
   "models": [
@@ -129,18 +144,6 @@
           "value": ""
         },
         {
-          "component": "text",
-          "name": "ctaLabel",
-          "label": "CTA Label",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "aem-content",
-          "name": "ctaLink",
-          "label": "CTA Link"
-        },
-        {
           "component": "reference",
           "name": "flagImage",
           "label": "Flag Image",
@@ -159,7 +162,8 @@
     {
       "id": "accordion",
       "components": [
-        "accordion-item"
+        "accordion-item",
+        "accordion-cta"
       ],
       "rte": {
         "toolbar": {
