@@ -31,7 +31,7 @@
     line-height: 1.4;
 }
 
-.quotes blockquote .quote-quotation > :first-child {
+.quotes blockquote .quote-quotation> :first-child {
     text-indent: -0.5ch;
 }
 
@@ -193,6 +193,10 @@
         padding: 60px var(--container-gutter);
     }
 
+    .quotes .quote-media.quote-media-alt {
+        justify-self: start;
+    }
+
     .quotes blockquote.image .quote-content {
         margin-top: 132px;
         margin-right: -360px;
@@ -207,6 +211,11 @@
     .quotes blockquote.image {
         grid-template-columns: 260px 420px;
         justify-content: center;
+    }
+
+    .quotes .quote-media.quote-media-alt {
+        width: 420px;
+        max-width: 420px;
     }
 
     .quotes blockquote.image .quote-content {
@@ -243,6 +252,13 @@
     .quotes blockquote.image {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .quotes .quote-media.quote-media-alt {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: auto;
+        min-height: 220px;
     }
 
     .quotes blockquote.image .quote-content {
@@ -284,21 +300,16 @@
 }
 
 .quotes .quote-media.quote-media-alt {
-    width: 220px;
-    height: 330px;
-    min-height: 200px;
+    width: 480px;
+    max-width: 480px;
+    aspect-ratio: 0.62;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: var(--spacing-5xl);
-    margin-left: var(--spacing-6xl);
-    padding: var(--spacing-m);
     background: var(--surface-subtle);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    box-sizing: border-box;
-    font-size: var(--body-font-size-m);
     color: var(--text-color-muted);
     text-align: center;
     overflow: hidden;
+    box-sizing: border-box;
 }
