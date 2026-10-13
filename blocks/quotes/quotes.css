@@ -200,18 +200,20 @@
         margin-right: 0;
     }
 
-    .quotes .quote-media.quote-media-alt {
-        grid-column: 2;
-        grid-row: 1;
-        margin-top: 132px;
-        margin-left: -20px;
-        place-self: start start;
+    @media (width >=900px) {
+        .quotes .quote-media.quote-media-alt {
+            grid-column: 2;
+            grid-row: 1;
+            margin-top: 132px;
+            margin-left: -120px;
+            place-self: start start;
+        }
     }
 }
 
 @media (width <=1024px) and (width >=768px) {
     .quotes blockquote.image {
-        grid-template-columns: 260px 420px;
+        grid-template-columns: 420px 160px;
         justify-content: center;
     }
 
@@ -309,13 +311,12 @@
     overflow: hidden;
 }
 
-/* ADD THIS BELOW */
 @media (width >=900px) {
     .quotes .quote-media.quote-media-alt {
         grid-column: 2;
         grid-row: 1;
         margin-top: 132px;
-        margin-left: 0;
+        margin-left: -120px;
         place-self: start start;
     }
 }
