@@ -143,7 +143,7 @@ export default function decorate(block) {
       meta.className = 'accordion-meta';
 
       meta.textContent = `${dateField?.textContent.trim() || ''} | ${locationField?.textContent.trim() || ''
-        }`;
+      }`;
     }
 
     let bannerWrapper = null;
