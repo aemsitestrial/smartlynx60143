@@ -4,13 +4,25 @@ function normalizeLayout(value) {
   return value.trim().toLowerCase().replace(/\s+accordion$/, '');
 }
 
+function isCtaRow(row) {
+  if (!row) {
+    return false;
+  }
+
+  if (row.classList.contains('cta')) {
+    return true;
+  }
+
+  return row.children.length > 8;
+}
+
 export default function decorate(block) {
   let hasSearch = false;
 
   const rows = [...block.children];
 
   rows.forEach((row, index) => {
-    if (row.classList.contains('cta')) {
+    if (isCtaRow(row)) {
       return;
     }
 
@@ -158,8 +170,9 @@ export default function decorate(block) {
 
     const nextRow = rows[index + 1];
 
-    if (nextRow && nextRow.classList.contains('cta')) {
+    if (isCtaRow(nextRow)) {
       cta = nextRow.cloneNode(true);
+      cta.classList.add('cta');
       nextRow.remove();
     }
 
