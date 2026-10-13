@@ -190,7 +190,7 @@
     .quotes blockquote.image {
         grid-template-columns: 420px 220px;
         justify-content: center;
-        gap: 24px;
+        gap: 0;
         padding: 60px var(--container-gutter);
     }
 
@@ -204,8 +204,8 @@
         grid-column: 2;
         grid-row: 1;
         margin-top: 132px;
-        margin-left: 0;
-        justify-self: start;
+        margin-left: -20px;
+        place-self: start start;
     }
 }
 
