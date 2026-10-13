@@ -162,8 +162,7 @@
     {
       "id": "accordion",
       "components": [
-        "accordion-item",
-        "accordion-cta"
+        "accordion-item"
       ],
       "rte": {
         "toolbar": {
