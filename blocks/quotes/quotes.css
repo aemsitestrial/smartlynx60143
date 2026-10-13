@@ -188,17 +188,23 @@
 
 @media (width >=900px) {
     .quotes blockquote.image {
-        grid-template-columns: 240px 480px;
+        grid-template-columns: 420px 220px;
         justify-content: center;
+        gap: 24px;
         padding: 60px var(--container-gutter);
     }
 
     .quotes blockquote.image .quote-content {
+        grid-column: 1;
         margin-top: 132px;
-        margin-right: -360px;
+        margin-right: 0;
     }
 
-    .quotes blockquote.image .quote-media {
+    .quotes .quote-media.quote-media-alt {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 132px;
+        margin-left: 0;
         justify-self: start;
     }
 }
