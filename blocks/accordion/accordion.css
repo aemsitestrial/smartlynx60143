@@ -305,3 +305,26 @@
 .accordion-description li {
   margin-bottom: 8px;
 }
+
+/* CTA inside accordion */
+.accordion .cta {
+  width: 100%;
+}
+
+.accordion .cta-align-left {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.accordion .cta-align-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.accordion .cta-align-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
