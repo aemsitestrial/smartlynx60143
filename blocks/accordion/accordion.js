@@ -167,9 +167,11 @@ export default function decorate(block) {
     const nextRow = rows[index + 1];
 
     if (isCtaRow(nextRow)) {
-      cta = nextRow.cloneNode(true);
+      cta = document.createElement('div');
 
       cta.classList.add('cta');
+
+      cta.innerHTML = nextRow.innerHTML;
 
       decorateCTA(cta);
 
