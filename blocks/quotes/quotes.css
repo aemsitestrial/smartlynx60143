@@ -170,8 +170,9 @@
 }
 
 .quotes blockquote.image .quote-media {
-    width: 360px;
-    height: 620px;
+    width: 480px;
+    max-width: 480px;
+    aspect-ratio: 0.62;
     overflow: hidden;
     border-radius: 0;
 }
@@ -182,7 +183,7 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center top;
+    object-position: 25% top;
 }
 
 @media (width >=900px) {
