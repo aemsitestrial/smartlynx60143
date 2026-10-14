@@ -131,6 +131,12 @@
   display: block;
 }
 
+.accordion .cta-align-left,
+.accordion .cta-align-center,
+.accordion .cta-align-right {
+  width: 100%;
+}
+
 .accordion input[type='search'] {
   width: 100%;
   padding: 12px;
