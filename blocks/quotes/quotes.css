@@ -188,7 +188,7 @@
 
 @media (width >=900px) {
     .quotes blockquote.image {
-        grid-template-columns: 420px 220px;
+        grid-template-columns: 420px 120px;
         justify-content: center;
         gap: 0;
         padding: 60px var(--container-gutter);
@@ -207,7 +207,7 @@
             grid-column: 2;
             grid-row: 1;
             margin-top: 132px;
-            margin-left: -120px;
+            margin-left: -180px;
             place-self: start start;
         }
     }
