@@ -95,7 +95,7 @@
 .quotes blockquote.image .quote-content {
     background-color: var(--quote-bg, var(--surface-color));
     width: 420px;
-    padding: 20px 20px 16px 23px;
+    padding: 32px;
     position: relative;
     z-index: 0;
     box-shadow: none;
@@ -103,10 +103,10 @@
 
 .quotes blockquote.image .quote-quotation {
     position: relative;
-    max-width: 300px;
+    max-width: 340px;
     margin-left: 0;
-    margin-bottom: 18px;
-    font-size: 0.95rem; 
+    margin-bottom: 22px;
+    font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
     font-weight: var(--font-weight-regular);
     line-height: 1.45;
     color: var(--heading-color);
@@ -139,8 +139,8 @@
 .quotes blockquote.image .quote-quotation p:first-child::before {
     content: "“";
     position: absolute;
-    left: -24px;
-    top: -2px;
+    left: -12px;
+    top: -8px;
     color: var(--color-brand-500);
     font-size: 34px;
     font-weight: var(--font-weight-bold);
@@ -151,8 +151,8 @@
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: 0%;
-    bottom: -16px;
+    right: 20px ;
+    bottom: -8px;
     color: var(--color-brand-500);
     font-size: 34px;
     font-weight: var(--font-weight-bold);
