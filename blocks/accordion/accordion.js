@@ -10,7 +10,7 @@ function isCtaRow(row) {
     return false;
   }
 
-  return row.children.length > 5;
+  return row.children.length > 9;
 }
 
 export default function decorate(block) {
@@ -167,11 +167,9 @@ export default function decorate(block) {
     const nextRow = rows[index + 1];
 
     if (isCtaRow(nextRow)) {
-      cta = document.createElement('div');
+      cta = nextRow.cloneNode(true);
 
       cta.classList.add('cta');
-
-      cta.innerHTML = nextRow.innerHTML;
 
       decorateCTA(cta);
 
