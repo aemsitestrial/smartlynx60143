@@ -5,12 +5,22 @@ function normalizeLayout(value) {
   return value.trim().toLowerCase().replace(/\s+accordion$/, '');
 }
 
+function getRowModel(row) {
+  return row?.getAttribute('data-aue-model') || row?.dataset?.aueModel || '';
+}
+
 function isCtaRow(row) {
   if (!row) {
     return false;
   }
 
-  return row.children.length > 9;
+  const rowModel = getRowModel(row).toLowerCase();
+
+  if (rowModel) {
+    return rowModel === 'cta' || rowModel === 'accordion-cta';
+  }
+
+  return row.classList.contains('cta') || row.children.length > 9;
 }
 
 export default function decorate(block) {
