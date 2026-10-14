@@ -197,7 +197,7 @@
     .quotes blockquote.image .quote-content {
         grid-column: 1;
         margin-top: 132px;
-        margin-right: 0;
+        margin-right: -80px;
     }
 
     @media (width >=900px) {
