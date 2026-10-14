@@ -106,15 +106,15 @@
     max-width: 340px;
     margin-left: 0;
     margin-bottom: 22px;
-    font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
+    font-size: 1rem;
     font-weight: var(--font-weight-regular);
-    line-height: 1.45;
+    line-height: 1.5;
     color: var(--heading-color);
 }
 
 .quotes .quote-author-details {
     margin-top: 0;
-    font-size: 0.98rem;
+    font-size: 0.85rem;
     line-height: 1.35;
     color: var(--heading-color);
 }
@@ -151,7 +151,7 @@
 .quotes blockquote.image .quote-quotation p:last-child::after {
     content: "”";
     position: absolute;
-    right: 20px ;
+    right: 20px;
     bottom: -8px;
     color: var(--color-brand-500);
     font-size: 34px;
@@ -235,15 +235,15 @@
     }
 
     .quotes blockquote.image .quote-quotation p:first-child::before {
-        left: -20px;
-        top: -6px;
-        font-size: 30px;
+        left: -18px;
+        top: -2px;
+        font-size: 22px;
     }
 
     .quotes blockquote.image .quote-quotation p:last-child::after {
-        right: 8px;
-        bottom: -20px;
-        font-size: 30px;
+        right: 4px;
+        bottom: -4px;
+        font-size: 22px;
     }
 }
 
