@@ -10,7 +10,7 @@ function isCtaRow(row) {
     return false;
   }
 
-  return row.children.length > 9;
+  return row.children.length > 5;
 }
 
 export default function decorate(block) {

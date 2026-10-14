@@ -91,6 +91,7 @@
   list-style: none;
   background: var(--accordion-bg, transparent);
   color: var(--accordion-text, inherit);
+  text-align: left;
 }
 
 .accordion details summary::-webkit-details-marker {
@@ -201,7 +202,10 @@
   writing-mode: horizontal-tb;
   transform: none;
   margin-top: 0;
+  display: block;
+  text-align: left;
 }
+
 
 .accordion.horizontal .accordion-item[open] .accordion-summary-flag {
   display: none;
