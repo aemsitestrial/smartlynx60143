@@ -172,9 +172,6 @@ export default function decorate(block) {
       cta.classList.add('cta');
 
       decorateCTA(cta);
-
-      console.log(cta.outerHTML);
-
       nextRow.remove();
     }
     body.replaceChildren();
