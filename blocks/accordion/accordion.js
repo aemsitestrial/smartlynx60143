@@ -167,11 +167,16 @@ export default function decorate(block) {
     const nextRow = rows[index + 1];
 
     if (isCtaRow(nextRow)) {
+      console.log('CTA ROW', nextRow);
+      console.log('CTA CHILDREN', nextRow.children.length);
+
       cta = nextRow.cloneNode(true);
 
       cta.classList.add('cta');
 
       decorateCTA(cta);
+
+      console.log('CTA AFTER DECORATE', cta);
 
       nextRow.remove();
     }
