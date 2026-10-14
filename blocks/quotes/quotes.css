@@ -103,7 +103,7 @@
 
 .quotes blockquote.image .quote-quotation {
     position: relative;
-    max-width: 280px;
+    max-width: 340px;
     margin-left: 0;
     margin-bottom: 22px;
     font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
@@ -188,7 +188,7 @@
 
 @media (width >=900px) {
     .quotes blockquote.image {
-        grid-template-columns: 420px 120px;
+        grid-template-columns: 420px 220px;
         justify-content: center;
         gap: 0;
         padding: 60px var(--container-gutter);
@@ -197,7 +197,7 @@
     .quotes blockquote.image .quote-content {
         grid-column: 1;
         margin-top: 132px;
-        margin-right: -80px;
+        margin-right: -40px;
         margin-left: 0;
 
     }
