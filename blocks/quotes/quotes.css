@@ -96,7 +96,7 @@
     background-color: var(--quote-bg, var(--surface-color));
     width: 420px;
     padding: 32px;
-    margin-left: -30px;
+    margin-left: -60px;
     position: relative;
     z-index: 0;
     box-shadow: none;
