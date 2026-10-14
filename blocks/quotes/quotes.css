@@ -94,7 +94,7 @@
 
 .quotes blockquote.image .quote-content {
     background-color: var(--quote-bg, var(--surface-color));
-    width: 500px;
+    width: 420px;
     padding: 32px;
     position: relative;
     z-index: 0;
@@ -103,7 +103,7 @@
 
 .quotes blockquote.image .quote-quotation {
     position: relative;
-    max-width: 420px;
+    max-width: 340px;
     margin-left: 0;
     margin-bottom: 22px;
     font-size: clamp(1.05rem, 0.95rem + 0.35vw, 1.2rem);
@@ -255,11 +255,14 @@
 
     .quotes blockquote.image .quote-content {
         background-color: var(--quote-bg, var(--surface-color));
-        width: 420px;
-        padding: 24px 24px 20px 40px;
+        width: calc(100% - var(--spacing-xs));
+        margin: calc(var(--spacing-5xl) * -0.625) var(--spacing-xxs) 0;
+        padding: var(--spacing-l);
         position: relative;
         z-index: 0;
         box-shadow: none;
+        box-sizing: border-box;
+        max-width: none;
     }
 
     .quotes blockquote.image .quote-media {
