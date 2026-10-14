@@ -172,7 +172,7 @@
 .quotes blockquote.image .quote-media {
     width: 480px;
     max-width: 480px;
-    aspect-ratio: 0.62;
+    aspect-ratio: 0.55;
     overflow: hidden;
     border-radius: 0;
 }
